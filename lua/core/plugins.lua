@@ -203,7 +203,7 @@ return require("packer").startup {
 
         use {
             "akinsho/toggleterm.nvim",
-            keys = "<c-t>",
+            keys = { "<c-t>", "<leader>tg" },
             tag = "*",
             config = function()
                 require "modules.editor.toggleterm"
