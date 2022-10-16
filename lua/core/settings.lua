@@ -4,6 +4,8 @@ local utils = require "core.utils"
 local g = vim.g
 local o = vim.opt
 
+g.colors_name = "everblush"
+
 --Cursor & cursorline
 -- o.guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
 -- o.guicursor = "n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor-blinkwait300-blinkon500-blinkoff300,r-cr-o:hor20"
@@ -68,7 +70,7 @@ end ]]
 -- o.statusline = "%!v:lua.require'custom.statusline'.run()"
 -- o.guifont = "OperatorMonoSSmLig Nerd Font,codicon:h10"
 -- o.guifont = "ComicCodeLigatures Nerd Font:codicon:h09"
-o.guifont = "MonoLisaNerdFontComplete Nerd Font:h9"
+o.guifont = "Operator Mono SSm Lig Book:h9"
 
 -- Conceal
 o.conceallevel = 2
@@ -116,5 +118,3 @@ end ]]
 -- Commenting this out because it causes error on linux cuz i don't hv nu LMFAO
 --[[ vim.opt.shell = "nu"
 vim.opt.shellcmdflag = "-c" ]]
-
-g.colors_name = "everblush"
