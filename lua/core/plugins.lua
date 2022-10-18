@@ -502,7 +502,10 @@ return require("packer").startup {
         use {
             "p00f/clangd_extensions.nvim",
             -- ft = { "c", "cpp" },
-            requires = "nvim-lspconfig",
+            after = "nvim-lspconfig",
+            config = function()
+                require "modules.lsp.servers.clangd"
+            end,
             disable = plugins.clangd_ext,
         }
 
@@ -523,6 +526,15 @@ return require("packer").startup {
                 require "modules.lsp.saga"
             end,
             disable = plugins.lspsaga,
+        }
+
+        use {
+            "simrat39/rust-tools.nvim",
+            after = "nvim-lspconfig",
+            config = function()
+                require "modules.lsp.servers.rust_analyzer"
+            end,
+            disable = plugins.rust_tools,
         }
 
         -----------------------------------

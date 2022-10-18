@@ -60,6 +60,7 @@ config.plugins = {
     inlay = true,
     lua_dev = false,
     clangd_ext = false,
+    rust_analyzer = false,
     lsp_signature = false,
     lspsaga = true,
 
