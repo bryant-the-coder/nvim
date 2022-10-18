@@ -144,6 +144,7 @@ if ui.transparency then
     -- bg("Normal", "none")
     fg_bg("Normal", "NONE", "none")
     bg("StatuslineNC", "NONE")
+    bg("HarpoonWindow", "NONE")
     fg_bg("BufferlineFill", grey_fg, "NONE")
     fg_bg("Folded", white, "NONE")
 else

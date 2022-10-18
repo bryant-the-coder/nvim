@@ -35,6 +35,28 @@ return {
             }
         )
     ),
+    s(
+        "italic",
+        fmt(
+            [[
+            /{}/
+            ]],
+            {
+                i(1, "Word tobe italic"),
+            }
+        )
+    ),
+    s(
+        "bold",
+        fmt(
+            [[
+            *{}*
+            ]],
+            {
+                i(1, "Word tobe bold"),
+            }
+        )
+    ),
     s({ trig = "ses" }, {
         t { "Session " },
         i(1),
