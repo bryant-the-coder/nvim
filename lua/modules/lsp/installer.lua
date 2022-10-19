@@ -1,13 +1,16 @@
 local servers = {
-    "pyright",
-    "typescript-language-server",
-    "json-lsp",
     "clangd",
-    "rust-analyzer",
-    "lua-language-server",
-    "ltex-ls",
-    "jedi-language-server",
+    "jsonls",
+    "tsserver",
+    "ltex",
     "texlab",
+    "sumneko_lua",
+    "jedi_language_server",
+    "pyright",
+    "rust_analyzer",
+    "taplo",
+    "vimls",
+    "yamlls",
 }
 
 local status_ok, mason = pcall(require, "mason")
@@ -28,8 +31,7 @@ mason.setup {
     -- servers that are requested to be installed will be put in a queue.
 
     -- NOTE: to prevent lack
-    max_concurrent_installers = 5,
-    ensure_installed = servers,
+    -- max_concurrent_installers = 5,
 }
 
 local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
@@ -38,6 +40,6 @@ if not status_ok then
 end
 
 require("mason-lspconfig").setup {
-    -- ensure_installed = servers,
+    ensure_installed = servers,
     automatic_installation = true,
 }
