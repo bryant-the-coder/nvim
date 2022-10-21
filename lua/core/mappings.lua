@@ -55,6 +55,11 @@ map({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
 -- nimap("<C-s>", "<cmd>w<CR>")
 map("n", "<leader>sf", "<cmd>source % <CR>")
 
+-- Expand the word and find for the word in help files
+map("n", "<C-f>", function()
+    vim.cmd(":vert :h " .. vim.fn.expand "<cword>")
+end, { noremap = true, silent = true, desc = "Open helpfile of word under cursor" })
+
 --  j = gj
 -- k = gk
 map({ "n", "v" }, "j", "gj")
