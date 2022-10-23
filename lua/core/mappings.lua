@@ -320,3 +320,22 @@ map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>")
 map("n", "<leader>ft", function()
     require("modules.files.telescope").harpoon()
 end)
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "qf",
+    callback = function()
+        vim.keymap.set("n", "<C-]>", function()
+            return ":cn"
+        end, {
+            buffer = 0,
+            desc = "Go to next item in quickfix list",
+        })
+
+        vim.keymap.set("n", "<C-[>", function()
+            return ":cp"
+        end, {
+            buffer = 0,
+            desc = "Go to previous item in quickfix list",
+        })
+    end,
+})
