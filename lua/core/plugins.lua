@@ -664,6 +664,15 @@ return require("packer").startup {
         -----------------------------------
         --               UI              --
         -----------------------------------
+        -- Zen mode
+        use {
+            "folke/zen-mode.nvim",
+            config = function()
+                require("zen-mode").setup {}
+            end,
+            disable = plugins.zen_mode,
+        }
+
         -- True zen
         use {
             "Pocco81/TrueZen.nvim",
