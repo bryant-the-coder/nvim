@@ -92,6 +92,7 @@ return require("packer").startup {
                 { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp", disable = plugins.cmp_lsp },
                 { "hrsh7th/cmp-buffer", after = "nvim-cmp", disable = plugins.cmp_buffer },
                 { "hrsh7th/cmp-path", after = "nvim-cmp", disable = plugins.cmp_path },
+                { "rcarriga/cmp-dap", after = "nvim-cmp", disable = plugins.cmp_dap },
             },
             config = function()
                 require "modules.completion.cmp"
