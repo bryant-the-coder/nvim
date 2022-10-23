@@ -11,11 +11,22 @@ neorg.setup {
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    home = "~/dev/neorg",
-                    notes = "~/dev/neorg/notes",
-                    task = "~/dev/neorg/task",
+                    home = "~/dev/NEORG",
+                    notes = "~/dev/NEORG/notes",
+                    task = "~/dev/NEORG/task",
                 },
                 open_last_workspace = false,
+            },
+        },
+        ["core.promo"] = {},
+        ["core.presenter"] = {
+            config = {
+                zen_mode = "zen-mode",
+                slide_count = {
+                    enable = true,
+                    position = "top",
+                    count_format = "[%d/%d]",
+                },
             },
         },
         ["core.norg.esupports.metagen"] = {
