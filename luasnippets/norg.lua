@@ -112,10 +112,10 @@ return {
             local current_12_hour = twentry_four_to_twelve_hour(t)
             local session_12_hour = twentry_four_to_twelve_hour(session_time)
 
-            return " [" .. added_time .. "]" .. "(" .. current_12_hour .. " -> " .. session_12_hour .. ")"
+            return " [" .. added_time .. "] " .. "( " .. current_12_hour .. " -> " .. session_12_hour .. ")"
         end, {}),
         t { "{" },
-        i(2, "topic"),
+        i(2, " topic"),
         t { "}" },
     }),
     s({ trig = "sF", docstring = "sF" }, {
