@@ -243,6 +243,7 @@ map("n", "<leader>ps", "<cmd>PackerSync<CR>")
 map("n", "<leader>pp", "<cmd>PackerStatus<CR>")
 
 -- LSP
+map("n", "<leader>ca", vim.lsp.buf.code_action)
 map("n", "<leader>lr", function()
     require("core.utils").open()
 end)
