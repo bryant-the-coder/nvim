@@ -4,16 +4,16 @@ description:
 authors: bryant
 categories:
 created: 2022-09-29
-updated: 2022-10-23
+updated: 2022-10-24
 version: 0.0.15
 @end
 
 = TOC
 
 * Things to add
-  - [ ] Mappings for dap
-  -- [ ] Activation dap
-  -- [ ] Stop dap
-  -- [ ] Pause dap
+  - [x] Mappings for dap
+  -- [x] Activation dap
+  -- [x] Stop dap
+  -- [x] Pause dap
   - [x] Add toggleterm back as this is linux not winhoes
 
