@@ -22,6 +22,7 @@ end
 
 lspconfig.tsserver.setup {}
 lspconfig.vimls.setup {}
+lspconfig.bashls.setup {}
 
 -- sumneko_lua
 local sumneko = {

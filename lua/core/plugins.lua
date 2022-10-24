@@ -368,6 +368,7 @@ return require("packer").startup {
                 "typescript",
                 "latex",
                 "json",
+                "sh",
             },
             run = ":TSUpdate",
             event = { "BufRead", "BufNewFile" },
@@ -452,6 +453,7 @@ return require("packer").startup {
                 "json",
                 "vim",
                 "python",
+                "sh",
             },
             config = function()
                 require "modules.lsp.init"
