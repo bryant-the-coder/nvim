@@ -13,6 +13,7 @@ config.plugins = {
     -----------------------------------
     catppuccin = true,
     everblush = true,
+    tokyonight = true,
 
     -----------------------------------
     --           Completion          --

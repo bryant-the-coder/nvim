@@ -14,3 +14,10 @@ local theme = _G.theme ]]
 local theme = vim.g.colors_name
 -- vim.cmd [[colorscheme everblush]]
 return base16(base16.themes(theme))
+
+--[[ require("tokyonight").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+    transparent = true, -- Enable this to disable setting the background color
+} ]]

@@ -75,6 +75,12 @@ return require("packer").startup {
             disable = plugins.everblush,
         }
 
+        use {
+            "folke/tokyonight.nvim",
+            as = "tokyonight",
+            disable = plugins.tokyonight,
+        }
+
         -----------------------------------
         --           Completion          --
         -----------------------------------
@@ -751,6 +757,10 @@ return require("packer").startup {
         end
     end,
     config = {
+        git = {
+            clone_timeout = 300,
+            default_url_format = "git@github.com:%s",
+        },
         profile = {
             enable = true,
             threshold = 0.0001,
