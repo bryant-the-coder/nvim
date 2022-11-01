@@ -94,6 +94,7 @@ config.plugins = {
     -----------------------------------
     --               UI              --
     -----------------------------------
+    neoscroll = true,
     true_zen = true,
     presence = false,
     bufferline = false,
