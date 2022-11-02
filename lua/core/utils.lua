@@ -293,4 +293,18 @@ utils.PeekDefinition = function()
     return vim.lsp.buf_request(0, "textDocument/definition", params, preview_location_callback)
 end
 
+utils.timer_theme = function()
+    local time = os.date "*t"
+    local theme = vim.g.colors_name
+
+    -- When its 7am or is equal or more than 9pm = onedark
+    if time.hour < 7 or time.hour >= 21 then
+        theme = "everblush"
+    else
+        theme = "everforest"
+    end
+
+    return theme
+end
+
 return utils
