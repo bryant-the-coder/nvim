@@ -9,8 +9,9 @@
 local fn = vim.fn
 local packer_dir = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
 
+-- Packer bootstrap from aloof polo
 if fn.empty(fn.glob(packer_dir)) > 0 then
-    packer_bootstrap = fn.system {
+    bootstrap = fn.system {
         "git",
         "clone",
         "--depth=1",
@@ -802,6 +803,6 @@ packer.startup {
     },
 }
 
-if packer_bootstrap then
+if bootstrap then
     packer.sync()
 end
