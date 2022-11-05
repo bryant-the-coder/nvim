@@ -1,16 +1,7 @@
 -- Most of the setup is taken from akinsho
 local notify = require "notify"
 
-local border = {
-    { "┌", "FloatBorder" },
-    { "─", "FloatBorder" },
-    { "┐", "FloatBorder" },
-    { "│", "FloatBorder" },
-    { "┘", "FloatBorder" },
-    { "─", "FloatBorder" },
-    { "└", "FloatBorder" },
-    { "│", "FloatBorder" },
-}
+local border = require("custom.border").styles.type_5
 
 local default = {
     stages = "fade",

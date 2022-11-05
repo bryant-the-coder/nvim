@@ -144,6 +144,15 @@ packer.startup {
         -----------------------------------
         --             Editor            --
         -----------------------------------
+        use {
+            "anuvyklack/hydra.nvim",
+            requires = "anuvyklack/keymap-layer.nvim",
+            config = function()
+                require "modules.editor.hydra.init"
+            end,
+            event = "InsertEnter",
+        }
+
         -- Markdown Preview (seldom use)
         use {
             "iamcco/markdown-preview.nvim",
@@ -345,7 +354,6 @@ packer.startup {
         -- Neogen
         use {
             "danymat/neogen",
-            cmd = "Neogen",
             config = function()
                 require "modules.lang.neogen"
             end,

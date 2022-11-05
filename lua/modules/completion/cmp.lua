@@ -16,49 +16,7 @@ local luasnip = require "luasnip"
 local icons = require "custom.icons"
 local kind_icons = icons.kind
 
--- local border = {
---     { "┏", "FloatBorder" },
---     { "━", "FloatBorder" },
---     { "┓", "FloatBorder" },
---     { "┃", "FloatBorder" },
---     { "┛", "FloatBorder" },
---     { "━", "FloatBorder" },
---     { "┗", "FloatBorder" },
---     { "┃", "FloatBorder" },
--- }
-
--- local border = {
---     { "╔", "FloatBorder" },
---     { "═", "FloatBorder" },
---     { "╗", "FloatBorder" },
---     { "║", "FloatBorder" },
---     { "╝", "FloatBorder" },
---     { "═", "FloatBorder" },
---     { "╚", "FloatBorder" },
---     { "║", "FloatBorder" },
--- }
-
--- local border = {
---     { "╭", "CmpBorder" },
---     { "─", "CmpBorder" },
---     { "╮", "CmpBorder" },
---     { "│", "CmpBorder" },
---     { "╯", "CmpBorder" },
---     { "─", "CmpBorder" },
---     { "╰", "CmpBorder" },
---     { "│", "CmpBorder" },
--- }
-
-local border = {
-    { "┌", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "┐", "CmpBorder" },
-    { "│", "CmpBorder" },
-    { "┘", "CmpBorder" },
-    { "─", "CmpBorder" },
-    { "└", "CmpBorder" },
-    { "│", "CmpBorder" },
-}
+local border = require("custom.border").styles.type_5
 
 cmp.setup {
     window = {
