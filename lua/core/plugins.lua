@@ -794,10 +794,10 @@ packer.startup {
         }
     end,
     config = {
-        git = {
+        --[[ git = {
             clone_timeout = 300,
             default_url_format = "git@github.com:%s",
-        },
+        }, ]]
         profile = {
             enable = true,
             threshold = 0.0001,
