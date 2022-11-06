@@ -25,14 +25,14 @@ Hydra {
             function()
                 require("core.utils").show_documentation()
             end,
-            { exit = true },
+            { exit = true, silent = true },
         },
         {
             "r",
             function()
                 require("core.utils").open()
             end,
-            { exit = true },
+            { exit = true, silent = true },
         },
         { "d", vim.lsp.buf.definition, { exit = true } },
         { "t", vim.lsp.buf.type_definition, { exit = true } },

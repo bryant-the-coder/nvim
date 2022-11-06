@@ -10,15 +10,18 @@ local telescope_hint = [[
   _f_: Find files                   _w_: Find string
   _d_: Find diag                    _c_: Colorscheme
   _m_: Find word (buffer)           _t_: Harpoon
-  _o_: Oldfiles
+  _o_: Oldfiles                     _k_: Mappings
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
+
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
  ^^^^                       DevDoc                        ^^^^
  ^^^^                                                     ^^^^
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
-      _;_: search ft    _'_: search     _#_: browse
+      _;_: Search ft    _'_: Search     _#_: Browse
+
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
   _q_ exit _<Esc>_ exit
+
 ]]
 
 Hydra {

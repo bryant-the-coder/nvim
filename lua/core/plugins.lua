@@ -332,6 +332,12 @@ packer.startup {
         -----------------------------------
         --            Language           --
         -----------------------------------
+        use {
+            "romainl/vim-devdocs",
+            cmd = { "DD" },
+            opt = true,
+        }
+
         -- Formatter
         use {
             "mhartington/formatter.nvim",

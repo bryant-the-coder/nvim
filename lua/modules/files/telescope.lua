@@ -208,7 +208,7 @@ custom_telescope.google_search = function()
     if input == nil or input == "" then
         return
     end
-    local path = "https://www.google.com/search?q=" .. input
+    local path = "https://duckduckgo.com/" .. input
     vim.fn.jobstart({ open_cmd, path }, { detach = true })
 end
 

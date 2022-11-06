@@ -4,15 +4,15 @@ local border = require("custom.border").styles.type_1
 local harpoon_hint = [[
     ^ ^ _p_ : Toggle Harpoon   ^ ^
     ^ ^ _=_ : Harpoon add file ^ ^
-    ^ ^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔^ ^
+    ^ ^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔^ ^
     ^ ^ _1_ : open harpoon file 1  ^ ^
     ^ ^ _2_ : open harpoon file 2  ^ ^
     ^ ^ _3_ : open harpoon file 3  ^ ^
     ^ ^ _4_ : open harpoon file 4  ^ ^
     ^ ^ _5_ : open harpoon file 5  ^ ^
-    ^ ^                                                           ^ ^
-    ^ ^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔^ ^
-    ^ ^                       _<Esc>_: quit                       ^ ^
+    ^ ^                                     ^ ^
+    ^ ^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔^ ^
+    ^ ^            _<Esc>_: quit            ^ ^
 ]]
 
 Hydra {

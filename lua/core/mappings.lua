@@ -244,19 +244,19 @@ map("n", "<leader>pp", "<cmd>PackerStatus<CR>")
 
 -- LSP
 map("n", "<leader>ca", vim.lsp.buf.code_action)
---[[ map("n", "<leader>lr", function()
+map("n", "<leader>lr", function()
     require("core.utils").open()
 end)
 map("n", "<leader>ld", vim.lsp.buf.definition)
 map("n", "<leader>lt", vim.lsp.buf.type_definition)
-map("n", "<leader>lh", vim.lsp.buf.signature_help) ]]
+map("n", "<leader>lh", vim.lsp.buf.signature_help)
 map("n", "<leader>qf", vim.diagnostic.setqflist)
 map("n", "<C-a>", vim.lsp.buf.references)
 -- map("n", "<C-k>", vim.diagnostic.goto_prev)
 -- map("n", "<C-j>", vim.diagnostic.goto_next)
--- map("n", "<leader>lbh", function()
---     require("core.utils").show_documentation()
--- end, { desc = "Show the documentation in a floating window" })
+map("n", "<leader>lbh", function()
+    require("core.utils").show_documentation()
+end, { desc = "Show the documentation in a floating window" })
 
 map("n", "<C-k>", function()
     vim.diagnostic.goto_prev { border = "rounded" }
