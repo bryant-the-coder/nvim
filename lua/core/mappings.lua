@@ -29,7 +29,7 @@ map("n", "<leader>ta", [[<cmd>put! =repeat(nr2char(10), v:count1)<cr>'[]])
 map("n", "<C-q>", "<cmd>q<CR>")
 
 -- Buffer
-map("n", "<leader>dd", "<cmd>bdelete<CR>")
+map("n", "<leader>db", "<cmd>bdelete<CR>")
 
 -- Pasting stuff
 map("v", "p", 'p:let @+=@0<CR>:let @"=@0<CR>')
@@ -197,7 +197,16 @@ map("n", "<leader>zm", "<cmd>ZenMode<CR>")
 map("n", "<leader>tt", "<cmd>Trouble<CR>")
 
 -- Neogen
-map("n", "<leader>ng", "<cmd>Neogen<CR>")
+-- map("n", "<leader>ng", "<cmd>Neogen<CR>")
+--[[ map("n", "<leader>dd", function()
+    require("neogen").generate()
+end)
+map("n", "<leader>dc", function()
+    require("neogen").generate { type = "class" }
+end)
+map("n", "<leader>ds", function()
+    require("neogen").generate { type = "type" }
+end) ]]
 
 -- TSPlayground
 map("n", "<leader>tp", "<cmd>TSPlaygroundToggle<CR>")
