@@ -119,6 +119,7 @@ packer.startup {
             end,
             disable = plugins.luasnip,
         }
+
         use {
             "bryant-the-coder/friendly-snippets",
             event = "InsertEnter",
@@ -332,12 +333,6 @@ packer.startup {
         -----------------------------------
         --            Language           --
         -----------------------------------
-        use {
-            "romainl/vim-devdocs",
-            cmd = { "DD" },
-            opt = true,
-        }
-
         -- Formatter
         use {
             "mhartington/formatter.nvim",
@@ -355,15 +350,6 @@ packer.startup {
                 require "modules.lang.formatter"
             end,
             disable = plugins.formatter,
-        }
-
-        -- Neogen
-        use {
-            "danymat/neogen",
-            config = function()
-                require "modules.lang.neogen"
-            end,
-            disable = plugins.neogen,
         }
 
         -- Null-ls
@@ -571,6 +557,13 @@ packer.startup {
         -----------------------------------
         --             Tools             --
         -----------------------------------
+        use {
+            "natecraddock/workspaces.nvim",
+            after = "telescope.nvim",
+            config = function()
+                require "modules.tools.workspace"
+            end,
+        }
         -- Navigate nvim and tmux properly!
         use {
             "christoomey/vim-tmux-navigator",
@@ -791,6 +784,24 @@ packer.startup {
                 require "modules.ui.satellite"
             end,
             disable = plugins.satellite,
+        }
+
+        -----------------------------------
+        --              DOC              --
+        -----------------------------------
+        -- Neogen
+        use {
+            "danymat/neogen",
+            config = function()
+                require "modules.documentation.neogen"
+            end,
+            disable = plugins.neogen,
+        }
+
+        use {
+            "romainl/vim-devdocs",
+            cmd = { "DD" },
+            opt = true,
         }
     end,
     config = {
