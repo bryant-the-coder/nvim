@@ -23,6 +23,7 @@ config.plugins = {
     cmp_lsp = false,
     cmp_buffer = false,
     cmp_path = false,
+    cmp_git = false,
     luasnip = false,
     friendly_snippets = false,
     autopairs = false,

@@ -103,6 +103,14 @@ packer.startup {
                 { "hrsh7th/cmp-buffer", after = "nvim-cmp", disable = plugins.cmp_buffer },
                 { "hrsh7th/cmp-path", after = "nvim-cmp", disable = plugins.cmp_path },
                 { "rcarriga/cmp-dap", after = "nvim-cmp", disable = plugins.cmp_dap },
+                {
+                    "petertriho/cmp-git",
+                    after = "nvim-cmp",
+                    disable = plugins.cmp_git,
+                    config = function()
+                        require "modules.completion.cmp_git"
+                    end,
+                },
             },
             config = function()
                 require "modules.completion.cmp"

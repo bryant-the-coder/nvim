@@ -135,25 +135,15 @@ cmp.setup {
         { name = "npm", keyword_length = 2 },
         { name = "neorg" },
         { name = "path" },
+        { name = "git" },
     },
     enabled = function()
         return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
     end,
 }
 
--- cmp.setup.cmdline("/", {
---     sources = {
---         { name = "buffer" },
---     },
--- })
-
--- cmp.setup.cmdline(":", {
---     sources = {
---         { name = "cmdline" },
---     },
--- })
-
 cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "cmdline", group_index = 1 },
         -- { name = "cmdline" },
@@ -162,10 +152,10 @@ cmp.setup.cmdline(":", {
     view = {
         entries = { name = "wildmenu", separator = " | " },
     },
-    mapping = cmp.mapping.preset.cmdline(),
 })
 
 cmp.setup.cmdline("/", {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "cmdline_history" },
         { name = "buffer" },
@@ -173,7 +163,6 @@ cmp.setup.cmdline("/", {
     view = {
         entries = { name = "wildmenu", separator = " | " },
     },
-    mapping = cmp.mapping.preset.cmdline(),
 })
 
 cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
