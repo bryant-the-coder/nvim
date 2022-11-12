@@ -1,11 +1,3 @@
--- ULES TO FOLLOW :
--- 1. use ({})
--- 2. lazy load ( see :h events )
--- 3. add comment or sections
--- 4. add disable option (plugins.<name_of_plugins>)
-
--- Lazy load whenever you can :)
-
 local fn = vim.fn
 local packer_dir = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
 

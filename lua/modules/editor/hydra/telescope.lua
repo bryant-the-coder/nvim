@@ -7,10 +7,11 @@ local telescope_hint = [[
  ^^^^                       Files                         ^^^^
  ^^^^                                                     ^^^^
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
-  _f_: Find files                   _w_: Find string
-  _d_: Find diag                    _c_: Colorscheme
-  _m_: Find word (buffer)           _t_: Harpoon
-  _o_: Oldfiles                     _k_: Mappings
+  _f_ : Find files                   _w_: Find string
+  _d_ : Find diag                    _c_: Colorscheme
+  _m_ : Find word (buffer)           _t_: Harpoon
+  _o_ : Oldfiles                     _k_: Mappings
+  _ws_: Workspaces
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
 
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ ^^^^
@@ -91,6 +92,11 @@ Hydra {
             function()
                 require("modules.files.telescope").harpoon()
             end,
+            { exit = true },
+        },
+        {
+            "ws",
+            "<cmd>Telescope workspaces<CR>",
             { exit = true },
         },
         { ";", require("modules.files.telescope").devdocs_ft, { exit = true, desc = "Dev Doc search ft" } },
