@@ -112,7 +112,7 @@ cmd("TextYankPost", {
     end,
 })
 
--- q as escape key
+-- q as an escape key
 cmd("FileType", {
     desc = "Quit with q in this filetypes",
     group = "_buffer",
