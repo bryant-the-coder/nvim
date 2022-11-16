@@ -6,7 +6,7 @@ end
 -- Load lua-dev because i am lazyloading it
 require("packer").loader "lua-dev.nvim"
 
--- Dont remove this files
+-- WARN: Dont remove this files
 require "modules.lsp.installer"
 require "modules.lsp.config"
 local capabilities = require "modules.lsp.capabilities"

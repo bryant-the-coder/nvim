@@ -6,7 +6,7 @@ local o = vim.opt
 
 -- local themes = utils.timer_theme()
 
-g.colors_name = "everblush"
+g.colors_name = "everforest"
 
 --Cursor & cursorline
 o.guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
