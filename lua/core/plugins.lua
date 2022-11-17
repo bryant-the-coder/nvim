@@ -734,9 +734,10 @@ packer.startup {
         use {
             "andweeb/presence.nvim",
             opt = true,
-            setup = function()
+            event = "InsertEnter",
+            --[[ setup = function()
                 require("custom.load").on_file_open "presence.nvim"
-            end,
+            end, ]]
             disable = plugins.presence,
         }
 

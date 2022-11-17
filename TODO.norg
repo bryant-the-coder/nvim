@@ -4,7 +4,7 @@ description:
 authors: bryant
 categories:
 created: 2022-09-29
-updated: 2022-11-07
+updated: 2022-11-18
 version: 0.0.15
 @end
 
@@ -17,4 +17,3 @@ version: 0.0.15
   -- [x] Pause dap
   -- [ ] Dap for hydra
   - [x] Add toggleterm back as this is linux not winhoes
-

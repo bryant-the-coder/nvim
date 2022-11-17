@@ -120,7 +120,7 @@ neorg.setup {
         ["core.keybinds"] = {
             config = {
                 hook = function(keybinds)
-                    keybinds.remap_event("norg", "n", "lp", "core.norg.qol.todo_items.todo.task_cycle")
+                    keybinds.remap_event("norg", "n", "tc", "core.norg.qol.todo_items.todo.task_cycle")
                 end,
             },
         },

@@ -97,7 +97,7 @@ config.plugins = {
     -----------------------------------
     neoscroll = true,
     true_zen = true,
-    presence = false,
+    presence = true,
     bufferline = false,
     indent_blankline = false,
     notify = false,

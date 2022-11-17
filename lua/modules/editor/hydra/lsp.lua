@@ -1,5 +1,4 @@
 local Hydra = require "hydra"
-local cmd = require("hydra.keymap-util").cmd
 local border = require("custom.border").styles.type_1
 
 local hint = [[
