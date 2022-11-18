@@ -22,6 +22,16 @@ local function lsp_highlight_document(client, bufnr)
         vim.api.nvim_set_hl(0, "LspReferenceRead", { nocombine = true, reverse = false, underline = true })
         vim.api.nvim_set_hl(0, "LspReferenceWrite", { nocombine = true, reverse = false, underline = true })
     end
+end
+
+function on_attach.setup(client, bufnr)
+    lsp_highlight_document(client, bufnr)
+    vim.keymap.set("n", "<C-k>", function()
+        vim.diagnostic.goto_prev { border = "rounded" }
+    end)
+    vim.keymap.set("n", "<C-j>", function()
+        vim.diagnostic.goto_next { border = "rounded" }
+    end)
 
     augroup("_lsp", {})
     -- Open float when there are diagnostics
@@ -30,10 +40,6 @@ local function lsp_highlight_document(client, bufnr)
         group = "_lsp",
         callback = vim.diagnostic.open_float,
     })
-end
-
-function on_attach.setup(client, bufnr)
-    lsp_highlight_document(client, bufnr)
 end
 
 return on_attach

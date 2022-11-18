@@ -1,3 +1,14 @@
+local capabilities = require "modules.lsp.capabilities"
+-- Creating a function call on_attach
+local function on_attach(client, bufnr)
+    require("modules.lsp.on_attach").setup(client, bufnr)
+end
+
+-- Update this path
+local extension_path = vim.env.HOME .. "/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/"
+local codelldb_path = extension_path .. "adapter/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+
 local opts = {
     tools = { -- rust-tools options
 
@@ -152,18 +163,30 @@ local opts = {
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
     server = {
-        -- standalone file support
-        -- setting it to false may improve startup time
-        standalone = true,
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+            ["rust-analyzer"] = {
+                editor = {
+                    formatOnType = true,
+                },
+                checkOnSave = {
+                    command = "clippy",
+                },
+                hover = {
+                    actions = {
+                        references = {
+                            enable = true,
+                        },
+                    },
+                },
+            },
+        },
     }, -- rust-analyzer options
 
     -- debugging stuff
     dap = {
-        adapter = {
-            type = "executable",
-            command = "lldb-vscode",
-            name = "rt_lldb",
-        },
+        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
     },
 }
 local status_ok, rust = pcall(require, "rust-tools")
@@ -171,3 +194,6 @@ if not status_ok then
     return
 end
 rust.setup(opts)
+
+local dap = require "dap"
+dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
