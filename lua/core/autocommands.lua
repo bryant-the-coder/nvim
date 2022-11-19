@@ -122,6 +122,16 @@ cmd("FileType", {
     end,
 })
 
+cmd("FileType", {
+    desc = "Quit with q in this filetypes",
+    group = "_buffer",
+    pattern = "qf",
+    callback = function()
+        vim.keymap.set("n", ";j", "<CMD>cn<CR>")
+        vim.keymap.set("n", ";k", "<CMD>cp<CR>")
+    end,
+})
+
 -----------------------------------
 --            CUSTOM             --
 -----------------------------------

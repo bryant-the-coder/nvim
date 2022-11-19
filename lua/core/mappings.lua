@@ -104,7 +104,7 @@ map("n", "<A-right>", "<C-w><")
 -- Window Navigation
 map("", "H", "<C-w>h")
 map("", "K", "<C-w>k")
--- map("", "J", "<C-w>j")
+map("", "J", "<C-w>j")
 map("", "L", "<C-w>l")
 
 -- Buffer navigation
