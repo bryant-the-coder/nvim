@@ -12,9 +12,9 @@ local base16 = require "base16"
 local theme = _G.theme ]]
 
 local theme = vim.g.colors_name
--- vim.cmd [[colorscheme everblush]]
 return base16(base16.themes(theme))
 
+-- vim.cmd [[colorscheme everblush]]
 --[[ require("tokyonight").setup {
     -- your configuration comes here
     -- or leave it empty to use the default settings
