@@ -27,7 +27,7 @@ Hydra {
         },
     },
     mode = "n",
-    body = ";;",
+    body = ";",
     heads = {
         { "1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>" },
         { "2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>" },
