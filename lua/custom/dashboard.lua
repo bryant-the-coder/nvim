@@ -88,14 +88,13 @@ local mid_night = {
 
 local quotes = {
     "",
-    "'Fight for what's right. No matter if it means standing all ALONE'",
+    "'My mindset is different from other people. That's why I don't vibe with many!'",
     "",
 }
 
 function dashboard.display()
-    if
-        not (
-            (vim.api.nvim_buf_get_number(0) > 1 or vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]:len() == 0)
+    if not (
+        (vim.api.nvim_buf_get_number(0) > 1 or vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]:len() == 0)
             and vim.api.nvim_buf_get_name(0):len() == 0
         )
     then
@@ -138,7 +137,7 @@ function dashboard.display()
     })
     vim.fn.matchadd("Green", "[██]")
     vim.fn.matchadd("Orange", "Bryant")
-    vim.fn.matchadd("Purple", "'Fight for what's right. No matter if it means standing all ALONE'")
+    vim.fn.matchadd("Purple", "'My mindset is different from other people. That's why I don't vibe with many!'")
     vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q!<CR>", { noremap = true, silent = true })
 end
 
