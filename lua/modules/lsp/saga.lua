@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 local map = vim.keymap.set
-local action = require "lspsaga.action"
 
 saga.init_lsp_saga {
     -- Options with default value
@@ -16,10 +15,6 @@ saga.init_lsp_saga {
     -- when cursor in saga window you config these to move
     move_in_saga = { prev = "<C-p>", next = "<C-n>" },
     diagnostic_header = { " ", " ", " ", " " },
-    -- show diagnostic source
-    show_diagnostic_source = true,
-    -- add bracket or something with diagnostic source, just have 2 elements
-    diagnostic_source_bracket = {},
     -- preview lines of lsp_finder and definition preview
     max_preview_lines = 30,
     -- use emoji lightbulb in default
@@ -28,9 +23,9 @@ saga.init_lsp_saga {
     code_action_num_shortcut = true,
     -- same as nvim-lightbulb but async
     code_action_lightbulb = {
-        enable = false,
-        sign = false,
-        enable_in_insert = false,
+        enable = true,
+        sign = true,
+        enable_in_insert = true,
         sign_priority = 20,
         virtual_text = false,
     },
@@ -58,7 +53,6 @@ saga.init_lsp_saga {
     },
     rename_action_quit = "<Esc>",
     rename_in_select = true,
-    definition_preview_icon = "  ",
     -- show symbols in winbar must nightly
     symbol_in_winbar = {
         in_custom = false,

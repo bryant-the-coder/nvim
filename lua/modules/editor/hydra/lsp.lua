@@ -1,12 +1,15 @@
 local Hydra = require "hydra"
 local border = require("custom.border").styles.type_1
+local cmd = require("hydra.keymap-util").cmd
 
 local hint = [[
-_h_: show signature     _r_: rename something
-_d_: definition         _bh_: show doc
-_t_: type definition    _ca_: code action
-
-^ ^            _<Esc>_: quit            ^ ^
+_d_ : definition
+_t_ : type definition
+_h_ : show signature
+_r_ : rename
+_a_ : code action
+_sd_: show documentation
+_ot_: outline
 ]]
 
 Hydra {
@@ -23,7 +26,7 @@ Hydra {
     body = "<leader>l",
     heads = {
         {
-            "bh",
+            "sd",
             function()
                 require("core.utils").show_documentation()
             end,
@@ -39,7 +42,8 @@ Hydra {
         { "d", vim.lsp.buf.definition, { exit = true } },
         { "t", vim.lsp.buf.type_definition, { exit = true } },
         { "h", vim.lsp.buf.signature_help, { exit = true } },
-        { "ca", vim.lsp.buf.code_action, { exit = true } },
+        { "a", cmd "Lspsaga code_action", { exit = true } },
+        { "ot", cmd "LSoutlineToggle", { exit = true } },
 
         { "<Esc>", nil, { nowait = true, exit = true, desc = false } },
     },

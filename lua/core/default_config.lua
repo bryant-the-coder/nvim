@@ -64,7 +64,7 @@ config.plugins = {
     clangd_ext = false,
     rust_analyzer = false,
     lsp_signature = false,
-    lspsaga = true,
+    lspsaga = false,
 
     -----------------------------------
     --              Git              --

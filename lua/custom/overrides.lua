@@ -187,6 +187,15 @@ fg("Visual", blue)
 -- Neorg
 bg("NeorgCodeBlock", darker_black)
 
+fg("LspSagaCodeActionTitle", purple)
+fg("LspSagaCodeActionBorder", vibrant_green)
+fg("LspSagaCodeActionContent", white)
+fg("LSOutlinePreviewBorder", purple)
+fg("OutlineIndentEven", orange)
+fg("OutlineIndentOdd", dark_purple)
+fg("OutlineFoldPrefix", red)
+fg("OutlineDetail", grey)
+
 -- Lsp
 fg("DiagnosticHint", purple)
 fg("DiagnosticError", red)
