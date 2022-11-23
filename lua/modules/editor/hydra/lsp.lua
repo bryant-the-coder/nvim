@@ -7,10 +7,11 @@ _d_ : definition
 _t_ : type definition
 _h_ : show signature
 _r_ : rename
-_a_ : code action
 _sd_: show documentation
-_ot_: outline
+_so_: outline
 ]]
+
+-- _a_ : code action
 
 Hydra {
     name = "Diagnostic",
@@ -42,8 +43,8 @@ Hydra {
         { "d", vim.lsp.buf.definition, { exit = true } },
         { "t", vim.lsp.buf.type_definition, { exit = true } },
         { "h", vim.lsp.buf.signature_help, { exit = true } },
-        { "a", cmd "Lspsaga code_action", { exit = true } },
-        { "ot", cmd "LSoutlineToggle", { exit = true } },
+        -- { "a", "<cmd>Lspsaga code_action<CR>", { exit = true } },
+        { "so", "<cmd>LSoutlineToggle<CR>", { exit = true } },
 
         { "<Esc>", nil, { nowait = true, exit = true, desc = false } },
     },
