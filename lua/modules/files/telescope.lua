@@ -6,6 +6,7 @@ end
 vim.cmd [[
     PackerLoad telescope-fzf-native.nvim
     PackerLoad telescope-file-browser.nvim
+    PackerLoad telescope-ui-select.nvim
 ]]
 
 local actions = require "telescope.actions"
@@ -115,11 +116,15 @@ telescope.setup {
             -- the default case_mode is "smart_case"
         },
         file_browser = {},
+        ["ui-select"] = {
+            require("telescope.themes").get_cursor(),
+        },
     },
 }
 require("telescope").load_extension "fzf"
 require("telescope").load_extension "file_browser"
 require("telescope").load_extension "harpoon"
+require("telescope").load_extension "ui-select"
 
 local custom_telescope = {}
 

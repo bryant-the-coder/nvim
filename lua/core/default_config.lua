@@ -48,6 +48,7 @@ config.plugins = {
     telescope = false,
     telescope_fzf_native = false,
     telescope_file_browser = false,
+    telescope_ui_select = false,
     formatter = true,
     neogen = false,
     null = false,

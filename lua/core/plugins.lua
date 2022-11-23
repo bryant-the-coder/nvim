@@ -294,6 +294,12 @@ packer.startup {
             disable = plugins.telescope_file_browser,
         }
 
+        use {
+            "nvim-telescope/telescope-ui-select.nvim",
+            after = "telescope.nvim",
+            disable = plugins.telescope_ui_select,
+        }
+
         -----------------------------------
         --              Git              --
         -----------------------------------
