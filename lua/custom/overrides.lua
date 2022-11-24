@@ -203,8 +203,15 @@ fg("DiagnosticWarn", yellow)
 fg("DiagnosticInformation", green)
 fg_bg("RenamerTitle", black, yellow, { bold = true })
 fg("RenamerBorder", yellow)
-fg_bg("MasonHeader", black, red)
 fg("InlayHints", grey_fg)
+
+fg_bg("MasonHeader", black, red)
+fg("MasonHighlight", blue)
+fg_bg("MasonHighlightBlock", black, green)
+fg("MasonMuted", light_grey)
+fg_bg("MasonMutedBlock", light_grey, one_bg)
+hl(0, "MasonHighlightBlockBold", { link = "MasonHighlightBlock" })
+hl(0, "MasonHeaderSecondary", { link = "MasonHighlightBlock" })
 
 -- Pmenu
 bg("Pmenu", black)
