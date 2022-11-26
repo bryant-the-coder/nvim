@@ -36,7 +36,7 @@ fidget.setup {
         --     " ",
         --     " ",
         -- },
-        done = "",
+        done = " ",
         commenced = " ",
         completed = " ",
     },
