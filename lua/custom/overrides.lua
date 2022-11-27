@@ -282,7 +282,7 @@ bg("TelescopeSelection", black2)
 fg_bg("TelescopeBorder", darker_black, darker_black)
 fg_bg("TelescopePromptBorder", black2, black2)
 fg_bg("TelescopePromptNormal", white, black2)
-fg_bg("TelescopePromptPrefix", red, black2)
+fg_bg("TelescopePromptPrefix", red, "NONE")
 fg_bg("TelescopeResultsTitle", darker_black, darker_black)
 bg("TelescopePreviewLine", light_grey)
 
