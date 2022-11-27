@@ -116,9 +116,7 @@ telescope.setup {
             -- the default case_mode is "smart_case"
         },
         file_browser = {},
-        ["ui-select"] = {
-            require("telescope.themes").get_cursor(),
-        },
+        ["ui-select"] = { require("telescope.themes").get_dropdown() },
     },
 }
 require("telescope").load_extension "fzf"
