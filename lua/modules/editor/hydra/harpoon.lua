@@ -36,7 +36,7 @@ Hydra {
         { "5", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>" },
 
         { "p", [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]], { exit = true } },
-        { "=", [[<cmd>lua require("harpoon.mark").add_file()<CR>]] },
+        { "=", [[<cmd>lua require("harpoon.mark").add_file()<CR>]], { exit = true } },
 
         { "<Esc>", nil, { nowait = true, exit = true, desc = false } },
     },
