@@ -5,6 +5,7 @@ local clangd_configs = vim.tbl_deep_extend("force", clangd_defaults["default_con
     -- on_attach = on_attach,
     cmd = {
         "clangd",
+        -- NOTE: don't remove this if you don't want errors
         "--offset-encoding=utf-16",
         "-j=4",
         "--background-index",
