@@ -6,34 +6,8 @@ local create_command = vim.api.nvim_create_user_command
 -----------------------------------
 --            BUILTIN            --
 -----------------------------------
--- Netrw
---[[ local netrw = vim.api.nvim_create_augroup("netrw", { clear = true })
-cmd({ "Filetype" }, {
-    pattern = "netrw",
-    callback = function()
-        require("lua.custom.netrw").draw_icons()
-    end,
-    desc = "Draw netrw icons",
-    group = netrw,
-})
-cmd({ "TextChanged" }, {
-    pattern = "*",
-    callback = function()
-        require("lua.custom.netrw").draw_icons()
-    end,
-    desc = "Draw netrw icons",
-    group = netrw,
-})
-cmd({ "Filetype" }, {
-    pattern = "netrw",
-    callback = function()
-        require("lua.custom.netrw").set_maps()
-    end,
-    desc = "Define netrw mappings",
-    group = netrw,
-})
-]]
 -- Disable autocommenting
+-- Who likes autocommenting anyways?
 cmd("BufEnter", {
     desc = "Disable autocommenting in new lines",
     command = "set fp-=c fo-=r fo-=o",
@@ -61,6 +35,8 @@ cmd("FileType", {
         vim.opt.signcolumn = "yes:2"
     end,
 })
+
+-- Setting plaintex to tex in order for it to work
 cmd("FileType", {
     pattern = "plaintex",
     callback = function()
@@ -122,6 +98,7 @@ cmd("FileType", {
     end,
 })
 
+-- Quickfix mappings
 cmd("FileType", {
     desc = "Quit with q in this filetypes",
     group = "_buffer",
@@ -184,12 +161,6 @@ cmd({ "WinEnter", "FileType" }, {
 --             PLUGINS           --
 -----------------------------------
 augroup("_lsp", {})
--- Open float when there are diagnostics
---[[ cmd({ "CursorHold" }, {
-    desc = "Open float when there is diagnostics",
-    group = "_lsp",
-    callback = vim.diagnostic.open_float,
-}) ]]
 
 -- Nofity when file changes
 augroup("_auto_reload_file", {})
