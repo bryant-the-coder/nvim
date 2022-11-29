@@ -371,30 +371,23 @@ packer.startup {
         -- Treesitter
         use {
             "nvim-treesitter/nvim-treesitter",
-            setup = function()
-                if global.load_treesitter then
-                    require("packer").loader "nvim-treesitter"
-                    require("packer").loader "indent-blankline.nvim"
-                else
-                    vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
-                        callback = function()
-                            local file = vim.fn.expand "%"
-                            if not vim.tbl_contains({ "[packer]", "" }, file) then
-                                require("packer").loader "nvim-treesitter"
-                                require("packer").loader "indent-blankline.nvim"
-                            end
-                        end,
-                    })
-                end
-            end,
-            cmd = {
-                "TSInstall",
-                "TSBufEnable",
-                "TSBufDisable",
-                "TSEnable",
-                "TSDisable",
-                "TSModuleInfo",
+            ft = {
+                "lua",
+                "md",
+                "rust",
+                "python",
+                "c",
+                "cpp",
+                "html",
+                "css",
+                "javascript",
+                "typescript",
+                "latex",
+                "json",
+                "sh",
             },
+            run = ":TSUpdate",
+            event = { "BufRead", "BufNewFile" },
             config = function()
                 require "modules.lang.treesitter"
             end,
