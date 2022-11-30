@@ -570,6 +570,7 @@ packer.startup {
                 require "modules.tools.workspace"
             end,
         }
+
         -- Navigate nvim and tmux properly!
         use {
             "christoomey/vim-tmux-navigator",
