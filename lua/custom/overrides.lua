@@ -201,7 +201,7 @@ fg("DiagnosticHint", purple)
 fg("DiagnosticError", red)
 fg("DiagnosticWarn", yellow)
 fg("DiagnosticInformation", green)
-fg_bg("RenamerTitle", black, yellow, { bold = true })
+fg_bg("RenamerTitle", black, yellow, { bold = true, italic = true })
 fg("RenamerBorder", yellow)
 fg("InlayHints", grey_fg)
 
