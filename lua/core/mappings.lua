@@ -79,6 +79,8 @@ map("n", "-", "<C-x>")
 
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 --[[ map({ "n", "v" }, "j", "jzzzv")
 map({ "n", "v" }, "k", "kzzzv") ]]
 
