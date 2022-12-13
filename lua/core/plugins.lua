@@ -560,6 +560,15 @@ packer.startup {
             disable = plugins.rust_tools,
         }
 
+        use {
+            "saecki/crates.nvim",
+            event = { "BufRead Cargo.toml" },
+            config = function()
+                require "modules.tools.crates"
+            end,
+            disable = plugins.crates,
+        }
+
         -----------------------------------
         --             Tools             --
         -----------------------------------

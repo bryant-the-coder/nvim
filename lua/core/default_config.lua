@@ -64,6 +64,7 @@ config.plugins = {
     lua_dev = false,
     clangd_ext = false,
     rust_analyzer = false,
+    crates = false,
     lsp_signature = false,
     lspsaga = false,
 
