@@ -81,7 +81,6 @@ o.fillchars = {
     vertleft = "╣",
     vertright = "╠",
     verthoriz = "╬",
-    diff = "/",
 }
 o.listchars = {
     trail = "·",
