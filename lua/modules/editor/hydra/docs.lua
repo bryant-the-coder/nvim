@@ -36,14 +36,12 @@ local hints = [[
  ^^^^▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔^^^^
     _k_: Dev doc
 
-  _Esc_: Quit
 ]]
 
 config.doc_binds = {
     color = "pink",
     body = "<leader>d",
     mode = { "n", "v", "x", "o" },
-    ["<Esc>"] = { nil, { exit = true } },
     -- Neogen stuff
     d = {
         function()
@@ -67,6 +65,7 @@ config.doc_binds = {
         cmd "DD",
         { nowait = true, silent = true, desc = "DevDoc Search", exit = true },
     },
+    ["<Esc>"] = { nil, { exit = true } },
 }
 
 local mapping = {

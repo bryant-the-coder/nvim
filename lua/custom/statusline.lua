@@ -69,10 +69,6 @@ local function file()
         filename = " " .. filename .. " "
     end
 
-    --[[ if vim.bo.modified then
-        return " " .. filename
-    end ]]
-
     local devicons_present, devicons = pcall(require, "nvim-web-devicons")
 
     if not devicons_present then
@@ -204,6 +200,18 @@ local function search_count()
     end
 end
 
+--- Check if file is modified
+-- @treturn string
+local function get_modified()
+    if vim.bo.modified then
+        return "●"
+    end
+    if not vim.bo.modifiable then
+        return "[-]"
+    end
+    return ""
+end
+
 statusline.run = function()
     return table.concat {
         "%#Statusline#",
@@ -221,6 +229,7 @@ statusline.run = function()
 
         "%=",
         file(), -- Show filename
+        get_modified(),
         "%=",
 
         space,
