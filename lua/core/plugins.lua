@@ -572,6 +572,11 @@ packer.startup {
         --             Tools             --
         -----------------------------------
         use {
+            "mbbill/undotree",
+            after = "telescope.nvim",
+        }
+
+        use {
             "natecraddock/workspaces.nvim",
             after = "telescope.nvim",
             config = function()

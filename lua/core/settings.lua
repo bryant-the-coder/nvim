@@ -88,10 +88,15 @@ o.listchars = {
 }
 
 -- Backups / Undo
-o.backup = false -- Don't backup files
+--[[ o.backup = false -- Don't backup files
 o.writebackup = false -- Don't write backup
 o.undofile = false -- Don't write undofile
-o.swapfile = false -- Don't write swapfile
+o.swapfile = false -- Don't write swapfile ]]
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
 -- Syntax
 -- Set C syntax for '.h' header files (default is C++)

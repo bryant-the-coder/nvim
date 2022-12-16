@@ -21,12 +21,12 @@ vim.api.nvim_set_keymap(
 )
 
 map("n", "<leader>ta", [[<cmd>put! =repeat(nr2char(10), v:count1)<cr>'[]])
-
 -----------------------------------
 --           BASIC               --
 -----------------------------------
 -- Quitting
 map("n", "<C-q>", "<cmd>q<CR>")
+map("i", "<C-c>", "<Esc>")
 
 -- Buffer
 map("n", "<leader>db", "<cmd>bdelete<CR>")
@@ -49,6 +49,9 @@ map({ "n", "i", "v" }, "<ESC>", "<cmd>noh<CR>")
 
 -- Running and exec files
 map("n", "<leader>ex", "<cmd>call bryant#save_and_exec()<CR>")
+
+-- Replace words with find and replace
+map("n", "<leader>rw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Saving the traditional way
 map({ "n", "i" }, "<C-s>", "<cmd>w<CR>")

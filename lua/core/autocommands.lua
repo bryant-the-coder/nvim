@@ -176,3 +176,11 @@ cmd({ "FocusGained", "CursorHold" }, {
     group = "_auto_reload_file",
     command = [[if getcmdwintype() == '' | checktime | endif]],
 })
+cmd("LspAttach", {
+    callback = function(args)
+        local bufnr = args.buf
+        -- vim.lsp.semantic_tokens.stop(bufnr, args.data.client_id)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        client.server_capabilities.semanticTokensProvider = nil
+    end,
+})
