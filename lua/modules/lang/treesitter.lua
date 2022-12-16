@@ -38,7 +38,7 @@ parser_configs.norg_table = {
 require("nvim-treesitter.install").compilers = { "clang", "gcc" }
 treesitter.setup {
     ensure_installed = langs,
-    sync_install = false,
+    sync_install = true,
     incremental_selection = {
         enable = true,
         keymaps = {
