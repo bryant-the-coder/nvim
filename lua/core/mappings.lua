@@ -95,7 +95,7 @@ map({ "n", "v" }, "<Right>", "<nop>")
 
 -- Terminal ESC key
 -- map("n", "<leader>vs", "<cmd>90 vsp | :term<CR>")
-map("n", "<leader>v", "<cmd>vsp | :term<CR>")
+map("n", "<leader>v", "<cmd>70 vsp | :term<CR>")
 map("n", "<leader>h", "<cmd>17 sp | :term<CR>")
 map("t", "jk", "<C-\\><C-n>")
 map("t", "<Esc>", "<C-\\><C-n> <cmd>bd!<CR>")
