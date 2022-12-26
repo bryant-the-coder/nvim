@@ -31,6 +31,7 @@ config.plugins = {
     -----------------------------------
     --             Editor            --
     -----------------------------------
+    hl_match_area = false,
     impatient = false,
     comment = false,
     commentstring = false,

@@ -146,6 +146,15 @@ packer.startup {
         --             Editor            --
         -----------------------------------
         use {
+            "rareitems/hl_match_area.nvim",
+            config = function()
+                require "modules.editor.hl_area"
+            end,
+            after = "nvim-lspconfig",
+            disable = plugins.hl_match_area,
+        }
+
+        use {
             "anuvyklack/hydra.nvim",
             requires = "anuvyklack/keymap-layer.nvim",
             config = function()

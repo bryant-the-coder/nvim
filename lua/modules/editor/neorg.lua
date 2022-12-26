@@ -45,11 +45,11 @@ neorg.setup {
                 engine = "nvim-cmp",
             },
         },
-        ["core.gtd.base"] = {
+        --[[ ["core.gtd.base"] = {
             config = {
                 workspace = "task",
             },
-        },
+        }, ]]
         ["core.norg.concealer"] = {
             config = {
                 -- markup_preset = "dimmed",
