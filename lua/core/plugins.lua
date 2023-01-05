@@ -403,7 +403,7 @@ packer.startup {
 
         -- Vscode like rainbow parenthesis
         use {
-            "p00f/nvim-ts-rainbow",
+            "mrjones2014/nvim-ts-rainbow",
             after = "nvim-treesitter",
             opt = true,
             disable = plugins.ts_rainbow,
