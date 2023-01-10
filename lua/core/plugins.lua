@@ -216,11 +216,13 @@ packer.startup {
             end,
             disable = plugins.neorg,
         }
+
         use {
             "max397574/neorg-kanban",
             after = "neorg",
             disable = plugins.neorg_kanban,
         }
+
         use {
             "nvim-neorg/neorg-telescope",
             after = "neorg",
