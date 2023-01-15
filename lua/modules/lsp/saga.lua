@@ -5,7 +5,26 @@ end
 
 local map = vim.keymap.set
 
-saga.init_lsp_saga {
+--[[ map("n", "<C-j>", require("lspsaga.diagnostic").goto_next)
+map("n", "<C-k>", require("lspsaga.diagnostic").goto_prev) ]]
+--[[ map("n", "<leader>ld", require("lspsaga.definition").preview_definition)
+-- show hover doc and press twice will jumpto hover window
+map("n", "<leader>lh", require("lspsaga.signaturehelp").signature_help)
+map("n", "<leader>lf", "<cmd>Lspsaga lsp_finder<CR>")
+
+-- scroll down hover doc or scroll in definition preview
+map("n", "<C-f>", function()
+    action.smart_scroll_with_saga(1)
+end, { silent = true })
+-- scroll up hover doc
+map("n", "<C-b>", function()
+    action.smart_scroll_with_saga(-1)
+end, { silent = true })
+
+map("n", "<leader>lr", require("lspsaga.rename").lsp_rename)
+map("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>") ]]
+
+saga.setup {
     -- Options with default value
     -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "rounded",
@@ -80,22 +99,3 @@ saga.init_lsp_saga {
     -- like server_filetype_map = { metals = { "sbt", "scala" } }
     server_filetype_map = {},
 }
-
---[[ map("n", "<C-j>", require("lspsaga.diagnostic").goto_next)
-map("n", "<C-k>", require("lspsaga.diagnostic").goto_prev) ]]
---[[ map("n", "<leader>ld", require("lspsaga.definition").preview_definition)
--- show hover doc and press twice will jumpto hover window
-map("n", "<leader>lh", require("lspsaga.signaturehelp").signature_help)
-map("n", "<leader>lf", "<cmd>Lspsaga lsp_finder<CR>")
-
--- scroll down hover doc or scroll in definition preview
-map("n", "<C-f>", function()
-    action.smart_scroll_with_saga(1)
-end, { silent = true })
--- scroll up hover doc
-map("n", "<C-b>", function()
-    action.smart_scroll_with_saga(-1)
-end, { silent = true })
-
-map("n", "<leader>lr", require("lspsaga.rename").lsp_rename)
-map("n", "<leader>lo", "<cmd>LSoutlineToggle<CR>") ]]

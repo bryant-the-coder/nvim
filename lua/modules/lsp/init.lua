@@ -16,9 +16,9 @@ local function on_attach(client, bufnr)
     require("modules.lsp.on_attach").setup(client, bufnr)
 end
 
-local function on_attach_16(client, bufnr)
+--[[ local function on_attach_16(client, bufnr)
     require("modules.lsp.on_attach").setup(client, bufnr)
-end
+end ]]
 
 lspconfig.tsserver.setup {}
 lspconfig.vimls.setup {}
