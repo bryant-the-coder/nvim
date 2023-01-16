@@ -4,16 +4,15 @@ description:
 authors: bryant
 categories:
 created: 2022-09-29
-updated: 2022-11-18
+updated: 2023-01-17
 version: 0.0.15
 @end
 
-= TOC
+.TOC
 
 * Things to add
-  - [x] Mappings for dap
-  -- [x] Activation dap
-  -- [x] Stop dap
-  -- [x] Pause dap
-  -- [ ] Dap for hydra
-  - [x] Add toggleterm back as this is linux not winhoes
+  - (x) Mappings for dap
+  -- (x) Activation dap
+  -- (x) Stop dap
+  -- (x) Pause dap
+  - ( ) Use lazy.nvim
