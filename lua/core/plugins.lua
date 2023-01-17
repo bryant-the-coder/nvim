@@ -721,6 +721,33 @@ packer.startup {
         --               UI              --
         -----------------------------------
         use {
+            "jackMort/pommodoro-clock.nvim",
+            requires = {
+                "MunifTanjim/nui.nvim",
+            },
+            keys = {
+                "<leader>pw",
+                "<leader>pb",
+                "<leader>pl",
+                "<leader>pc",
+                "<leader>pc",
+            },
+            config = function()
+                require("pommodoro-clock").setup {}
+
+                local function pc(func)
+                    return "<Cmd>lua require('pommodoro-clock')." .. func .. "()<CR>"
+                end
+
+                vim.keymap.set("n", "<leader>pw", pc "start_work", { silent = true })
+                vim.keymap.set("n", "<leader>pb", pc "start_short_break", { silent = true })
+                vim.keymap.set("n", "<leader>pl", pc "start_long_break", { silent = true })
+                vim.keymap.set("n", "<leader>pc", pc "toggle_pause", { silent = true })
+                vim.keymap.set("n", "<leader>pc", pc "close", { silent = true })
+            end,
+        }
+
+        use {
             "karb94/neoscroll.nvim", -- NOTE: alternative: 'declancm/cinnamon.nvim'
             config = function()
                 require("neoscroll").setup {
