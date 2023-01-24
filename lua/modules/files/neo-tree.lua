@@ -3,7 +3,6 @@ if not present then
     return
 end
 
-vim.cmd [[ packadd nui.nvim ]]
 vim.g.neo_tree_remove_legacy_commands = 1
 
 tree.setup {

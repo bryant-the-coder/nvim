@@ -3,10 +3,10 @@ local config = {}
 config.plugins = {
     -- INFO: Dont disable this
     -- They are dependencies
-    plenary = false,
-    icons = false,
-    base16 = false,
-    nui = false,
+    plenary = true,
+    icons = true,
+    base16 = true,
+    nui = true,
 
     -----------------------------------
     --              Theme            --
@@ -18,93 +18,86 @@ config.plugins = {
     -----------------------------------
     --           Completion          --
     -----------------------------------
-    cmp = false,
-    cmp_luasnip = false,
-    cmp_lsp = false,
-    cmp_buffer = false,
-    cmp_path = false,
-    cmp_git = false,
-    luasnip = false,
-    friendly_snippets = false,
-    autopairs = false,
+    cmp = true,
+    cmp_luasnip = true,
+    cmp_lsp = true,
+    cmp_buffer = true,
+    cmp_path = true,
+    cmp_git = true,
+    luasnip = true,
+    friendly_snippets = true,
+    autopairs = true,
 
     -----------------------------------
     --             Editor            --
     -----------------------------------
-    hl_match_area = false,
-    impatient = false,
-    comment = false,
-    commentstring = false,
-    neorg = false,
-    neorg_kanban = false,
-    neorg_telescope = true,
-    hologram = true,
+    hl_match_area = true,
+    comment = true,
+    commentstring = true,
+    neorg = true,
 
     -----------------------------------
     --              Files            --
     -----------------------------------
-    nvim_tree = true,
-    neotree = false,
-    harpoon = false,
-    telescope = false,
-    telescope_fzf_native = false,
-    telescope_file_browser = false,
-    telescope_ui_select = false,
-    formatter = true,
-    neogen = false,
-    null = false,
-    treesitter = false,
-    ts_rainbow = false,
-    autotag = true,
-    playground = false,
-    ts_context = false,
-    trouble = true,
-    lsp = false,
-    lsp_installer = false,
-    inlay = true,
-    lua_dev = false,
-    clangd_ext = false,
-    rust_analyzer = false,
-    crates = false,
-    lsp_signature = false,
-    lspsaga = false,
+    neotree = true,
+    harpoon = true,
+    telescope = true,
+    telescope_fzf_native = true,
+    telescope_file_browser = true,
+    telescope_ui_select = true,
+    formatter = false,
+    neogen = true,
+    null = true,
+    treesitter = true,
+    ts_rainbow = true,
+    autotag = false,
+    playground = true,
+    ts_context = true,
+    trouble = false,
+    lsp = true,
+    lsp_installer = true,
+    inlay = false,
+    lua_dev = true,
+    clangd_ext = true,
+    rust_analyzer = true,
+    crates = true,
+    lsp_signature = true,
+    lspsaga = true,
 
     -----------------------------------
     --              Git              --
     -----------------------------------
-    gitsigns = false,
-    fugitive = false,
-    neogit = false,
-    diffview = false,
+    gitsigns = true,
 
     -----------------------------------
     --             Tools             --
     -----------------------------------
-    colorizer = false,
-    colortils = true,
-    cybu = true,
-    fidget = false,
+    workspaces = true,
+    colorizer = true,
+    colortils = false,
+    cybu = false,
+    fidget = true,
     toggleterm = true,
-    paperplanes = false,
-    lightspeed = false,
-    todo_comments = false,
-    nvim_surround = true,
-    align = true,
-    neodim = true,
-    dap = false,
-    dapui = false,
-    dap_python = false,
+    paperplanes = true,
+    lightspeed = true,
+    todo_comments = true,
+    nvim_surround = false,
+    align = false,
+    neodim = false,
+    dap = true,
+    dapui = true,
+    dap_python = true,
 
     -----------------------------------
     --               UI              --
     -----------------------------------
-    neoscroll = true,
-    true_zen = true,
-    presence = false,
-    bufferline = false,
-    indent_blankline = false,
-    notify = false,
-    satellite = true,
+    neoscroll = false,
+    true_zen = false,
+    presence = true,
+    bufferline = true,
+    indent_blankline = true,
+    notify = true,
+    satellite = false,
 }
 
 return config

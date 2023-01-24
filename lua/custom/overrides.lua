@@ -21,6 +21,7 @@ local pink = colors.pink
 local pmenu_bg = colors.pmenu_bg
 local purple = colors.purple
 local red = colors.red
+local nord_blue = colors.nord_blue
 local white = colors.white
 local yellow = colors.yellow
 local orange = colors.orange
@@ -332,7 +333,7 @@ fg("DevIconwoff2", white)
 fg("DevIconxz", sun)
 fg("DevIconzip", sun)
 
--- Notify
+-- notify
 fg("NotifyERRORBorder", red)
 fg("NotifyERRORIcon", red)
 fg("NotifyERRORTitle", red)
@@ -348,3 +349,27 @@ fg("NotifyDEBUGTitle", grey)
 fg("NotifyTRACEBorder", purple)
 fg("NotifyTRACEIcon", purple)
 fg("NotifyTRACETitle", purple)
+
+-- lazy
+fg_bg("LazyH1", black, green)
+fg_bg("LazyButton", light_grey, one_bg)
+fg("LazyH2", red, { bold = true, underline = true })
+fg("LazyReasonPlugin", red)
+fg("LazyValue", teal)
+fg("LazyDir", base05)
+fg("LazyUrl", base05)
+fg("LazyCommit", green)
+fg("LazyNoCond", red)
+fg("LazySpecial", blue)
+fg("LazyReasonFt", purple)
+fg("LazyOperator", white)
+fg("LazyReasonKeys", teal)
+fg("LazyTaskOutput", white)
+fg("LazyCommitIssue", pink)
+fg("LazyReasonEvent", yellow)
+fg("LazyReasonStart", white)
+fg("LazyReasonRuntime", nord_blue)
+fg("LazyReasonCmd", sun)
+fg("LazyReasonSource", cyan)
+fg("LazyReasonImport", white)
+fg("LazyProgressDone", green)
