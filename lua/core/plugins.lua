@@ -381,7 +381,7 @@ packer.startup {
         -- Treesitter
         use {
             "nvim-treesitter/nvim-treesitter",
-            ft = {
+            --[[ ft = {
                 "lua",
                 "md",
                 "rust",
@@ -395,9 +395,9 @@ packer.startup {
                 "latex",
                 "json",
                 "sh",
-            },
+            }, ]]
             run = ":TSUpdate",
-            event = { "BufRead", "BufNewFile" },
+            -- event = { "BufRead", "BufWinEnter", "BufNewFile" },
             config = function()
                 require "modules.lang.treesitter"
             end,
