@@ -188,6 +188,11 @@ end)
 -- Nvim-tree
 -- map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
+-- Lazy
+map("n", "<leader>un", function()
+    require("notify").dismiss()
+end)
+
 -- Noerg
 map("n", "<leader>jt", "<cmd>Neorg journal today<CR>")
 

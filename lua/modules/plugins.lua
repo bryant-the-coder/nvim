@@ -245,7 +245,9 @@ return {
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        version = false, -- last release is way too old and doesn't work on Windows
+        build = ":TSUpdate",
+        event = "BufReadPost",
         config = function()
             require "modules.lang.treesitter"
         end,
@@ -299,23 +301,9 @@ return {
     -- LSP
     {
         "neovim/nvim-lspconfig",
-        ft = {
-            "lua",
-            "rust",
-            "c",
-            "cpp",
-            "html",
-            "css",
-            "javascript",
-            "typescript",
-            "tex",
-            "json",
-            "vim",
-            "python",
-            "sh",
-        },
+        event = "BufWritePre",
         config = function()
-            require "lua.modules.lsp.main"
+            require "modules.lsp.main"
         end,
     },
 
