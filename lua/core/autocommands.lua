@@ -51,24 +51,6 @@ cmd("VimResized", {
 })
 
 augroup("_buffer", {})
--- Trim whitespace
-local NoWhitespace = vim.api.nvim_exec(
-    [[
-    function! NoWhitespace()
-        let l:save = winsaveview()
-        keeppatterns %s/\s\+$//e
-        call winrestview(l:save)
-    endfunction
-    call NoWhitespace()
-    ]],
-    true
-)
-cmd("BufWritePre", {
-    desc = "Trim whitespace on save",
-    group = "_buffer",
-    command = [[call NoWhitespace()]],
-})
-
 -- Cursor position
 cmd("BufReadPost", {
     desc = "Restore cursor position upon reopening the file",

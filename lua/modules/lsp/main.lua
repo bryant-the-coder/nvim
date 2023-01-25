@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 -- Load lua-dev because i am lazyloading it
-require("packer").loader "lua-dev.nvim"
+-- require("lazy").load "lua-dev.nvim"
 
 -- WARN: Dont remove this files
 require "modules.lsp.installer"

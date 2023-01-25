@@ -3,12 +3,6 @@ if not present then
     return
 end
 
-vim.cmd [[
-    PackerLoad telescope-fzf-native.nvim
-    PackerLoad telescope-file-browser.nvim
-    PackerLoad telescope-ui-select.nvim
-]]
-
 local actions = require "telescope.actions"
 local theme = require "telescope.themes"
 local previewers_utils = require "telescope.previewers.utils"
@@ -121,7 +115,7 @@ telescope.setup {
 }
 require("telescope").load_extension "fzf"
 require("telescope").load_extension "file_browser"
-require("telescope").load_extension "harpoon"
+-- require("telescope").load_extension "harpoon"
 require("telescope").load_extension "ui-select"
 
 local custom_telescope = {}

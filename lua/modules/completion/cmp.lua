@@ -3,8 +3,6 @@ if not present then
     return
 end
 
-vim.cmd [[PackerLoad nvim-autopairs]]
-
 -- luasnip
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -138,9 +136,6 @@ cmp.setup {
         { name = "git" },
         { name = "crates" },
     },
-    enabled = function()
-        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
-    end,
 }
 
 cmp.setup.cmdline(":", {
@@ -163,11 +158,5 @@ cmp.setup.cmdline("/", {
     },
     view = {
         entries = { name = "wildmenu", separator = " | " },
-    },
-})
-
-cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
-    sources = {
-        { name = "dap" },
     },
 })
