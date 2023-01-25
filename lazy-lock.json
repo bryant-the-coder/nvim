@@ -25,7 +25,7 @@
   "lspsaga.nvim": { "branch": "main", "commit": "915cf25a439ee7b70cd0d0c3a2653d4c25363692" },
   "lua-dev.nvim": { "branch": "main", "commit": "81d6185ab28e18fc56ff092e842beec26c4650d9" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "c29f9a9f9b01528ca6a44cd14814f5af20778f7a" },
-  "mason.nvim": { "branch": "main", "commit": "52a469a57d4795eacd71f55bc735c6e68075c7e5" },
+  "mason.nvim": { "branch": "main", "commit": "e7303a1632c004ebd2dcd0be1aaa4354586c030b" },
   "neo-tree.nvim": { "branch": "v2.x", "commit": "8238865e1d9c61f1a260c290653f2c419503e0a9" },
   "neogen": { "branch": "main", "commit": "465af9d6c6fb7f360175991dcc23fc10917e3a06" },
   "neorg": { "branch": "main", "commit": "4a9a5fe13cd454692fc4db0b27783cd005e6be56" },
