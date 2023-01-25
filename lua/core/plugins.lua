@@ -480,7 +480,7 @@ packer.startup {
                 "sh",
             },
             config = function()
-                require "modules.lsp.init"
+                require "lua.modules.lsp.main"
                 require "modules.lsp.installer"
             end,
             disable = plugins.lsp,

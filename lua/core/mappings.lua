@@ -250,11 +250,10 @@ map("n", "<leader>dt", function()
 end)
 
 -- Packer
-map("n", "<leader>pi", "<cmd>PackerInstall<CR>")
-map("n", "<leader>pu", "<cmd>PackerUpdate<CR>")
-map("n", "<leader>pc", "<cmd>PackerClean<CR>")
-map("n", "<leader>ps", "<cmd>PackerSync<CR>")
-map("n", "<leader>pp", "<cmd>PackerStatus<CR>")
+map("n", "<leader>li", "<cmd>Lazy install<CR>")
+map("n", "<leader>lu", "<cmd>Lazy update<CR>")
+map("n", "<leader>lx", "<cmd>Lazy clean<CR>")
+map("n", "<leader>ls", "<cmd>Lazy sync<CR>")
 
 -- LSP
 -- map("n", "<leader>ca", vim.lsp.buf.code_action)

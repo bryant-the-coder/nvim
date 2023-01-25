@@ -13,11 +13,13 @@ local lazy_load = function(payload)
                 -- dont defer for treesitter as it will show slow highlighting
                 -- This deferring only happens only when we do "nvim filename"
                 if payload.plugins ~= "nvim-treesitter" then
-                    vim.defer_fn(function()
-                        vim.cmd("PackerLoad " .. payload.plugins)
+                    vim.defer_fn(function(plugins)
+                        require("lazy").load({ plugins = { plugins } })
                     end, 0)
                 else
-                    vim.cmd("PackerLoad " .. payload.plugins)
+                    vim.defer_fn(function(plugins)
+                        require("lazy").load({ plugins = { plugins } })
+                    end, 0)
                 end
             end
         end,
@@ -104,7 +106,7 @@ load.git = function()
         callback = function()
             if vim.fn.isdirectory ".git" ~= 0 then
                 vim.schedule(function()
-                    require("packer").loader "gitsigns.nvim"
+                    require("lazy").load({ plugins = { "gitsigns.nvim" } })
                 end)
             end
         end,
@@ -128,7 +130,7 @@ load.blankline = function()
         callback = function()
             local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
             if lines ~= { "" } then
-                require("packer").loader "indent-blankline.nvim"
+                require("lazy").load({ plugins = { "indent-blankline.nvim" } })
             end
         end,
     })

@@ -1,8 +1,3 @@
-local present, bufferline = pcall(require, "bufferline")
-if not present then
-    return
-end
-
 local default = {
     colors = require("core.utils").get(),
 }
@@ -14,7 +9,7 @@ vim.cmd [[
 ]]
 
 -- Code from NvChad
-bufferline.setup {
+require("bufferline").setup {
     options = {
         hover = {
             enabled = true,
