@@ -4,13 +4,13 @@ description:
 authors: bryant
 categories:
 created: 2023-01-24
-updated: 2023-01-24
+updated: 2023-01-25
 version: 1.0.0
 @end
 
 . TOC
 
 - ( ) Replace lightspeed with leap
-- ( ) Replace packer with lazy.nvim
-- ( ) Update my config
--- ( ) Reduce startuptime
+- (x) Replace packer with lazy.nvim
+- (x) Update my config
+-- (x) Reduce startuptime
