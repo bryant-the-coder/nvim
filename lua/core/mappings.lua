@@ -259,6 +259,7 @@ map("n", "<leader>li", "<cmd>Lazy install<CR>")
 map("n", "<leader>lu", "<cmd>Lazy update<CR>")
 map("n", "<leader>lx", "<cmd>Lazy clean<CR>")
 map("n", "<leader>ls", "<cmd>Lazy sync<CR>")
+map("n", "<leader>lp", "<cmd>Lazy profile<CR>")
 
 -- LSP
 -- map("n", "<leader>ca", vim.lsp.buf.code_action)

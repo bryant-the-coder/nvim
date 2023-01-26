@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Lazy.nvim
 require("lazy").setup("modules", {
     default = {
-        lazy = true,
+        lazy = false,
     },
     install = {
         -- install missing plugins on startup. This doesn't increase startup time.
