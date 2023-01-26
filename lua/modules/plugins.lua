@@ -204,6 +204,7 @@ return {
     },
 
     {
+        enabled = false,
         "sindrets/diffview.nvim",
         after = "gitsigns.nvim",
         config = function()
@@ -336,8 +337,8 @@ return {
 
     {
         "p00f/clangd_extensions.nvim",
-        -- ft = { "c", "cpp" },
-        after = "nvim-lspconfig",
+        ft = { "c", "cpp" },
+        -- after = "nvim-lspconfig",
         config = function()
             require "modules.lsp.servers.clangd"
         end,
@@ -362,7 +363,7 @@ return {
 
     {
         "simrat39/rust-tools.nvim",
-        after = "nvim-lspconfig",
+        ft = "rust",
         config = function()
             require "modules.lsp.servers.rust_analyzer"
         end,
@@ -386,7 +387,14 @@ return {
 
     {
         "natecraddock/workspaces.nvim",
-        after = "telescope.nvim",
+        lazy = true,
+        cmd = {
+            "WorkspacesAdd",
+            "WorkspacesRemove",
+            "WorkspacesRename",
+            "WorkspacesList",
+            "WorkspacesOpen",
+        },
         config = function()
             require "modules.tools.workspace"
         end,
@@ -400,25 +408,29 @@ return {
     },
 
     {
+        "mfussenegger/nvim-dap",
+        lazy = true,
+        config = function()
+            require "modules.tools.dap"
+        end,
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "mfussenegger/nvim-dap-python",
+        },
+    },
+
+    --[[ {
         "rcarriga/nvim-dap-ui",
         after = "nvim-dap",
         config = function()
             require "modules.tools.dapui"
         end,
-    },
+    }, ]]
 
-    {
-        "mfussenegger/nvim-dap",
-        after = "nvim-lspconfig",
-        config = function()
-            require "modules.tools.dap"
-        end,
-    },
-
-    {
+    --[[ {
         "mfussenegger/nvim-dap-python",
         after = "nvim-dap",
-    },
+    }, ]]
 
     -- Quickly move around tabs
     {
@@ -581,11 +593,11 @@ return {
     -- Indentation
     {
         "lukas-reineke/indent-blankline.nvim",
-        -- event = "BufReadPost",
-        init = function()
-            require("custom.load").blankline()
-        end,
-        lazy = true,
+        event = "BufReadPost",
+        -- init = function()
+        --     require("custom.load").blankline()
+        -- end,
+        -- lazy = true,
         config = function()
             require "modules.ui.indent"
         end,
