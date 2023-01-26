@@ -204,6 +204,7 @@ return {
     },
 
     {
+        enabled = false,
         "sindrets/diffview.nvim",
         after = "gitsigns.nvim",
         config = function()
@@ -316,6 +317,7 @@ return {
     -- Much like lspisntaller, but better
     {
         "williamboman/mason.nvim",
+        cmd = "Mason",
     },
 
     -- Setting up inlay hints
@@ -335,6 +337,7 @@ return {
     },
 
     {
+        enabled = false,
         "p00f/clangd_extensions.nvim",
         -- ft = { "c", "cpp" },
         after = "nvim-lspconfig",
@@ -362,7 +365,8 @@ return {
 
     {
         "simrat39/rust-tools.nvim",
-        after = "nvim-lspconfig",
+        -- after = "nvim-lspconfig",
+        ft = "rust",
         config = function()
             require "modules.lsp.servers.rust_analyzer"
         end,
@@ -601,6 +605,7 @@ return {
     },
 
     {
+        enabled = false,
         "lewis6991/satellite.nvim",
         after = "bufferline.nvim",
         config = function()
