@@ -302,7 +302,8 @@ return {
     -- LSP
     {
         "neovim/nvim-lspconfig",
-        event = "BufWritePre",
+        -- event ={"BufEnter", "BufFilePost", "BufFilePre"},
+        event = "BufRead",
         config = function()
             require "modules.lsp.main"
         end,
@@ -336,6 +337,7 @@ return {
     },
 
     {
+        enabled = false,
         "p00f/clangd_extensions.nvim",
         ft = { "c", "cpp" },
         -- after = "nvim-lspconfig",
