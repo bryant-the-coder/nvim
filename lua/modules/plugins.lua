@@ -163,8 +163,27 @@ return {
         config = function()
             require "modules.files.telescope"
         end,
+        dependencies = {
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
+                lazy = true,
+                -- after = "telescope.nvim",
+            },
+            {
+                "nvim-telescope/telescope-file-browser.nvim",
+                -- after = "telescope.nvim",
+                lazy = true,
+            },
+
+            {
+                "nvim-telescope/telescope-ui-select.nvim",
+                -- after = "telescope.nvim",
+                lazy = true,
+            },
+        },
     },
-    {
+    --[[ {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         after = "telescope.nvim",
@@ -177,12 +196,13 @@ return {
     {
         "nvim-telescope/telescope-ui-select.nvim",
         after = "telescope.nvim",
-    },
+    }, ]]
 
     -----------------------------------
     --              Git              --
     -----------------------------------
     {
+        enabled = false,
         "tpope/vim-fugitive",
         after = "gitsigns.nvim",
         cmd = {
@@ -195,13 +215,22 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         -- event = "BufRead",
-        -- init = function()
-        --     require("custom.load").git()
-        -- end,
+        init = function()
+            require("custom.load").git()
+        end,
         config = function()
             require "modules.git.gitsigns"
         end,
     },
+    --[[ {
+        "lewis6991/gitsigns.nvim",
+        lazy = true,
+        config = function()
+            require "modules.git.gitsigns"
+        end,
+        -- dependencies = { "nvim-lua/plenary.nvim" },
+        -- module = "gitsigns",
+    }, ]]
 
     {
         enabled = false,
@@ -348,7 +377,8 @@ return {
 
     {
         "ray-x/lsp_signature.nvim",
-        after = "nvim-lspconfig",
+        lazy = true,
+        ft = { "python" },
         config = function()
             require "modules.lsp.signature"
         end,
@@ -357,10 +387,12 @@ return {
     -- Uncomment this if you want lspsage
     {
         "glepnir/lspsaga.nvim",
-        after = "nvim-lspconfig",
+        cmd = { "Lspsaga" },
+        lazy = true,
         config = function()
             require "modules.lsp.saga"
         end,
+        dependencies = "neovim/nvim-lspconfig",
     },
 
     {
@@ -384,7 +416,13 @@ return {
     -----------------------------------
     {
         "mbbill/undotree",
-        after = "telescope.nvim",
+        -- after = "telescope.nvim",
+        cmd = {
+            "UndotreeToggle",
+            "UndotreeShow",
+            "UndotreeFocus",
+            "UndotreeHide",
+        },
     },
 
     {
@@ -455,9 +493,27 @@ return {
 
     -- Hex colours
     {
-        "NvChad/nvim-colorizer.lua",
+        -- "NvChad/nvim-colorizer.lua",
+        -- config = function()
+        --     require "modules.tools.colorizer"
+        -- end,
+        "xiyaowong/nvim-colorizer.lua",
+        cmd = { "ColorizerAttachToBuffer" },
         config = function()
-            require "modules.tools.colorizer"
+            require("colorizer").setup({
+                "*",
+            }, {
+                RGB = true, -- #RGB hex codes
+                RRGGBB = true, -- #RRGGBB hex codes
+                names = false, -- "Name" codes like Blue
+                RRGGBBAA = false, -- #RRGGBBAA hex codes
+                rgb_fn = false, -- CSS rgb() and rgba() functions
+                hsl_fn = false, -- CSS hsl() and hsla() functions
+                css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+                css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+                mode = "background", -- Set the display mode.
+            })
+            vim.cmd.ColorizerAttachToBuffer()
         end,
     },
 
@@ -474,6 +530,7 @@ return {
     -- Show lsp progress when you enter a file
     {
         "j-hui/fidget.nvim",
+        lazy = true,
         module = "lspconfig",
         config = function()
             require "modules.tools.fidget"
@@ -564,6 +621,7 @@ return {
     -- Presence
     {
         "andweeb/presence.nvim",
+        lazy = true,
         config = function()
             require "modules.editor.presence"
         end,
@@ -615,6 +673,7 @@ return {
     },
 
     {
+        enabled = false,
         "lewis6991/satellite.nvim",
         after = "bufferline.nvim",
         config = function()
@@ -628,6 +687,8 @@ return {
     -- Neogen
     {
         "danymat/neogen",
+        lazy = true,
+        dependencies = { "L3MON4D3/LuaSnip" },
         config = function()
             require "modules.documentation.neogen"
         end,
