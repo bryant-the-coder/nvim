@@ -57,8 +57,9 @@ return {
             require "modules.completion.cmp"
         end,
     },
+
     -- Snippets
-    --[[ {
+    {
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
         config = function()
@@ -69,21 +70,6 @@ return {
     {
         "bryant-the-coder/friendly-snippets",
         event = "InsertEnter",
-    }, ]]
-
-    {
-        "L3MON4D3/LuaSnip", -- need to be the first to load
-        event = "InsertEnter",
-        dependencies = {
-            {
-                "bryant-the-coder/friendly-snippets",
-                lazy = true,
-                "hrsh7th/nvim-cmp",
-            },
-        }, -- , event = "InsertEnter"
-        config = function()
-            require "modules.completion.snippets"
-        end,
     },
 
     -- Autopairs
