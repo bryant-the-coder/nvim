@@ -1,35 +1,37 @@
+local load = {}
+
 local cmd = vim.api.nvim_create_autocmd
 -- https://github.com/max397574/omega-nvim/blob/master/lua/omega/modules/ui/bufferline.lua
-local lazy_load = function(payload)
-    vim.api.nvim_create_autocmd(payload.events, {
-        pattern = "*",
-        group = vim.api.nvim_create_augroup(payload.augroup_name, {}),
+load.lazy_load = function(plugin)
+    vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
+        group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),
         callback = function()
-            -- WARN: Change `cond` to anything you like.
-            -- ALSO THE COND IN THE ENTIRE FILE
-            if payload.cond() then
-                vim.api.nvim_del_augroup_by_name(payload.augroup_name)
+            local file = vim.fn.expand "%"
+            local condition = file ~= "NvimTree_1" and file ~= "[lazy]" and file ~= ""
+
+            if condition then
+                vim.api.nvim_del_augroup_by_name("BeLazyOnFileOpen" .. plugin)
 
                 -- dont defer for treesitter as it will show slow highlighting
                 -- This deferring only happens only when we do "nvim filename"
-                if payload.plugins ~= "nvim-treesitter" then
-                    vim.defer_fn(function(plugins)
-                        require("lazy").load({ plugins = { plugins } })
+                if plugin ~= "nvim-treesitter" then
+                    vim.schedule(function()
+                        require("lazy").load { plugins = plugin }
+
+                        if plugin == "nvim-lspconfig" then
+                            vim.cmd "silent! do FileType"
+                        end
                     end, 0)
                 else
-                    vim.defer_fn(function(plugins)
-                        require("lazy").load({ plugins = { plugins } })
-                    end, 0)
+                    require("lazy").load { plugins = plugin }
                 end
             end
         end,
     })
 end
 
-local load = {}
-
 -- If there is more than 1 buffer, load bufferline
-load.bufferline = function()
+--[[ load.bufferline = function()
     lazy_load {
         events = { "BufNewFile", "BufRead", "TabEnter" },
         augroup_name = "BufferLineLazy",
@@ -106,7 +108,7 @@ load.git = function()
         callback = function()
             if vim.fn.isdirectory ".git" ~= 0 then
                 vim.schedule(function()
-                    require("lazy").load({ plugins = { "gitsigns.nvim" } })
+                    require("lazy").load { plugins = { "gitsigns.nvim" } }
                 end)
             end
         end,
@@ -130,7 +132,7 @@ load.blankline = function()
         callback = function()
             local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
             if lines ~= { "" } then
-                require("lazy").load({ plugins = { "indent-blankline.nvim" } })
+                require("lazy").load { plugins = { "indent-blankline.nvim" } }
             end
         end,
     })
@@ -146,6 +148,6 @@ load.on_file_open = function(plugname)
             return file ~= "NvimTree_1" and file ~= "[packer]" and file ~= ""
         end,
     }
-end
+end ]]
 
 return load
