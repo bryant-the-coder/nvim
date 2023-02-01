@@ -90,6 +90,7 @@ return {
     --             Editor            --
     -----------------------------------
     {
+        enabled = false,
         "rareitems/hl_match_area.nvim",
         config = function()
             require "modules.editor.hl_area"
@@ -152,6 +153,10 @@ return {
 
     {
         "bryant-the-coder/harpoon",
+        lazy = true,
+        init = function()
+            require("custom.load").lazy_load "harpoon"
+        end,
         config = function()
             require "modules.files.harpoon"
         end,
@@ -215,8 +220,23 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         -- event = "BufRead",
+        -- init = function()
+        --     require("custom.load").lazy_load "gitsigns.nvim"
+        -- end,
         init = function()
-            require("custom.load").git()
+            -- load gitsigns only when a git file is opened
+            vim.api.nvim_create_autocmd({ "BufRead" }, {
+                group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
+                callback = function()
+                    vim.fn.system("git -C " .. vim.fn.expand "%:p:h" .. " rev-parse")
+                    if vim.v.shell_error == 0 then
+                        vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
+                        vim.schedule(function()
+                            require("lazy").load { plugins = "gitsigns.nvim" }
+                        end)
+                    end
+                end,
+            })
         end,
         config = function()
             require "modules.git.gitsigns"
@@ -277,7 +297,11 @@ return {
         "nvim-treesitter/nvim-treesitter",
         version = false, -- last release is way too old and doesn't work on Windows
         build = ":TSUpdate",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
+        init = function()
+            require("custom.load").lazy_load "nvim-treesitter"
+        end,
+        lazy = true,
         config = function()
             require "modules.lang.treesitter"
         end,
@@ -332,7 +356,11 @@ return {
     {
         "neovim/nvim-lspconfig",
         -- event ={"BufEnter", "BufFilePost", "BufFilePre"},
-        event = "BufRead",
+        -- event = "BufRead",
+        init = function()
+            require("custom.load").lazy_load "nvim-lspconfig"
+        end,
+        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
         config = function()
             require "modules.lsp.main"
         end,
@@ -347,6 +375,7 @@ return {
     -- Much like lspisntaller, but better
     {
         "williamboman/mason.nvim",
+        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     },
 
     -- Setting up inlay hints
@@ -497,7 +526,7 @@ return {
         -- config = function()
         --     require "modules.tools.colorizer"
         -- end,
-        "xiyaowong/nvim-colorizer.lua",
+        "NvChad/nvim-colorizer.lua",
         cmd = { "ColorizerAttachToBuffer" },
         config = function()
             require("colorizer").setup({
@@ -553,6 +582,7 @@ return {
     },
 
     {
+        enabld = false,
         "folke/todo-comments.nvim",
         after = "nvim-treesitter",
         config = function()
@@ -653,11 +683,11 @@ return {
     -- Indentation
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPost",
-        -- init = function()
-        --     require("custom.load").blankline()
-        -- end,
-        -- lazy = true,
+        -- event = "BufReadPost",
+        init = function()
+            require("custom.load").lazy_load "indent-blankline.nvim"
+        end,
+        lazy = true,
         config = function()
             require "modules.ui.indent"
         end,
