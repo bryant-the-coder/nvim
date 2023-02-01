@@ -133,6 +133,7 @@ cmd({ "WinEnter", "FileType" }, {
         "packer",
         "startify",
         "netrw",
+        "terminal",
     },
     callback = function()
         vim.opt.statusline = "%#StatusLine#" -- Disable statusline
