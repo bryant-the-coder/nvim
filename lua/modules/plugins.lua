@@ -327,7 +327,8 @@ return {
 
     {
         "lewis6991/nvim-treesitter-context",
-        after = "nvim-treesitter",
+        -- after = "nvim-treesitter",
+        ft = { "rust", "python" },
         config = function()
             require("treesitter-context").setup {
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -582,7 +583,7 @@ return {
     },
 
     {
-        enabld = false,
+        -- enabld = false,
         "folke/todo-comments.nvim",
         after = "nvim-treesitter",
         config = function()
