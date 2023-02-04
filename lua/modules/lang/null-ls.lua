@@ -25,11 +25,11 @@ null_ls.setup {
                 }
             end,
         },
-        diagnostics.flake8.with {
+        --[[ diagnostics.flake8.with {
             extra_args = function(_)
                 return { "--max-line-lenth", vim.opt_local.colorcolumn:get()[1] or "88" }
             end,
-        },
+        }, ]]
         -- formatting.yapf,
     },
 

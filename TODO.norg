@@ -1,19 +1,17 @@
 @document.meta
 title: TODO
-description:
+description: 
 authors: bryant
-categories:
-created: 2022-09-29
-updated: 2022-11-18
-version: 0.0.15
+categories: 
+created: 2023-02-04
+updated: 2023-02-04
+version: 1.0.0
 @end
 
-= TOC
+. TOC
 
-* Things to add
-  - [x] Mappings for dap
-  -- [x] Activation dap
-  -- [x] Stop dap
-  -- [x] Pause dap
-  -- [ ] Dap for hydra
-  - [x] Add toggleterm back as this is linux not winhoes
+* TODO
+  - ( ) Add overseer
+  - ( ) Fix lazy.nvim
+  - ( ) Upgrade hydra setup
+  -- ( ) Yoink from Aloof
