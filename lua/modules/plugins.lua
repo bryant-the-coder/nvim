@@ -61,6 +61,7 @@ return {
     -- Snippets
     {
         "L3MON4D3/LuaSnip",
+        build = "make install_jsregexp",
         event = "InsertEnter",
         config = function()
             require "modules.completion.snippets"
@@ -438,6 +439,33 @@ return {
         event = { "BufRead Cargo.toml" },
         config = function()
             require "modules.tools.crates"
+        end,
+    },
+
+    {
+        "stevearc/overseer.nvim",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+        cmd = {
+            "OverseerDebugParser",
+            "OverseerRun",
+            "OverseerRunCmd",
+            "OverseerInfo",
+            "OverseerToggle",
+            "OverseerOpen",
+        },
+        keys = {
+            { "<leader>oo", "<cmd>OverseerToggle<CR>", mode = "n" },
+            { "<leader>or", "<cmd>OverseerRun<CR>", mode = "n" },
+            { "<leader>oc", "<cmd>OverseerRunCmd<CR>", mode = "n" },
+            { "<leader>ol", "<cmd>OverseerLoadBundle<CR>", mode = "n" },
+            { "<leader>ob", "<cmd>OverseerBuild<CR>", mode = "n" },
+            { "<leader>od", "<cmd>OverseerQuickAction<CR>", mode = "n" },
+            { "<leader>os", "<cmd>OverseerTaskAction<CR>", mode = "n" },
+        },
+        config = function()
+            require "modules.lsp.overseer"
         end,
     },
 
