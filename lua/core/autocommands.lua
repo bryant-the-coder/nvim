@@ -167,3 +167,27 @@ cmd("LspAttach", {
         client.server_capabilities.semanticTokensProvider = nil
     end,
 })
+
+-- https://github.com/max397574/omega-nvim/blob/master/lua/omega/core/autocommands.lua#L39
+cmd({ "TextYankPost" }, {
+    callback = function()
+        if vim.v.event.regname ~= "+" then
+            return
+        end
+        local contents = vim.split(vim.fn.getreg "+", "\n")
+        local min_spaces = 10000
+        local new_contents = {}
+        if not contents or #contents == 0 then
+            return
+        end
+        for _, line in ipairs(contents) do
+            if #line ~= 0 then
+                min_spaces = math.min(min_spaces, #(line:match "^%s*"))
+            end
+        end
+        for _, line in ipairs(contents) do
+            table.insert(new_contents, line:sub(min_spaces + 1, -1))
+        end
+        vim.fn.setreg("+", table.concat(new_contents, "\n"))
+    end,
+})
