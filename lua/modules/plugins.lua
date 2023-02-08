@@ -296,13 +296,11 @@ return {
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
-        version = false, -- last release is way too old and doesn't work on Windows
-        build = ":TSUpdate",
-        -- event = "BufReadPost",
         init = function()
             require("custom.load").lazy_load "nvim-treesitter"
         end,
-        lazy = true,
+        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
+        build = ":TSUpdate",
         config = function()
             require "modules.lang.treesitter"
         end,
