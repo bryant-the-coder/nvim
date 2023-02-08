@@ -4,7 +4,7 @@ description:
 authors: bryant
 categories: 
 created: 2023-02-04
-updated: 2023-02-06
+updated: 2023-02-09
 version: 1.0.0
 @end
 
@@ -12,7 +12,7 @@ version: 1.0.0
 
 * TODO
   - ( ) Add overseer
-  - ( ) Fix lazy.nvim
+  - (x) Fix lazy.nvim
   - ( ) Upgrade hydra setup
   -- ( ) Yoink from Aloof
   - (x) Upgrade my luasnip
