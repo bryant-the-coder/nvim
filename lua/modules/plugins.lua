@@ -686,7 +686,6 @@ return {
 
     -- Bufferline
     {
-        -- enabled = false,
         "akinsho/bufferline.nvim",
         lazy = true,
         -- Taken from https://github.com/max397574/omega-nvim
