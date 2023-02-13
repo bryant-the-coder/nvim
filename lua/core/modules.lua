@@ -65,6 +65,6 @@ require("lazy").setup("modules", {
         },
     },
     change_detection = {
-        enabled = false,
+        enabled = true,
     },
 })
