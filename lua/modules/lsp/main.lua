@@ -64,9 +64,9 @@ if use_lua_dev then
         lspconfig = sumneko,
     }
 
-    lspconfig.sumneko_lua.setup(luadev)
+    lspconfig.lua_ls.setup(luadev)
 else
-    lspconfig.sumneko_lua.setup(sumneko)
+    lspconfig.lua_ls.setup(sumneko)
 end
 
 -- JSON

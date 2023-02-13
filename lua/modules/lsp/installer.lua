@@ -4,7 +4,7 @@ local servers = {
     "tsserver",
     "ltex",
     "texlab",
-    "sumneko_lua",
+    "lua_ls",
     "jedi_language_server",
     "pyright",
     "rust_analyzer",
