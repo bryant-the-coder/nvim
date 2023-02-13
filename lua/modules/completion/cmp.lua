@@ -138,7 +138,7 @@ cmp.setup {
     },
 }
 
-cmp.setup.cmdline(":", {
+--[[ cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "cmdline", group_index = 1 },
@@ -148,7 +148,7 @@ cmp.setup.cmdline(":", {
     view = {
         entries = { name = "wildmenu", separator = " | " },
     },
-})
+}) ]]
 
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
