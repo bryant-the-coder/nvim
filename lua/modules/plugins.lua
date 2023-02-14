@@ -75,6 +75,7 @@ return {
 
     -- Autopairs
     {
+        enabled = false,
         "windwp/nvim-autopairs",
         event = {
             "InsertEnter",
@@ -207,6 +208,16 @@ return {
     -----------------------------------
     --              Git              --
     -----------------------------------
+    {
+        "TimUntersberger/neogit",
+        lazy = true,
+        dependencies = { "nvim-lua/plenary.nvim" },
+        cmd = { "Neogit" },
+        config = function()
+            require "modules.git.neogit"
+        end,
+    },
+
     {
         enabled = false,
         "tpope/vim-fugitive",
