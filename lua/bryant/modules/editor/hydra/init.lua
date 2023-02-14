@@ -1,0 +1,5 @@
+require "bryant.modules.editor.hydra.lsp"
+require "bryant.modules.editor.hydra.harpoon"
+require "bryant.modules.editor.hydra.docs"
+require "bryant.modules.editor.hydra.telescope"
+require "bryant.modules.editor.hydra.rust_tools"
