@@ -726,7 +726,7 @@ return {
         end,
         lazy = true,
         config = function()
-            require "modules.ui.indent"
+            require "modules.ui.blankline"
         end,
     },
 
