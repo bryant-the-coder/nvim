@@ -30,7 +30,7 @@ neogit.setup {
             -- To override lightspeed "s" keybinding
             ["s"] = "Stage",
             ["p"] = "PushPopup",
-            ["P"] = "PushPopup",
+            ["P"] = "PullPopup",
         },
     },
 }
