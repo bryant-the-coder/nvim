@@ -32,7 +32,7 @@ cmd("FileType", {
         vim.opt.number = false
         vim.opt.cole = 1
         vim.opt.foldlevel = 10
-        vim.opt.signcolumn = "yes:2"
+        vim.opt.signcolumn = "yes:4"
     end,
 })
 
