@@ -175,11 +175,11 @@ return {
                 lazy = true,
                 -- after = "telescope.nvim",
             },
-            {
+            --[[ {
                 "nvim-telescope/telescope-file-browser.nvim",
                 -- after = "telescope.nvim",
                 lazy = true,
-            },
+            }, ]]
 
             {
                 "nvim-telescope/telescope-ui-select.nvim",
@@ -608,15 +608,6 @@ return {
         cmd = "PP",
     },
 
-    -- Faster movement
-    {
-        "ggandor/lightspeed.nvim",
-        keys = { "S", "s", "f", "F", "t", "T" },
-        config = function()
-            require "modules.tools.lightspeed"
-        end,
-    },
-
     {
         -- enabld = false,
         "folke/todo-comments.nvim",
@@ -762,5 +753,25 @@ return {
     {
         "romainl/vim-devdocs",
         cmd = { "DD" },
+    },
+
+    -----------------------------------
+    --            Movement           --
+    -----------------------------------
+    {
+        "ggandor/leap.nvim",
+        config = function()
+            require "modules.movement.leap"
+        end,
+    },
+
+    -- Faster movement
+    {
+        enabled = false,
+        "ggandor/lightspeed.nvim",
+        keys = { "S", "s", "f", "F", "t", "T" },
+        config = function()
+            require "modules.movement.lightspeed"
+        end,
     },
 }
