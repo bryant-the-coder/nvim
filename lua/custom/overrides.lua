@@ -188,6 +188,11 @@ fg("Visual", blue)
 -- Neorg
 bg("NeorgCodeBlock", darker_black)
 
+-- Neogit
+fg("NeogitNotificationInfo", green)
+fg("NeogitNotificationWarning", yellow)
+fg("NeogitNotificationError", red)
+
 fg("LspSagaCodeActionTitle", purple)
 fg("LspSagaCodeActionBorder", vibrant_green)
 fg("LspSagaCodeActionContent", white)
