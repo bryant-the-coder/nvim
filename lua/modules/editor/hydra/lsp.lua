@@ -3,12 +3,13 @@ local border = require("custom.border").styles.type_1
 local cmd = require("hydra.keymap-util").cmd
 
 local hint = [[
-_d_ : definition
-_t_ : type definition
-_h_ : show signature
-_r_ : rename
-_sd_: show documentation
-_so_: outline
+_d_    : definition
+_t_    : type definition
+_h_    : show signature
+_r_    : rename
+_sd_   : show documentation
+_so_   : outline
+_<Esc>_: quit
 ]]
 
 -- _a_ : code action
