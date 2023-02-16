@@ -196,6 +196,9 @@ end)
 -- Noerg
 map("n", "<leader>jt", "<cmd>Neorg journal today<CR>")
 
+-- Neogit
+map("n", "<leader>ng", "<cmd>Neogit<CR>")
+
 -- Neo-tree
 map("n", "<leader>nr", "<cmd>NeoTreeFocusToggle<CR>")
 map("n", "<leader>nf", "<cmd>Neotree float<CR>")

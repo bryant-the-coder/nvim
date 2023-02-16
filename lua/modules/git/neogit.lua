@@ -1,7 +1,6 @@
 local neogit = require "neogit"
 
 neogit.setup {
-    disable_insert_on_commit = true,
     disable_signs = false,
     disable_hint = false,
     disable_context_highlighting = false,
