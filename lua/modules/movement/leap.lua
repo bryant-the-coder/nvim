@@ -70,3 +70,7 @@ require("leap").setup {
 require("leap").add_default_mappings()
 
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward-to)")
+vim.keymap.del({ "x", "o" }, "x")
+vim.keymap.del({ "x", "o" }, "X")
+vim.keymap.set({ "x", "o" }, "<leader>ft", "<Plug>(leap-forward-till)")
+vim.keymap.set({ "x", "o" }, "<leader>bt", "<Plug>(leap-backward-till)")
