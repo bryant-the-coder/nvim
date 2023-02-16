@@ -28,7 +28,7 @@ neogit.setup {
     mappings = {
         status = {
             -- To override lightspeed "s" keybinding
-            ["s"] = "Stage",
+            ["<Space>"] = "Stage",
             ["p"] = "PushPopup",
             ["P"] = "PullPopup",
         },
