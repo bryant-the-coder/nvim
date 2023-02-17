@@ -1,8 +1,10 @@
 require "core.settings"
-require "core.mappings"
 require "core.modules"
 require "core.autocommands"
 require "modules.ui.theme"
-require "custom.statusline"
 require "custom.overrides"
 require "custom.abbrev"
+vim.defer_fn(function()
+    require "core.mappings"
+    require "custom.statusline"
+end, 1)
