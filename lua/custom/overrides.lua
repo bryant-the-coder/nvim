@@ -1,6 +1,7 @@
 local hl = vim.api.nvim_set_hl
 local colors = require("core.utils").get()
 local base = require("core.utils").get_base()
+local config = require "core.default_config"
 
 -- Code from nvchad
 local black = colors.black
@@ -29,6 +30,7 @@ local teal = colors.teal
 local grey_fg2 = colors.grey_fg2
 local cyan = colors.cyan
 local sun = colors.sun
+local nord_blue = colors.nord_blue
 local base00 = base.base00
 local base01 = base.base01
 local base02 = base.base02
@@ -112,7 +114,7 @@ hl(0, "SearchCount", { fg = "#181a1f", bg = base0E })
 -- hl(0, "Coords", { fg = "#1E232A", bg = base0F })
 hl(0, "MatchArea", { bg = one_bg })
 
-if ui.italic then
+if config.ui.italic then
     -- local light_grey = "#a9a9a9"
     -- fg("Comment", light_grey, { italic = true, bold = true })
     -- fg("TSComment", light_grey, { italic = true, bold = true })
@@ -141,7 +143,7 @@ else
     fg_bg("BufferlineDuplicateVisible", white, black2, { bold = true })
 end
 
-if ui.transparency then
+if config.ui.transparency then
     -- bg("Normal", "none")
     fg_bg("Normal", "NONE", "none")
     bg("StatuslineNC", "NONE")

@@ -1,12 +1,13 @@
 require "core.disable_builtin"
 local utils = require "core.utils"
+local config = require "core.default_config"
 
 local g = vim.g
 local o = vim.opt
 
 -- local themes = utils.timer_theme()
 
-g.colors_name = "mocha"
+g.colors_name = config.ui.theme
 
 --Cursor & cursorline
 o.guicursor = "n-v-c-sm:block,ci-ve:ver25,r-cr-o:hor20,i:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor"
