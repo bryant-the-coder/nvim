@@ -663,7 +663,6 @@ return {
     -- True zen
     {
         enabled = false,
-
         "Pocco81/TrueZen.nvim",
         cmd = {
             "TZAtaraxis",
