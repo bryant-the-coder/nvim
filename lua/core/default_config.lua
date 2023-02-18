@@ -2,7 +2,7 @@ local config = {}
 
 config.ui = {
     italic = true,
-    transparency = true,
+    transparency = false,
     theme = "mocha",
 }
 
