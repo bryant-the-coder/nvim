@@ -123,8 +123,9 @@ return {
     -- Neorg
     {
         "nvim-neorg/neorg",
+        lazy = true,
         ft = "norg",
-        after = "nvim-treesitter", -- You may want to specify Telescope here as well
+        cmd = "Neorg",
         config = function()
             require "modules.editor.neorg"
         end,
@@ -141,6 +142,18 @@ return {
     -----------------------------------
     --              Files            --
     -----------------------------------
+    -- Oil.nvim
+    {
+        "stevearc/oil.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.keymap.set("n", "<leader>oo", require("oil").open, { desc = "Open parent directory" })
+        end,
+        config = function()
+            require "modules.files.oil"
+        end,
+    },
+
     -- Neotree
     {
         "nvim-neo-tree/neo-tree.nvim",

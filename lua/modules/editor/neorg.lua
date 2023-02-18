@@ -11,11 +11,12 @@ neorg.setup {
         ["core.norg.dirman"] = {
             config = {
                 workspaces = {
-                    home = "~/dev/NEORG",
-                    notes = "~/dev/NEORG/notes",
-                    task = "~/dev/NEORG/task",
+                    home = "~/neorg",
+                    notes = "~/neorg/notes",
+                    task = "~/neorg/task",
                 },
                 open_last_workspace = false,
+                index = "index.norg",
             },
         },
         ["core.promo"] = {},
