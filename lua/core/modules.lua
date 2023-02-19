@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Lazy.nvim
 require("lazy").setup("modules", {
+    dev = {
+        -- directory where you store your local plugin projects
+        path = "~/dev/GITHUB/neovim_plugins",
+    },
     default = {
         lazy = false,
     },
