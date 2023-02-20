@@ -127,9 +127,9 @@ if config.ui.italic then
     fg_bg("TelescopePreviewTitle", black, green, { italic = true })
     fg_bg("TelescopePromptTitle", black, red, { italic = true })
     fg_bg("BufferlineBufferSelected", white, black, { italic = true, bold = true })
-    fg_bg("BufferlineBufferVisible", light_grey, black2, { italic = true, bold = true })
+    --[[ fg_bg("BufferlineBufferVisible", light_grey, black2, { italic = true, bold = true })
     fg_bg("BufferlineDuplicateSelected", white, grey, { italic = true, bold = true })
-    fg_bg("BufferlineDuplicateVisible", white, black2, { italic = true, bold = true })
+    fg_bg("BufferlineDuplicateVisible", white, black2, { italic = true, bold = true }) ]]
 else
     fg("Comment", light_grey, { bold = true })
     fg("DiagnosticHeader", "#2cb27f", { bold = true })
@@ -148,7 +148,7 @@ if config.ui.transparency then
     fg_bg("Normal", "NONE", "none")
     bg("StatuslineNC", "NONE")
     bg("HarpoonWindow", "NONE")
-    fg_bg("BufferlineFill", grey_fg, "NONE")
+    -- fg_bg("BufferlineFill", grey_fg, "NONE")
     fg_bg("Folded", white, "NONE")
 else
     fg_bg("StatusLineNC", "#15171c")

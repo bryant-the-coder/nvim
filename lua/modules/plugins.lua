@@ -29,6 +29,7 @@ return {
             return base16(base16.themes(theme))
         end,
     },
+    { "catppuccin/nvim", name = "catppuccin" },
 
     {
         "MunifTanjim/nui.nvim",
