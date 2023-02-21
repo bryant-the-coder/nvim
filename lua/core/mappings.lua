@@ -124,8 +124,8 @@ map("v", "<C-up>", "<cmd>m '<-2<CR>gv=gv")
 
 -- Insert a new line
 -- Code from max
-map("n", "<A-CR>", "O<ESC>", { desc = "Empty line above" })
-map("n", "<CR>", "o<ESC>", { desc = "Empty line below" })
+--[[ map("n", "<A-CR>", "O<ESC>", { desc = "Empty line above" })
+map("n", "<CR>", "o<ESC>", { desc = "Empty line below" }) ]]
 map("n", "<leader>lb", "i<CR><ESC>", { desc = "Line break at cursor" })
 map("n", "<leader>il", "i <ESC>l", { desc = "Space before" })
 map("n", "<leader>ih", "a <ESC>h", { desc = "Space after" })
@@ -363,3 +363,17 @@ vim.api.nvim_create_autocmd("FileType", {
         })
     end,
 })
+
+-- ┌─────────────┐
+-- │ Comment Box │
+-- └─────────────┘
+local cb = require "comment-box"
+
+-- left aligned fixed size box with left aligned text
+map({ "n", "v" }, "<Leader>bb", cb.lbox, {})
+-- centered adapted box with centered text
+map({ "n", "v" }, "<Leader>bc", cb.accbox, {})
+
+-- centered line
+map("n", "<Leader>bl", cb.cline, {})
+map("i", "<M-l>", cb.cline, {})

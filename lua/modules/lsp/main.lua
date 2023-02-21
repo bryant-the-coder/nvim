@@ -8,7 +8,7 @@ end
 
 -- WARN: Dont remove this files
 require "modules.lsp.installer"
-require "modules.lsp.config"
+require "modules.lsp.lsp_config"
 local capabilities = require "modules.lsp.capabilities"
 
 -- Creating a function call on_attach

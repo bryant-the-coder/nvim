@@ -1,5 +1,5 @@
 local uv, api, fn = vim.loop, vim.api, vim.fn
-local helper = require "utils.init"
+local helper = require "utils.helper"
 
 local pack = {}
 pack.__index = pack

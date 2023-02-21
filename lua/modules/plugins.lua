@@ -81,7 +81,6 @@ return {
 
     -- Autopairs
     {
-        enabled = true,
         "windwp/nvim-autopairs",
         event = {
             "InsertEnter",
