@@ -13,6 +13,8 @@ dep {
 
 dep {
     "MunifTanjim/nui.nvim",
+    event = "VeryLazy",
+    lazy = true,
 }
 
 return dep

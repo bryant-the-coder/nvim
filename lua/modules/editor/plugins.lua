@@ -5,9 +5,7 @@ editor {
     "numToStr/Comment.nvim",
     lazy = true,
     keys = { { "g", mode = "n" }, { "g", mode = "v" } },
-    config = function()
-        require "modules.editor.comment"
-    end,
+    config = conf.comment,
 }
 
 editor {
@@ -21,6 +19,9 @@ editor {
 editor {
     "andweeb/presence.nvim",
     lazy = true,
+    --[[ config = function()
+        require "modules.editor.presence"
+    end, ]]
     config = conf.discord,
 }
 
@@ -37,6 +38,12 @@ editor {
     -- lazy = true,
     -- cmd = "Venn",
     config = conf.venn,
+}
+
+editor {
+    "folke/todo-comments.nvim",
+    after = "nvim-treesitter",
+    config = conf.todo,
 }
 
 return editor

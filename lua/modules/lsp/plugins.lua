@@ -79,7 +79,7 @@ lsp {
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     config = function()
-        require "modules.tools.crates"
+        require "modules.lsp.crates"
     end,
 }
 
@@ -89,4 +89,10 @@ lsp {
     config = function()
         require "modules.lsp.null-ls"
     end,
+}
+
+lsp {
+    "max397574/lua-dev.nvim",
+    ft = { "lua" },
+    after = "nvim-lspconfig",
 }
