@@ -3,7 +3,11 @@ local editor = require("utils.pack").package
 
 editor {
     "numToStr/Comment.nvim",
-    lazy = true,
+    event = "VeryLazy",
+    dependencies = {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        lazy = true,
+    },
     keys = { { "g", mode = "n" }, { "g", mode = "v" } },
     config = conf.comment,
 }

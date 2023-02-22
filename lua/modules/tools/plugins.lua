@@ -27,3 +27,14 @@ tools {
     event = "BufEnter",
     config = conf.colorizer,
 }
+
+tools {
+    "mbbill/undotree",
+    -- after = "telescope.nvim",
+    cmd = {
+        "UndotreeToggle",
+        "UndotreeShow",
+        "UndotreeFocus",
+        "UndotreeHide",
+    },
+}
