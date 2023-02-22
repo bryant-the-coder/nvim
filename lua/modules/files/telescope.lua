@@ -12,11 +12,17 @@ local open_cmd = "xdg-open"
 telescope.setup {
     defaults = {
         layout_config = {
-            width = 0.75,
+            preview_cutoff = 70, -- disable preview when less than 70 loc are available
             prompt_position = "top",
-            preview_cutoff = 120,
-            horizontal = { mirror = false },
-            vertical = { mirror = false },
+            width = 0.85,
+            height = 0.9,
+            horizontal = {
+                preview_width = 0.55,
+                results_width = 0.8,
+            },
+            vertical = {
+                mirror = false,
+            },
         },
 
         -- Transparency settings
@@ -47,7 +53,15 @@ telescope.setup {
             ".ico",
             ".add",
         },
-        path_display = { "shorten" }, -- see :h telescope.defaults.path_display
+        path_display = {
+            shorten = {
+                len = 2,
+                exclude = { -1 },
+            },
+        },
+        get_status_text = function()
+            return ""
+        end,
         preview = {
             filesize_hook = function(filepath, bufnr, opts)
                 -- If the file is very big only print the head of the it
