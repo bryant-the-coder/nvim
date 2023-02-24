@@ -177,7 +177,8 @@ function config.nvim_bufferline()
     }, ]]
         highlights = {
             background = {
-                bg = default.colors.mantle,
+                bg = default.colors.black2,
+                fg = default.colors.light_grey,
             },
 
             -- buffers
@@ -228,7 +229,7 @@ function config.nvim_bufferline()
             },
             error_selected = {
                 fg = default.colors.red,
-                bg = default.colors.black2,
+                bg = default.colors.black,
             },
             error_diagnostic_visible = {
                 fg = default.colors.red,
@@ -249,7 +250,7 @@ function config.nvim_bufferline()
             },
             warning_selected = {
                 fg = default.colors.yellow,
-                bg = default.colors.black2,
+                bg = default.colors.black,
             },
             warning_diagnostic = {
                 fg = default.colors.yellow,
@@ -274,7 +275,7 @@ function config.nvim_bufferline()
             },
             info_selected = {
                 fg = default.colors.vibrant_green,
-                bg = default.colors.black2,
+                bg = default.colors.black,
             },
             info_diagnostic = {
                 fg = default.colors.vibrant_green,
@@ -291,7 +292,7 @@ function config.nvim_bufferline()
 
             hint = { fg = default.colors.teal, bg = default.colors.black2 },
             hint_visible = { fg = default.colors.teal, bg = default.colors.black2 },
-            hint_selected = { fg = default.colors.teal, bg = default.colors.black2 },
+            hint_selected = { fg = default.colors.teal, bg = default.colors.black },
             hint_diagnostic = { fg = default.colors.teal, bg = default.colors.black2 },
             hint_diagnostic_visible = { fg = default.colors.teal, bg = default.colors.black2 },
             hint_diagnostic_selected = { fg = default.colors.teal, bg = default.colors.black },

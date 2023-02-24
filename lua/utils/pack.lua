@@ -31,6 +31,7 @@ function pack:load_modules_packages()
     end
 end
 
+-- Install lazy if it isnt install on the system
 function pack:boot_strap()
     local lazy_path = string.format("%s/lazy/lazy.nvim", helper.get_data_path())
     local state = uv.fs_stat(lazy_path)

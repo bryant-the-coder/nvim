@@ -3,7 +3,7 @@ local config = {}
 config.ui = {
     italic = true,
     transparency = false,
-    theme = "mocha",
+    theme = "onedark",
 }
 
 return config

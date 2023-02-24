@@ -25,7 +25,7 @@ ui {
         require("custom.load").lazy_load "indent-blankline.nvim"
     end,
     config = conf.blankline,
-} -- after="nvim-treesitter",
+}
 
 ui {
     enabled = false,
