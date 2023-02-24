@@ -51,6 +51,7 @@ completion {
 }
 
 completion {
+    enabled = false,
     "altermo/ultimate-autopair.nvim",
     lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
