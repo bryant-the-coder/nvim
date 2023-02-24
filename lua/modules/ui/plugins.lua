@@ -28,6 +28,7 @@ ui {
 } -- after="nvim-treesitter",
 
 ui {
+    enabled = false,
     "rareitems/hl_match_area.nvim",
     lazy = true,
     event = "VeryLazy",
