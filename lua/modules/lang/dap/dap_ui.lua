@@ -1,4 +1,4 @@
-require("dapui").setup {
+require("dapui").setup({
     icons = { expanded = "▾", collapsed = "▸" },
     mappings = {
         expand = { "<CR>", "<2-LeftMouse>" },
@@ -8,7 +8,7 @@ require("dapui").setup {
         repl = "r",
         toggle = "t",
     },
-    expand_lines = vim.fn.has "nvim-0.8",
+    expand_lines = vim.fn.has("nvim-0.8"),
     layouts = {
         {
             elements = {
@@ -41,4 +41,4 @@ require("dapui").setup {
     render = {
         max_type_length = nil, -- Can be integer or nil.
     },
-}
+})

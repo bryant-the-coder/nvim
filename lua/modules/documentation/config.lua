@@ -6,7 +6,7 @@ function config.neogen()
         return
     end
 
-    neogen.setup {
+    neogen.setup({
         snippet_engine = "luasnip",
         enabled = true,
         languages = {
@@ -17,11 +17,11 @@ function config.neogen()
                 template = { annotation_convention = "numpydoc" },
             },
         },
-    }
+    })
 end
 
 function config.browse()
-    local browse = require "browse"
+    local browse = require("browse")
     local bookmarks = {
         ["github"] = {
             ["name"] = "search github from neovim",
@@ -31,14 +31,14 @@ function config.browse()
             ["pulls_search"] = "https://github.com/search?q=%s&type=pullrequests",
         },
     }
-    browse.setup {
+    browse.setup({
         -- search provider you want to use
         provider = "duckduckgo", -- duckduckgo, bing, google
 
         -- either pass it here or just pass the table to the functions
         -- see below for more
         bookmarks = bookmarks,
-    }
+    })
 end
 
 return config

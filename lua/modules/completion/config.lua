@@ -1,11 +1,11 @@
 local config = {}
 
 function config.cmp()
-    require "modules.completion.cmp"
+    require("modules.completion.cmp")
 end
 
 function config.cmp_git()
-    require "modules.completion.cmp_git"
+    require("modules.completion.cmp_git")
 end
 
 function config.nvim_autopairs()
@@ -14,16 +14,16 @@ function config.nvim_autopairs()
         return
     end
 
-    local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-    local cmp = require "cmp"
-    local Rule = require "nvim-autopairs.rule"
-    local cond = require "nvim-autopairs.conds"
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+    local cmp = require("cmp")
+    local Rule = require("nvim-autopairs.rule")
+    local cond = require("nvim-autopairs.conds")
 
-    npairs.setup {
+    npairs.setup({
         check_ts = true,
         -- enable_check_bracket_line = true,
-    }
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
+    })
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 end
 
 function config.autopair()

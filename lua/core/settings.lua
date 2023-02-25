@@ -1,6 +1,6 @@
-require "core.disable_builtin"
-local utils = require "core.utils"
-local config = require "core.default_config"
+require("core.disable_builtin")
+local utils = require("core.utils")
+local config = require("core.default_config")
 
 local g = vim.g
 local o = vim.opt
@@ -22,7 +22,7 @@ o.mousemoveevent = true
 o.termguicolors = true
 
 -- Command line
-o.shortmess:append "I"
+o.shortmess:append("I")
 o.cmdheight = 1
 o.hidden = true
 o.history = 300
@@ -52,7 +52,7 @@ o.conceallevel = 2
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Syntax

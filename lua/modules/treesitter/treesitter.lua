@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-local incremental_selection = require "nvim-treesitter.incremental_selection"
+local incremental_selection = require("nvim-treesitter.incremental_selection")
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
 
 local langs = {
@@ -36,7 +36,7 @@ parser_configs.norg_table = {
     },
 }
 require("nvim-treesitter.install").compilers = { "clang", "gcc" }
-treesitter.setup {
+treesitter.setup({
     ensure_installed = langs,
     sync_install = true,
     incremental_selection = {
@@ -81,5 +81,4 @@ treesitter.setup {
             return true
         end
     end,
-}
-
+})

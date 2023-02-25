@@ -1,15 +1,15 @@
-local conf = require "modules.git.config"
+local conf = require("modules.git.config")
 local git = require("utils.pack").package
 
-git {
+git({
     "TimUntersberger/neogit",
     lazy = true,
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = { "Neogit" },
     config = conf.neogit,
-}
+})
 
-git {
+git({
     enabled = false,
     "tpope/vim-fugitive",
     after = "gitsigns.nvim",
@@ -17,10 +17,10 @@ git {
         "Git commit",
         "Git add",
     },
-}
+})
 
 -- Git intergrations
-git {
+git({
     "lewis6991/gitsigns.nvim",
     -- event = "BufRead",
     -- init = function()
@@ -31,18 +31,18 @@ git {
         vim.api.nvim_create_autocmd({ "BufRead" }, {
             group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
             callback = function()
-                vim.fn.system("git -C " .. vim.fn.expand "%:p:h" .. " rev-parse")
+                vim.fn.system("git -C " .. vim.fn.expand("%:p:h") .. " rev-parse")
                 if vim.v.shell_error == 0 then
-                    vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
+                    vim.api.nvim_del_augroup_by_name("GitSignsLazyLoad")
                     vim.schedule(function()
-                        require("lazy").load { plugins = "gitsigns.nvim" }
+                        require("lazy").load({ plugins = "gitsigns.nvim" })
                     end)
                 end
             end,
         })
     end,
     config = conf.gitsigns,
-}
+})
 
 --[[ {
     "lewis6991/gitsigns.nvim",
@@ -54,9 +54,9 @@ git {
     -- module = "gitsigns",
 } ]]
 
-git {
+git({
     enabled = false,
     "sindrets/diffview.nvim",
     after = "gitsigns.nvim",
     config = conf.diffview,
-}
+})

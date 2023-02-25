@@ -1,5 +1,5 @@
 -- Clangd
-local clangd_defaults = require "lspconfig.server_configurations.clangd"
+local clangd_defaults = require("lspconfig.server_configurations.clangd")
 local clangd_configs = vim.tbl_deep_extend("force", clangd_defaults["default_config"], {
     -- on_attach = on_attach_16,
     -- on_attach = on_attach,
@@ -22,7 +22,7 @@ local status_ok, clangd = pcall(require, "clangd_extensions")
 if not status_ok then
     return
 end
-clangd.setup {
+clangd.setup({
     server = clangd_configs,
     extensions = {
         autoSetHints = true,
@@ -69,4 +69,4 @@ clangd.setup {
             },
         },
     },
-}
+})

@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-hints.setup {
+hints.setup({
     inlay_hints = {
         parameter_hints = {
             show = true,
@@ -47,4 +47,4 @@ hints.setup {
         highlight = "InlayHints",
     },
     debug_mode = false,
-}
+})

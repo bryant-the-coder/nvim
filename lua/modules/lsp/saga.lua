@@ -5,7 +5,7 @@ end
 
 local map = vim.keymap.set
 
-saga.setup {
+saga.setup({
     -- Options with default value
     -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "rounded",
@@ -79,7 +79,7 @@ saga.setup {
     -- the related filetypes into this table
     -- like server_filetype_map = { metals = { "sbt", "scala" } }
     server_filetype_map = {},
-}
+})
 
 --[[ map("n", "<C-j>", require("lspsaga.diagnostic").goto_next)
 map("n", "<C-k>", require("lspsaga.diagnostic").goto_prev) ]]

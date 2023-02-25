@@ -60,7 +60,7 @@ map("n", "<leader>sf", "<cmd>source % <CR>")
 
 -- Expand the word and find for the word in help files
 map("n", "<C-f>", function()
-    vim.cmd(":vert :h " .. vim.fn.expand "<cword>")
+    vim.cmd(":vert :h " .. vim.fn.expand("<cword>"))
 end, { noremap = true, silent = true, desc = "Open helpfile of word under cursor" })
 
 --  j = gj
@@ -144,7 +144,7 @@ map("n", "<leader>w", function()
     local ok, res = pcall(vim.cmd, "write")
     if ok then
         return
-    elseif res:match "^Vim%(write%):E32:" then
+    elseif res:match("^Vim%(write%):E32:") then
         ok, res = pcall(vim.fn.input, "File name: ")
         if ok and res and res ~= "" then
             vim.cmd("write " .. res)
@@ -282,10 +282,10 @@ map("n", "<leader>lbh", function()
 end, { desc = "Show the documentation in a floating window" })
 
 map("n", "<C-k>", function()
-    vim.diagnostic.goto_prev { border = "rounded" }
+    vim.diagnostic.goto_prev({ border = "rounded" })
 end)
 map("n", "<C-j>", function()
-    vim.diagnostic.goto_next { border = "rounded" }
+    vim.diagnostic.goto_next({ border = "rounded" })
 end)
 
 -- Harpooon
@@ -363,7 +363,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- ┌─────────────┐
 -- │ Comment Box │
 -- └─────────────┘
-local cb = require "comment-box"
+local cb = require("comment-box")
 
 -- left aligned fixed size box with left aligned text
 map({ "n", "v" }, "<Leader>bb", cb.lbox, {})

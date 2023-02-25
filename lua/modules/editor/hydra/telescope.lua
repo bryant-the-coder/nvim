@@ -1,4 +1,4 @@
-local Hydra = require "hydra"
+local Hydra = require("hydra")
 local cmd = require("hydra.keymap-util").cmd
 local border = require("custom.border").styles.type_1
 
@@ -25,7 +25,7 @@ local telescope_hint = [[
 
 ]]
 
-Hydra {
+Hydra({
     name = "Diagnostic",
     hint = telescope_hint,
     config = {
@@ -105,4 +105,4 @@ Hydra {
         { "q", nil, { exit = true, nowait = true } },
         { "<Esc>", nil, { exit = true, nowait = true } },
     },
-}
+})

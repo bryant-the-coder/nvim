@@ -27,10 +27,10 @@ end
 function on_attach.setup(client, bufnr)
     lsp_highlight_document(client, bufnr)
     vim.keymap.set("n", "<C-k>", function()
-        vim.diagnostic.goto_prev { border = "rounded" }
+        vim.diagnostic.goto_prev({ border = "rounded" })
     end)
     vim.keymap.set("n", "<C-j>", function()
-        vim.diagnostic.goto_next { border = "rounded" }
+        vim.diagnostic.goto_next({ border = "rounded" })
     end)
 
     augroup("_lsp", {})

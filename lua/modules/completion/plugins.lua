@@ -1,7 +1,7 @@
-local conf = require "modules.completion.config"
+local conf = require("modules.completion.config")
 local completion = require("utils.pack").package
 
-completion {
+completion({
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdLineEnter" },
     -- after = { "LuaSnip" },
@@ -21,9 +21,9 @@ completion {
         },
     },
     config = conf.cmp,
-}
+})
 
-completion {
+completion({
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
     dependencies = {
@@ -34,11 +34,11 @@ completion {
         },
     },
     config = function()
-        require "modules.completion.snippets"
+        require("modules.completion.snippets")
     end,
-}
+})
 
-completion {
+completion({
     enabled = false,
     "windwp/nvim-autopairs",
     event = {
@@ -48,12 +48,12 @@ completion {
     },
     after = "nvim-cmp",
     config = conf.nvim_autopairs,
-}
+})
 
-completion {
+completion({
     enabled = false,
     "altermo/ultimate-autopair.nvim",
     lazy = true,
     event = { "InsertEnter", "CmdlineEnter" },
     opts = conf.autopair(),
-}
+})

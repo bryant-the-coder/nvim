@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
     " Command line abbrev
     cnoreabbrev W! w!
     cnoreabbrev Q! q!
@@ -426,4 +426,4 @@ vim.cmd [[
     inoreabbrev sukc suck
     inoreabbrev zpeling spelling
     inoreabbrev yuor your
-]]
+]])

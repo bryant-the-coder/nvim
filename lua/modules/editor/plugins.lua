@@ -1,7 +1,7 @@
-local conf = require "modules.editor.config"
+local conf = require("modules.editor.config")
 local editor = require("utils.pack").package
 
-editor {
+editor({
     "numToStr/Comment.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -10,44 +10,44 @@ editor {
     },
     keys = { { "g", mode = "n" }, { "g", mode = "v" } },
     config = conf.comment,
-}
+})
 
-editor {
+editor({
     "LudoPinelli/comment-box.nvim",
     lazy = true,
     keys = { "<Leader>cb", "<Leader>cc", "<Leader>cl", "<M-p>" },
     cmd = { "CBlbox", "CBcbox", "CBline", "CBcatalog" },
     config = conf.comment_box,
-}
+})
 
-editor {
+editor({
     "andweeb/presence.nvim",
     lazy = true,
     --[[ config = function()
         require "modules.editor.presence"
     end, ]]
     config = conf.discord,
-}
+})
 
-editor {
+editor({
     "anuvyklack/hydra.nvim",
     lazy = true,
     dependencies = { "anuvyklack/keymap-layer.nvim" },
     config = conf.hydra,
-}
+})
 
-editor {
+editor({
     "jbyuki/venn.nvim",
     event = "VeryLazy",
     -- lazy = true,
     -- cmd = "Venn",
     config = conf.venn,
-}
+})
 
-editor {
+editor({
     "folke/todo-comments.nvim",
     after = "nvim-treesitter",
     config = conf.todo,
-}
+})
 
 return editor

@@ -1,35 +1,35 @@
-local conf = require "modules.treesitter.config"
+local conf = require("modules.treesitter.config")
 local ts = require("utils.pack").package
 
-ts {
+ts({
     "nvim-treesitter/nvim-treesitter",
     init = function()
-        require("custom.load").lazy_load "nvim-treesitter"
+        require("custom.load").lazy_load("nvim-treesitter")
     end,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     config = conf.nvim_treesitter,
-}
+})
 
 -- Vscode like rainbow parenthesis
-ts {
+ts({
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter",
-}
+})
 
 -- Auto complete tag
-ts {
+ts({
     enabled = false,
     "windwp/nvim-ts-autotag",
     -- ft = { "html", "typescript", "javascripts", "javascriptreact" },
-}
+})
 
-ts {
+ts({
     "nvim-treesitter/playground",
     cmd = { "TSPlaygroundToggle", "TSHighlightCapturesUnderCursor" },
-}
+})
 
-ts {
+ts({
     "lewis6991/nvim-treesitter-context",
     -- after = "nvim-treesitter",
     ft = { "rust", "python" },
@@ -38,6 +38,6 @@ ts {
         throttle = true, -- Throttles plugin updates (may improve performance)
         max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
     },
-}
+})
 
 return ts

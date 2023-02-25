@@ -1,4 +1,4 @@
-require("leap").setup {
+require("leap").setup({
     max_phase_one_targets = nil,
     highlight_unlabeled_phase_one_targets = true,
     max_highlighted_traversal_targets = 50,
@@ -66,7 +66,7 @@ require("leap").setup {
         multi_accept = "<enter>",
         multi_revert = "<backspace>",
     },
-}
+})
 require("leap").add_default_mappings()
 
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap-forward-to)")

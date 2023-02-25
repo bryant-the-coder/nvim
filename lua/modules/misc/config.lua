@@ -1,10 +1,10 @@
 local config = {}
 
 function config.workspaces()
-    require("workspaces").setup {
+    require("workspaces").setup({
         -- path to a file to store workspaces data in
         -- on a unix system this would be ~/.local/share/nvim/workspaces
-        path = vim.fn.stdpath "data" .. "/workspaces",
+        path = vim.fn.stdpath("data") .. "/workspaces",
 
         -- to change directory for all of nvim (:cd) or only for the current window (:lcd)
         -- if you are unsure, you likely want this to be true.
@@ -22,9 +22,9 @@ function config.workspaces()
         hooks = {
             open = { "Neotree", "Telescope find_files" },
         },
-    }
+    })
 
-    require("telescope").load_extension "workspaces"
+    require("telescope").load_extension("workspaces")
 end
 
 function config.surround()
@@ -33,7 +33,7 @@ function config.surround()
         return
     end
 
-    surround.setup {
+    surround.setup({
         keymaps = { -- vim-surround style keymaps
             insert = "ys",
             visual = "S",
@@ -67,7 +67,7 @@ function config.surround()
                 ["q"] = { '"', "'", "`" }, -- Table aliases only apply for changes/deletions
             },
         },
-    }
+    })
 end
 
 return config

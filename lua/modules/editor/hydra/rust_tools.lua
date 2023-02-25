@@ -1,4 +1,4 @@
-local Hydra = require "hydra"
+local Hydra = require("hydra")
 local cmd = require("hydra.keymap-util").cmd
 local border = require("custom.border").styles.type_1
 
@@ -19,7 +19,7 @@ local hints = [[
     _q_ exit _<Esc>_ exit
 ]]
 
-Hydra {
+Hydra({
     name = "Rust Tools",
     hint = hints,
     config = {
@@ -93,4 +93,4 @@ Hydra {
         { "q", nil, { exit = true, nowait = true } },
         { "<Esc>", nil, { exit = true, nowait = true } },
     },
-}
+})

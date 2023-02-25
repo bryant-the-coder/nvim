@@ -7,9 +7,9 @@ end
 -- require("lazy").load "lua-dev.nvim"
 
 -- WARN: Dont remove this files
-require "modules.lsp.installer"
-require "modules.lsp.lsp_config"
-local capabilities = require "modules.lsp.capabilities"
+require("modules.lsp.installer")
+require("modules.lsp.lsp_config")
+local capabilities = require("modules.lsp.capabilities")
 
 -- Creating a function call on_attach
 local function on_attach(client, bufnr)
@@ -20,9 +20,9 @@ local function on_attach_16(client, bufnr)
     require("modules.lsp.on_attach").setup(client, bufnr)
 end
 
-lspconfig.tsserver.setup {}
-lspconfig.vimls.setup {}
-lspconfig.bashls.setup {}
+lspconfig.tsserver.setup({})
+lspconfig.vimls.setup({})
+lspconfig.bashls.setup({})
 
 -- sumneko_lua
 local sumneko = {
@@ -55,14 +55,14 @@ local sumneko = {
 }
 local use_lua_dev = true
 if use_lua_dev then
-    local luadev = require("lua-dev").setup {
+    local luadev = require("lua-dev").setup({
         library = {
             vimruntime = true,
             types = true,
             plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
         },
         lspconfig = sumneko,
-    }
+    })
 
     lspconfig.lua_ls.setup(luadev)
 else
@@ -70,11 +70,11 @@ else
 end
 
 -- JSON
-lspconfig.jsonls.setup {
+lspconfig.jsonls.setup({
     on_attach = on_attach,
-}
+})
 
-require("lspconfig").texlab.setup {
+require("lspconfig").texlab.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -102,7 +102,7 @@ require("lspconfig").texlab.setup {
             },
         },
     },
-}
+})
 
 local pyright = {
     on_attach = on_attach,
@@ -117,7 +117,7 @@ local pyright = {
                     variabletypes = true,
                     functionreturntypes = true,
                 },
-                stubpath = vim.fn.expand "$home/typings",
+                stubpath = vim.fn.expand("$home/typings"),
                 diagnosticseverityoverrides = {
                     reportunusedimport = "information",
                     reportunusedfunction = "information",
@@ -141,7 +141,7 @@ local jedi = {
                     variableTypes = true,
                     functionReturnTypes = true,
                 },
-                stubPath = vim.fn.expand "$HOME/typings",
+                stubPath = vim.fn.expand("$HOME/typings"),
                 diagnosticSeverityOverrides = {
                     reportMissingTypeStubs = "information",
 

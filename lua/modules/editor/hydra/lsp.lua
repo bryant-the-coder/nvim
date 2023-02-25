@@ -1,4 +1,4 @@
-local Hydra = require "hydra"
+local Hydra = require("hydra")
 local border = require("custom.border").styles.type_1
 local cmd = require("hydra.keymap-util").cmd
 
@@ -14,7 +14,7 @@ _<Esc>_: quit
 
 -- _a_ : code action
 
-Hydra {
+Hydra({
     name = "Diagnostic",
     hint = hint,
     config = {
@@ -49,4 +49,4 @@ Hydra {
 
         { "<Esc>", nil, { nowait = true, exit = true, desc = false } },
     },
-}
+})

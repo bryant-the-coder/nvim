@@ -3,13 +3,13 @@ if not present then
     return
 end
 
-local actions = require "telescope.actions"
-local theme = require "telescope.themes"
-local previewers_utils = require "telescope.previewers.utils"
+local actions = require("telescope.actions")
+local theme = require("telescope.themes")
+local previewers_utils = require("telescope.previewers.utils")
 
 local open_cmd = "xdg-open"
 
-telescope.setup {
+telescope.setup({
     defaults = {
         layout_config = {
             preview_cutoff = 70, -- disable preview when less than 70 loc are available
@@ -126,11 +126,11 @@ telescope.setup {
         file_browser = {},
         ["ui-select"] = { require("telescope.themes").get_dropdown() },
     },
-}
-require("telescope").load_extension "fzf"
+})
+require("telescope").load_extension("fzf")
 -- require("telescope").load_extension "file_browser"
 -- require("telescope").load_extension "harpoon"
-require("telescope").load_extension "ui-select"
+require("telescope").load_extension("ui-select")
 
 local custom_telescope = {}
 
@@ -201,7 +201,7 @@ custom_telescope.harpoon = function()
     require("telescope").extensions.harpoon.marks(opts)
 end
 custom_telescope.devdocs_ft = function()
-    local input = vim.fn.input "Search String: "
+    local input = vim.fn.input("Search String: ")
     if input == nil or input == "" then
         return
     end
@@ -210,12 +210,12 @@ custom_telescope.devdocs_ft = function()
 end
 
 custom_telescope.devdocs_search = function()
-    local input = vim.fn.input "Search String: "
+    local input = vim.fn.input("Search String: ")
     vim.fn.jobstart(string.format("%s 'https://devdocs.io/#q=%s'", open_cmd, input))
 end
 
 custom_telescope.google_search = function()
-    local input = vim.fn.input "Search String: "
+    local input = vim.fn.input("Search String: ")
     if input == nil or input == "" then
         return
     end

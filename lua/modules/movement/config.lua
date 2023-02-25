@@ -1,7 +1,7 @@
 local config = {}
 
 function config.leap()
-    require "modules.movement.leap"
+    require("modules.movement.leap")
 end
 
 function config.lightspeed()
@@ -14,7 +14,7 @@ function config.lightspeed()
         vim.keymap.set(m[1], m[2], m[3], { noremap = true, silent = true })
     end
 
-    require("lightspeed").setup {
+    require("lightspeed").setup({
         ignore_case = false,
         exit_after_idle_msecs = { unlabeled = 1000, labeled = nil },
         --- s/x ---
@@ -33,7 +33,7 @@ function config.lightspeed()
         --- f/t ---
         limit_ft_matches = nil,
         repeat_ft_with_target_char = false,
-    }
+    })
 end
 
 function config.harpoon()
@@ -42,7 +42,7 @@ function config.harpoon()
         return
     end
 
-    harpoon.setup {
+    harpoon.setup({
         global_settings = {
             save_on_toggle = false,
             save_on_change = true,
@@ -50,7 +50,7 @@ function config.harpoon()
             tmux_autoclose_windows = false,
             excluded_filetypes = { "harpoon", "package.lock.json" },
         },
-    }
+    })
 end
 
 return config

@@ -1,6 +1,6 @@
 local search = require("utils.pack").package
 
-search {
+search({
     "nvim-telescope/telescope.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -20,6 +20,6 @@ search {
         },
     },
     config = function()
-        require "modules.files.telescope"
+        require("modules.files.telescope")
     end,
-}
+})

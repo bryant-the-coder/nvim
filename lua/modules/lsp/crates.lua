@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-crates.setup {
+crates.setup({
     smart_insert = true,
     insert_closing_quote = true,
     avoid_prerelease = true,
@@ -142,4 +142,4 @@ crates.setup {
         enabled = false,
         name = "Crates",
     },
-}
+})

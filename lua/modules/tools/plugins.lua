@@ -1,34 +1,34 @@
-local conf = require "modules.tools.config"
+local conf = require("modules.tools.config")
 local tools = require("utils.pack").package
 
-tools {
+tools({
     "rktjmp/paperplanes.nvim",
     lazy = true,
     cmd = { "PP" },
     config = true,
-}
+})
 
-tools {
+tools({
     "natecraddock/workspaces.nvim",
     event = "VeryLazy",
     config = conf.woekspaces,
-}
+})
 
-tools {
+tools({
     "akinsho/toggleterm.nvim",
     keys = { "<c-t>", "<leader>tg" },
     config = function()
-        require "modules.tools.toggleterm"
+        require("modules.tools.toggleterm")
     end,
-}
+})
 
-tools {
+tools({
     "NvChad/nvim-colorizer.lua",
     event = "BufEnter",
     config = conf.colorizer,
-}
+})
 
-tools {
+tools({
     "mbbill/undotree",
     -- after = "telescope.nvim",
     cmd = {
@@ -37,4 +37,4 @@ tools {
         "UndotreeFocus",
         "UndotreeHide",
     },
-}
+})

@@ -1,6 +1,6 @@
-local ts_move = require "nvim-treesitter.textobjects.move"
+local ts_move = require("nvim-treesitter.textobjects.move")
 local leader = "\\<leader>"
-local hydra = require "hydra"
+local hydra = require("hydra")
 local border = require("custom.border").styles.type_1
 
 local mx = function(feedkeys, type)
@@ -74,25 +74,25 @@ config.parenth_mode = {
     ["<ESC>"] = { nil, { exit = true } },
     j = {
         function()
-            ts_move.goto_next_start { "@function.outer", "@class.outer" }
+            ts_move.goto_next_start({ "@function.outer", "@class.outer" })
         end,
         { nowait = true, desc = "Move [N] ←" },
     },
     h = {
         function()
-            ts_move.goto_next_end { "@function.outer", "@class.outer" }
+            ts_move.goto_next_end({ "@function.outer", "@class.outer" })
         end,
         { nowait = true, desc = "Move [N] →" },
     },
     k = {
         function()
-            ts_move.goto_previous_start { "@function.outer", "@class.outer" }
+            ts_move.goto_previous_start({ "@function.outer", "@class.outer" })
         end,
         { nowait = true, desc = "Move [P] ←" },
     },
     l = {
         function()
-            ts_move.goto_previous_start { "@function.outer", "@class.outer" }
+            ts_move.goto_previous_start({ "@function.outer", "@class.outer" })
         end,
         { nowait = true, desc = "Move [P] →" },
     },
@@ -106,13 +106,13 @@ config.parenth_mode = {
     ["I"] = { mx("iC", "v"), { nowait = true, desc = "Cond [iC]" } }, -- ts: inner conditional
 }
 
-for surround, motion in pairs { c = "ac", C = "ic", a = "af", A = "if", i = "aC", I = "iC" } do
-    for doc, key in pairs { D = "d", C = "c", Y = "y" } do
+for surround, motion in pairs({ c = "ac", C = "ic", a = "af", A = "if", i = "aC", I = "iC" }) do
+    for doc, key in pairs({ D = "d", C = "c", Y = "y" }) do
         local motiondoc = surround
         local exit = false
-        local mapping = table.concat { doc, surround }
+        local mapping = table.concat({ doc, surround })
         config.parenth_mode[mapping] = {
-            mx(table.concat { key, motion }),
+            mx(table.concat({ key, motion })),
             { desc = motion_type[doc] .. " [" .. key .. motion .. "]", exit = exit },
         }
     end

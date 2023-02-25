@@ -1,9 +1,9 @@
-local conf = require "modules.misc.config"
+local conf = require("modules.misc.config")
 local misc = require("utils.pack").package
 
-misc {
+misc({
     enabled = false,
     "kylechui/nvim-surround",
     after = "nvim-treesitter",
     config = conf.surround,
-}
+})

@@ -1,9 +1,9 @@
 local config = {}
 
 function config.neogit()
-    local neogit = require "neogit"
+    local neogit = require("neogit")
 
-    neogit.setup {
+    neogit.setup({
         disable_signs = false,
         disable_hint = false,
         disable_context_highlighting = false,
@@ -36,7 +36,7 @@ function config.neogit()
                 ["P"] = "PullPopup",
             },
         },
-    }
+    })
 end
 
 function config.gitsigns()
@@ -45,7 +45,7 @@ function config.gitsigns()
         return
     end
 
-    gitsigns.setup {
+    gitsigns.setup({
         debug_mode = true,
         max_file_length = 1000000000,
         signs = {
@@ -95,13 +95,13 @@ function config.gitsigns()
         update_debounce = 0,
         word_diff = false,
         diff_opts = { internal = true },
-    }
+    })
 end
 
 function config.diffview()
-    local actions = require "diffview.actions"
+    local actions = require("diffview.actions")
 
-    require("diffview").setup {
+    require("diffview").setup({
         diff_binaries = false, -- Show diffs for binaries
         enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
         git_cmd = { "git" }, -- The git executable followed by default args.
@@ -146,7 +146,7 @@ function config.diffview()
             DiffviewOpen = {},
             DiffviewFileHistory = {},
         },
-    }
+    })
 end
 
 return config

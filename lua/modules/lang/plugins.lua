@@ -1,7 +1,7 @@
-local conf = require "modules.lang.config"
+local conf = require("modules.lang.config")
 local lang = require("utils.pack").package
 
-lang {
+lang({
     enabled = false,
     "folke/trouble.nvim",
     cmd = {
@@ -14,9 +14,9 @@ lang {
         require "modules.lang.trouble"
     end, ]]
     config = conf.trouble,
-}
+})
 
-lang {
+lang({
     "mfussenegger/nvim-dap",
     lazy = true,
     --[[ config = function()
@@ -26,22 +26,22 @@ lang {
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap-python",
     },
-}
+})
 
-lang {
+lang({
     "rcarriga/nvim-dap-ui",
     after = "nvim-dap",
     config = conf.dap_ui,
-}
+})
 
-lang {
+lang({
     "mfussenegger/nvim-dap-python",
     after = "nvim-dap",
     config = conf.dap_py,
-}
+})
 
-lang {
+lang({
     "stevearc/overseer.nvim",
     event = "VeryLazy",
     config = conf.overseer,
-}
+})

@@ -1,4 +1,4 @@
-local capabilities = require "modules.lsp.capabilities"
+local capabilities = require("modules.lsp.capabilities")
 -- Creating a function call on_attach
 local function on_attach(client, bufnr)
     require("modules.lsp.on_attach").setup(client, bufnr)
@@ -195,5 +195,5 @@ if not status_ok then
 end
 rust.setup(opts)
 
-local dap = require "dap"
+local dap = require("dap")
 dap.defaults.fallback.terminal_win_cmd = "50vsplit new"

@@ -1,5 +1,5 @@
 local uv, api, fn = vim.loop, vim.api, vim.fn
-local helper = require "utils.helper"
+local helper = require("utils.helper")
 
 local pack = {}
 pack.__index = pack
@@ -20,7 +20,7 @@ function pack:load_modules_packages()
     local plugins_file = get_plugins_list()
     local disable_modules = {}
 
-    if fn.exists "g:disable_modules" == 1 then
+    if fn.exists("g:disable_modules") == 1 then
         disable_modules = vim.split(vim.g.disable_modules, ",")
     end
 
@@ -40,7 +40,7 @@ function pack:boot_strap()
         api.nvim_command(cmd)
     end
     vim.opt.runtimepath:prepend(lazy_path)
-    local lazy = require "lazy"
+    local lazy = require("lazy")
     local opts = {
         lockfile = helper.get_data_path() .. "/lazy-lock.json",
         dev = { path = "~/Workspace" },

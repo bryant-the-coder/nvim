@@ -1,4 +1,4 @@
-local Hydra = require "hydra"
+local Hydra = require("hydra")
 local border = require("custom.border").styles.type_1
 
 local harpoon_hint = [[
@@ -15,7 +15,7 @@ local harpoon_hint = [[
     ^ ^            _<Esc>_: quit            ^ ^
 ]]
 
-Hydra {
+Hydra({
     name = "harpoon",
     hint = harpoon_hint,
     config = {
@@ -40,4 +40,4 @@ Hydra {
 
         { "<Esc>", nil, { nowait = true, exit = true, desc = false } },
     },
-}
+})

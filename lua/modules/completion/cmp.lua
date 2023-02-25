@@ -6,17 +6,17 @@ end
 -- luasnip
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local luasnip = require "luasnip"
+local luasnip = require("luasnip")
 
-local icons = require "custom.icons"
+local icons = require("custom.icons")
 local kind_icons = icons.kind
 
 local border = require("custom.border").styles.type_5
 
-cmp.setup {
+cmp.setup({
     window = {
         completion = {
             border = border,
@@ -37,26 +37,26 @@ cmp.setup {
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    mapping = cmp.mapping.preset.insert {
+    mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable,
-        ["<C-e>"] = cmp.mapping {
+        ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
-        },
+        }),
 
-        ["<CR>"] = cmp.mapping {
-            i = cmp.mapping.confirm {
+        ["<CR>"] = cmp.mapping({
+            i = cmp.mapping.confirm({
                 select = true,
                 behavior = cmp.ConfirmBehavior.Insert,
-            },
-            c = cmp.mapping.confirm {
+            }),
+            c = cmp.mapping.confirm({
                 select = false,
                 behavior = cmp.ConfirmBehavior.Select,
-            },
-        },
+            }),
+        }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -78,7 +78,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-    },
+    }),
     sorting = {
         comparators = {
             cmp.config.compare.offset,
@@ -125,7 +125,7 @@ cmp.setup {
             return vim_item
         end,
     },
-    sources = cmp.config.sources {
+    sources = cmp.config.sources({
         { name = "nvim_lsp", priority = "9" },
         { name = "nvim_lsp_signature_help", priority = "7" },
         { name = "luasnip", priority = "8" },
@@ -135,8 +135,8 @@ cmp.setup {
         { name = "path" },
         { name = "git" },
         { name = "crates" },
-    },
-}
+    }),
+})
 
 --[[ cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),

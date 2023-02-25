@@ -1,5 +1,5 @@
 -- local km = require("core.keymap")
-local Hydra = require "hydra"
+local Hydra = require("hydra")
 local cmd = require("hydra.keymap-util").cmd
 local border = require("custom.border").styles.type_1
 
@@ -51,18 +51,18 @@ config.doc_binds = {
     },
     c = {
         function()
-            require("neogen").generate { type = "class" }
+            require("neogen").generate({ type = "class" })
         end,
         { nowait = true, silent = true, desc = "Gen class", exit = true },
     },
     s = {
         function()
-            require("neogen").generate { type = "type" }
+            require("neogen").generate({ type = "type" })
         end,
         { nowait = false, silent = false, desc = "Gen type", exit = false },
     },
     k = {
-        cmd "DD",
+        cmd("DD"),
         { nowait = true, silent = true, desc = "DevDoc Search", exit = true },
     },
     ["<Esc>"] = { nil, { exit = true } },

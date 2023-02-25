@@ -1,7 +1,7 @@
-local format = require "cmp_git.format"
-local sort = require "cmp_git.sort"
+local format = require("cmp_git.format")
+local sort = require("cmp_git.sort")
 
-require("cmp_git").setup {
+require("cmp_git").setup({
     -- defaults
     filetypes = { "gitcommit", "octo" },
     remotes = { "upstream", "origin" }, -- in order of most to least prioritized
@@ -98,4 +98,4 @@ require("cmp_git").setup {
             end,
         },
     },
-}
+})

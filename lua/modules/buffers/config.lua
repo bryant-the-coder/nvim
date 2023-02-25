@@ -5,14 +5,14 @@ function config.nvim_bufferline()
         colors = require("core.utils").get(),
     }
 
-    vim.cmd [[
+    vim.cmd([[
         function! Quit_vim(a,b,c,d)
         wqa
         endfunction
-    ]]
+    ]])
 
     -- Code from NvChad
-    require("bufferline").setup {
+    require("bufferline").setup({
         options = {
             hover = {
                 enabled = true,
@@ -365,7 +365,7 @@ function config.nvim_bufferline()
                 bg = default.colors.black,
             },
         },
-    }
+    })
 end
 
 function config.cybu()
@@ -374,7 +374,7 @@ function config.cybu()
         return
     end
 
-    cybu.setup {
+    cybu.setup({
         position = {
             relative_to = "win", -- win, editor, cursor
             anchor = "topright", -- topleft, topcenter, topright,
@@ -399,11 +399,11 @@ function config.cybu()
                 colored = true, -- enable color for web dev icons
             },
         },
-    }
+    })
 end
 
 function config.oil()
-    require("oil").setup {
+    require("oil").setup({
         columns = {
             "icon",
             -- "permissions",
@@ -457,7 +457,7 @@ function config.oil()
                 winblend = 10,
             },
         },
-    }
+    })
 end
 
 return config

@@ -59,9 +59,9 @@ end
 -- Filename
 local function file()
     local icon = ""
-    local filename = fn.pathshorten(fn.expand "%:t", ":r")
+    local filename = fn.pathshorten(fn.expand("%:t"), ":r")
     -- local filename = vim.fn.pathshorten(vim.fn.fnamemodify(self.filename, ":."))
-    local extension = fn.expand "%:e"
+    local extension = fn.expand("%:e")
 
     if filename == "" then
         icon = icon .. "  Empty "
@@ -117,7 +117,7 @@ end
 -- LSP
 local function get_diagnostic(prefix, severity)
     local count
-    if vim.fn.has "nvim-0.6" == 0 then
+    if vim.fn.has("nvim-0.6") == 0 then
         count = vim.lsp.diagnostic.get_count(0, severity)
     else
         local severities = {
@@ -149,7 +149,7 @@ end
 
 -- Clock
 local function clock()
-    return "%#Clock#" .. " 什 " .. os.date "%H:%M "
+    return "%#Clock#" .. " 什 " .. os.date("%H:%M ")
 end
 
 -- Treesitter status
@@ -173,7 +173,7 @@ local function progress_bar()
 end
 
 local function word_counter()
-    local wc = vim.api.nvim_eval "wordcount()"
+    local wc = vim.api.nvim_eval("wordcount()")
     if wc["visual_words"] then
         return wc["visual_words"]
     else
@@ -185,7 +185,7 @@ end
 -- Shows the word that you search
 --- @return string
 local function search_count()
-    local res = vim.fn.searchcount { recomput = 1, maxcount = 1000 }
+    local res = vim.fn.searchcount({ recomput = 1, maxcount = 1000 })
 
     if res.total ~= nil and res.total > 0 then
         return string.format(
@@ -193,7 +193,7 @@ local function search_count()
             -- ' %s/%d %s ',
             res.current,
             res.total,
-            vim.fn.getreg "/"
+            vim.fn.getreg("/")
         )
     else
         return ""
@@ -213,7 +213,7 @@ local function get_modified()
 end
 
 statusline.run = function()
-    return table.concat {
+    return table.concat({
         "%#Statusline#",
         update_mode_colors(), -- Update mode colors
         -- work_dir(),
@@ -241,7 +241,7 @@ statusline.run = function()
         -- coords(),
         clock(),
         -- progress_bar(),
-    }
+    })
 end
 
 return statusline
