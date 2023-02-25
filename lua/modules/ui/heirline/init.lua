@@ -1,3 +1,6 @@
+-- Credits: https://github.com/vsedov/nvim/blob/master/lua/modules/ui/heirline.lua
+-- Credits: https://github.com/max397574/omega-nvim/blob/feat/make_usable_for_outsiders/lua/omega/modules/ui/heirline/round_blended.lua
+
 local use_dev_icons = false
 local conditions = require("heirline.conditions")
 local utilities = require("heirline.utils")
