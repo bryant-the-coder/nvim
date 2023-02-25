@@ -117,7 +117,7 @@ cmd("BufUnload", {
     end,
 })
 
-cmd({ "TabEnter", "BufEnter", "WinEnter" }, {
+--[[ cmd({ "TabEnter", "BufEnter", "WinEnter" }, {
     callback = function()
         vim.opt.statusline = "%!v:lua.require'custom.statusline'.run()"
     end,
@@ -139,7 +139,7 @@ cmd({ "WinEnter", "FileType" }, {
         vim.opt.statusline = "%#StatusLine#" -- Disable statusline
     end,
 })
-
+]]
 -----------------------------------
 --             PLUGINS           --
 -----------------------------------

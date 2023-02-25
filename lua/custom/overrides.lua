@@ -151,7 +151,8 @@ if config.ui.transparency then
     -- fg_bg("BufferlineFill", grey_fg, "NONE")
     fg_bg("Folded", white, "NONE")
 else
-    fg_bg("StatusLineNC", "#15171c")
+    bg("StatusLineNC", "#15171c")
+    bg("StatusLine", colors.black)
     fg_bg("BufferlineFill", grey_fg, darker_black)
     fg_bg("Folded", white, grey)
 end

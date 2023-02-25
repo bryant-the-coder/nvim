@@ -12,6 +12,7 @@ g.colors_name = config.ui.theme
 --Cursor & cursorline
 o.cursorline = true
 o.cursorlineopt = { "number" } -- Highlighting the number where the cursor is on
+vim.opt.stl = " "
 
 -- Mappings
 g.mapleader = ","
@@ -87,6 +88,8 @@ vim.defer_fn(function()
         vertleft = "╣",
         vertright = "╠",
         verthoriz = "╬",
+        stl = " ",
+        stlnc = " ",
     }
     o.listchars = {
         trail = "·",

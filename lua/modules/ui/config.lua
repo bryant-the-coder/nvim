@@ -2,7 +2,7 @@ local config = {}
 
 function config.notify()
     -- Most of the setup is taken from akinsho
-    local notify = require "notify"
+    local notify = require("notify")
 
     local border = require("custom.border").styles.type_5
 
@@ -43,11 +43,11 @@ function config.notify()
         return ...
     end
 
-    vim.notify = require "notify"
+    vim.notify = require("notify")
 end
 
 function config.neo_tree()
-    require "modules.ui.neo-tree"
+    require("modules.ui.neo-tree")
 end
 
 function config.blankline()
@@ -102,10 +102,10 @@ function config.blankline()
         "import_statement",
         "operation_type",
     }
-    indent_blankline.setup {
+    indent_blankline.setup({
         show_current_context = true,
         show_current_context_start = false,
-    }
+    })
 end
 
 function config.hl_area()
@@ -114,11 +114,11 @@ function config.hl_area()
         return
     end
 
-    hl_match_area.setup {
+    hl_match_area.setup({
         n_lines_to_search = 500, -- how many lines should be searched for a matching delimite
         highlight_in_insert_mode = false, -- should highlighting also be done in insert mode
         delay = 100, -- delay before the highglight
-    }
+    })
 end
 
 function config.fidget()
@@ -127,7 +127,7 @@ function config.fidget()
         return
     end
     local relative = "editor"
-    fidget.setup {
+    fidget.setup({
         text = {
             spinner = "moon",
             -- spinner = {
@@ -205,7 +205,11 @@ function config.fidget()
             logging = false,
             strict = false,
         },
-    }
+    })
+end
+
+function config.heirline()
+    require("modules.ui.heirline.init")
 end
 
 return config
