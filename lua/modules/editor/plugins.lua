@@ -22,10 +22,7 @@ editor({
 
 editor({
     "andweeb/presence.nvim",
-    lazy = true,
-    --[[ config = function()
-        require "modules.editor.presence"
-    end, ]]
+    event = "VeryLazy",
     config = conf.discord,
 })
 
