@@ -11,4 +11,12 @@ colorscheme({
     end,
 })
 
+colorscheme({
+    enabled = false,
+    "NTBBloodbath/sweetie.nvim",
+    config = function()
+        vim.cmd.colorscheme("sweetie")
+    end,
+})
+
 return colorscheme

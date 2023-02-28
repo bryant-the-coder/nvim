@@ -96,8 +96,8 @@ local Mode = {
         hl = function(self)
             local mode = self.mode:sub(1, 1)
             return {
-                bg = mode_colors[mode] or colors.blue,
-                fg = colors.black,
+                fg = mode_colors[mode] or colors.blue,
+                -- fg = colors.black,
             }
         end,
         provider = function(self)
@@ -119,7 +119,8 @@ local Git = {
         provider = function(self)
             return "  " .. self.status_dict.head .. " "
         end,
-        hl = { fg = "#181a1f", bg = "#ff69b4", italic = true },
+        -- hl = { fg = "#181a1f", bg = "#ff69b4", italic = true },
+        hl = { italic = true, fg = colors.pink },
     },
 }
 
@@ -129,7 +130,7 @@ local Search_count = {
 
         if res.total ~= nil and res.total > 0 then
             return string.format(
-                " 爵 %s/%d %s ",
+                " 爵%s/%d %s ",
                 -- ' %s/%d %s ',
                 res.current,
                 res.total,
@@ -139,7 +140,7 @@ local Search_count = {
             return ""
         end
     end,
-    hl = { fg = "#181a1f", bg = base.base0E },
+    hl = { fg = base.base0E },
 }
 
 local FileIcon = {
@@ -179,7 +180,8 @@ local FileName = {
         local ft_icon = devicons.get_icon(filename, extension)
         icon = (ft_icon ~= nil and " " .. ft_icon) or icon
 
-        return icon .. filename
+        -- return icon .. filename
+        return filename
     end,
     hl = { fg = colors.white },
 }
@@ -204,10 +206,10 @@ local FileFlags = {
 local WorkDir = {
     {
         provider = function()
-            return "  "
+            return " 󰉋"
         end,
         hl = function(_)
-            return { fg = colors.green, bg = colors.black }
+            return { fg = colors.green }
         end,
     },
     {
@@ -216,9 +218,12 @@ local WorkDir = {
             cwd = vim.fn.fnamemodify(cwd, ":~")
             cwd = vim.fn.pathshorten(cwd)
             local trail = cwd:sub(-1) == "/" and "" or "/"
-            return " " .. cwd .. trail
+            local filename = fn.pathshorten(fn.expand("%:t"), ":r")
+            -- local filename = vim.fn.pathshorten(vim.fn.fnamemodify(self.filename, ":."))
+            local extension = fn.expand("%:e")
+            return " " .. cwd .. trail .. filename .. " "
         end,
-        hl = { bg = colors.black, fg = colors.white },
+        hl = { fg = colors.white },
     },
 }
 
@@ -302,9 +307,9 @@ local Diagnostics = {
 local Clock = {
     {
         provider = function()
-            return " 什" .. os.date("%H:%M ")
+            return " 󱑒 " .. os.date("%H:%M ")
         end,
-        hl = { fg = "#181a1f", bg = "#41a6b5" },
+        hl = { fg = colors.cyan },
     },
 }
 
@@ -332,12 +337,11 @@ local default_statusline = {
     -- { flexible = 5, WorkDir },
     Mode,
     Git,
-    Search_count,
-    align,
-    FileName,
+    WorkDir,
     FileFlags,
     align,
     Diagnostics,
+    Search_count,
     Clock,
 }
 
@@ -361,6 +365,7 @@ local startup_nvim_statusline = {
             filetype = { "startup", "TelescopePrompt" },
         })
     end,
+    align,
 }
 
 local GitStatusline = {
