@@ -13,6 +13,7 @@ editor({
 })
 
 editor({
+    enabled = false,
     "LudoPinelli/comment-box.nvim",
     lazy = true,
     keys = { "<Leader>cb", "<Leader>cc", "<Leader>cl", "<M-p>" },

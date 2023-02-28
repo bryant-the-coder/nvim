@@ -138,8 +138,8 @@ cmd({ "WinEnter", "FileType" }, {
     callback = function()
         vim.opt.statusline = "%#StatusLine#" -- Disable statusline
     end,
-})
-]]
+}) ]]
+
 -----------------------------------
 --             PLUGINS           --
 -----------------------------------

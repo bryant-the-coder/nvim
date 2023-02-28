@@ -363,7 +363,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- ┌─────────────┐
 -- │ Comment Box │
 -- └─────────────┘
-local cb = require("comment-box")
+--[[ local cb = require("comment-box")
 
 -- left aligned fixed size box with left aligned text
 map({ "n", "v" }, "<Leader>bb", cb.lbox, {})
@@ -372,4 +372,4 @@ map({ "n", "v" }, "<Leader>bc", cb.accbox, {})
 
 -- centered line
 map("n", "<Leader>bl", cb.cline, {})
-map("i", "<M-l>", cb.cline, {})
+map("i", "<M-l>", cb.cline, {}) ]]

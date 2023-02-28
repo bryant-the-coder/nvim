@@ -92,18 +92,37 @@ local Mode = {
                 ["!"] = "!",
                 t = "TERMINAL",
             },
+            mode_colors = {
+
+                n = colors.green,
+                i = colors.nord_blue,
+                v = colors.purple,
+                V = colors.purple,
+                ["^V"] = colors.purple,
+                c = colors.teal,
+                s = vim.g.terminal_color_3,
+                S = vim.g.terminal_color_3,
+                ["^S"] = colors.yellow,
+                R = colors.yellow,
+                r = colors.yellow,
+                ["!"] = colors.light_grey,
+                t = colors.red,
+            },
         },
         hl = function(self)
-            local mode = self.mode:sub(1, 1)
-            return {
-                fg = mode_colors[mode] or colors.blue,
-                -- fg = colors.black,
-            }
+            local mode = self.mode:sub(1, 1) -- get only the first mode character
+            return { fg = self.mode_colors[mode] }
         end,
         provider = function(self)
             -- return "%2(" .. self.mode_names[self.mode:sub(1, 1)] .. "%)" .. " "
             return string.format(" %s ", self.mode_names[self.mode:sub(1, 1)]):upper()
         end,
+        -- Re-evaluate the component only on ModeChanged event!
+        -- This is not required in any way, but it's there, and it's a small
+        -- performance improvement.
+        update = {
+            "ModeChanged",
+        },
     },
 }
 
