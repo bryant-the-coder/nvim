@@ -13,8 +13,8 @@ dep({
 
 dep({
     "MunifTanjim/nui.nvim",
-    event = "VeryLazy",
     lazy = true,
+    event = "VeryLazy",
 })
 
 return dep
