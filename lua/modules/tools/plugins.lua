@@ -11,7 +11,7 @@ tools({
 tools({
     "natecraddock/workspaces.nvim",
     event = "VeryLazy",
-    config = conf.woekspaces,
+    config = conf.workspaces,
 })
 
 tools({
