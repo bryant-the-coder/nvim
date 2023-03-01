@@ -17,3 +17,19 @@ e.g. completion, editor, files, lang, lsp, tools, ui
 
 All my custom settings eg. dashboard, statusline and winbar
 I override my colors in this folder
+
+## CREDITS
+
+Thanks to these wonderful people. Their config guided me into making my config.
+
+- [NvChad](https://github.com/NvChad/Nvchad)
+- [max397574](https://github.com/max397574/omega-nvim)
+  > Aesthetic config and amazing functions
+- [abzcoding](https://github.com/abzcoding/lvim)
+  > amazing config. recommend to check it out.
+- [tamton-aquib](https://github.com/tamton-aquib/nvim)
+  > Remember to check his plugin. [staline](https://github.com/tamton-aquib/staline.nvim)
+- [vsedov](https://github.com/vsedov/nvim)
+  > ISTG this dude has a nice lazy.nvim plugin structure. Most of my config is based off vsedov config.
+  > Give him a star :> he deserves it
+- [tjdevseries](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim)
