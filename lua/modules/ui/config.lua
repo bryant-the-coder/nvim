@@ -212,4 +212,8 @@ function config.heirline()
     require("modules.ui.heirline.init")
 end
 
+function config.nvim_tree()
+    require("modules.ui.nvim_tree")
+end
+
 return config

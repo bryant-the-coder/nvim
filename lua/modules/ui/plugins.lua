@@ -19,6 +19,16 @@ ui({
 })
 
 ui({
+    enabled = false,
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons", -- optional, for file icons
+    },
+    tag = "nightly",
+    config = conf.nvim_tree,
+})
+
+ui({
     "lukas-reineke/indent-blankline.nvim",
     lazy = true,
     init = function()

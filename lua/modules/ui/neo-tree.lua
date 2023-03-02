@@ -6,23 +6,18 @@ end
 vim.g.neo_tree_remove_legacy_commands = 1
 
 tree.setup({
-    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-    popup_border_style = "rounded", -- "double", "none", "rounded", "shadow", "single" or "solid
+    close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+    popup_border_style = "rounded",
     enable_git_status = true,
     enable_diagnostics = true,
-    event_handlers = {
-        {
-            event = "neo_tree_buffer_enter",
-            handler = function()
-                vim.wo.signcolumn = "no"
-            end,
-        },
-    },
-    use_popups_for_input = true,
+    sort_case_insensitive = false, -- used when sorting files and directories in the tree
     default_component_configs = {
+        container = {
+            enable_character_fade = true,
+        },
         indent = {
-            -- indent_size = 2,
-            -- padding = 1, -- extra padding on left hand side
+            indent_size = 2,
+            padding = 1, -- extra padding on left hand side
             -- indent guides
             with_markers = true,
             indent_marker = "│",
@@ -39,6 +34,7 @@ tree.setup({
             folder_open = "",
             folder_empty = "ﰊ",
             default = "*",
+            highlight = "NeoTreeFileIcon",
         },
         modified = {
             symbol = "[+]",
@@ -47,6 +43,7 @@ tree.setup({
         name = {
             trailing_slash = false,
             use_git_status_colors = true,
+            highlight = "NeoTreeFileName",
         },
         git_status = {
             symbols = {
@@ -95,6 +92,7 @@ tree.setup({
             visible = false, -- when true, they will just be displayed differently than normal items
             hide_dotfiles = false,
             hide_gitignored = false,
+            hide_hidden = false, -- only works on Windows for hidden files/directories
             hide_by_name = {
                 ".DS_Store",
                 "thumbs.db",
@@ -102,8 +100,8 @@ tree.setup({
             },
         },
         follow_current_file = true, -- This will find and focus the file in the active buffer every
-        hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-        use_libuv_file_watcher = true,
+        group_empty_dirs = true, -- when true, empty folders will be grouped together
+        hijack_netrw_behavior = "open_default",
         window = {
             mappings = {
                 ["<bs>"] = "navigate_up",
@@ -116,6 +114,9 @@ tree.setup({
         },
     },
     buffers = {
+        follow_current_file = true, -- This will find and focus the file in the active buffer every
+        -- time the current file is changed while the tree is open.
+        group_empty_dirs = true, -- when true, empty folders will be grouped together
         show_unloaded = true,
         window = {
             mappings = {
