@@ -10,7 +10,14 @@ tools({
 
 tools({
     "natecraddock/workspaces.nvim",
-    event = "VeryLazy",
+    lazy = true,
+    cmd = {
+        "WorkspacesAdd",
+        "WorkspacesRemove",
+        "WorkspacesRename",
+        "WorkspacesList",
+        "WorkspacesOpen",
+    },
     config = conf.workspaces,
 })
 
