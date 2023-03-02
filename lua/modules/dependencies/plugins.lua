@@ -7,7 +7,7 @@ dep({
 })
 
 dep({
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons", -- optional, for file icons
     config = conf.devicons,
 })
 
