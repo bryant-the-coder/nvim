@@ -17,6 +17,12 @@ ts({
     after = "nvim-treesitter",
 })
 
+ts({
+    enabled = false,
+    "HiPhish/nvim-ts-rainbow2",
+    after = "nvim-treesitter",
+})
+
 -- Auto complete tag
 ts({
     enabled = false,
