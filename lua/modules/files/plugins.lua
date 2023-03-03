@@ -1,4 +1,5 @@
 local search = require("utils.pack").package
+local conf = require("modules.files.config")
 
 search({
     "nvim-telescope/telescope.nvim",
@@ -22,4 +23,18 @@ search({
     config = function()
         require("modules.files.telescope")
     end,
+})
+
+search({
+    "ibhagwan/fzf-lua",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    command = {
+        "FzfLua files",
+        "FzfLua live_grep",
+        "FzfLua buffers",
+        "FzfLua lsp_references",
+        "FzfLua lsp_definitions",
+        "FzfLua lsp_code_actions",
+    },
+    config = conf.fzf,
 })
