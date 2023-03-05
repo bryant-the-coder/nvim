@@ -113,8 +113,8 @@ local Mode = {
             V = colors.purple,
             ["^V"] = colors.purple,
             c = colors.teal,
-            s = vim.g.terminal_color_3,
-            S = vim.g.terminal_color_3,
+            s = colors.yellow,
+            S = colors.yellow,
             ["^S"] = colors.yellow,
             R = colors.yellow,
             r = colors.yellow,
@@ -130,7 +130,7 @@ local Mode = {
     -- control the padding and make sure our string is always at least 2
     -- characters long. Plus a nice Icon.
     provider = function(self)
-        return "%2(" .. self.mode_names[self.mode] .. "%)"
+        return " %2(" .. self.mode_names[self.mode] .. "%) "
     end,
     hl = function(self)
         local mode = self.mode:sub(1, 1) -- get only the first mode character
