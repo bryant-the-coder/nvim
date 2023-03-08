@@ -26,13 +26,26 @@ end
 
 --- Getting color from base16
 utils.get = function()
-    -- local theme = _G.theme
+    --[[ local theme
+    local time = os.date("*t")
+    if time.hour < 7 or time.hour <= 21 then
+        theme = "everforest"
+    else
+        theme = "onedark"
+    end ]]
+    -- return base16(base16.themes(theme))
     local theme = vim.g.colors_name
     return require("hl_themes." .. theme)
 end
 
 utils.get_base = function()
-    -- local theme = _G.theme
+    --[[ local theme
+    local time = os.date("*t")
+    if time.hour < 7 or time.hour <= 21 then
+        theme = "everforest"
+    else
+        theme = "onedark"
+    end ]]
     local theme = vim.g.colors_name
     return require("themes." .. theme .. "-base16")
 end
