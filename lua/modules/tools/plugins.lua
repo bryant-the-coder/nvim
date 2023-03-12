@@ -24,9 +24,7 @@ tools({
 tools({
     "akinsho/toggleterm.nvim",
     keys = { "<c-t>", "<leader>tg" },
-    config = function()
-        require("modules.tools.toggleterm")
-    end,
+    config = conf.toggleterm,
 })
 
 tools({

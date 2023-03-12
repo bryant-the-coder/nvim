@@ -33,6 +33,10 @@ function on_attach.setup(client, bufnr)
         vim.diagnostic.goto_next({ border = "rounded" })
     end)
 
+    if client.server_capabilities["documentSymbolProvider"] then
+        require("nvim-navic").attach(client, bufnr)
+    end
+
     augroup("_lsp", {})
     -- Open float when there are diagnostics
     cmd({ "CursorHold" }, {

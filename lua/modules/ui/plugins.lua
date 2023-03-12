@@ -56,3 +56,14 @@ ui({
     "rebelot/heirline.nvim",
     config = conf.heirline,
 })
+
+ui({
+    "utilyre/barbecue.nvim",
+    version = "*",
+    after = "nvim-lspconfig",
+    dependencies = {
+        "SmiteshP/nvim-navic",
+        "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    config = conf.barbecue,
+})
