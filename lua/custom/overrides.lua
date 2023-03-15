@@ -145,7 +145,7 @@ end
 
 if config.ui.transparency then
     -- bg("Normal", "none")
-    fg_bg("Normal", "NONE", "none")
+    fg_bg("Normal", "NONE", "NONE")
     bg("StatuslineNC", "NONE")
     bg("HarpoonWindow", "NONE")
     -- fg_bg("BufferlineFill", grey_fg, "NONE")
