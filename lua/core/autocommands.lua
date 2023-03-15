@@ -8,9 +8,20 @@ local create_command = vim.api.nvim_create_user_command
 -----------------------------------
 -- Disable autocommenting
 -- Who likes autocommenting anyways?
-cmd("BufEnter", {
-    desc = "Disable autocommenting in new lines",
-    command = "set fp-=c fo-=r fo-=o",
+cmd("FileType", {
+    -- desc = "Disable autocommenting in new lines",
+    callback = function()
+        vim.opt.formatoptions = vim.opt.formatoptions
+            + "r" -- continue comments after return
+            + "c" -- wrap comments using textwidth
+            + "q" -- allow to format comments w/ gq
+            + "j" -- remove comment leader when joining lines when possible
+            - "t" -- don't autoformat
+            - "a" -- no autoformatting
+            - "o" -- don't continue comments after o/O
+            - "2" -- don't use indent of second line for rest of paragraph
+    end,
+    desc = "Set formatoptions",
 })
 
 -- Terminal
