@@ -12,8 +12,8 @@ completion({
             after = { "nvim-cmp" },
         },
         { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
-        { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-        { "hrsh7th/cmp-path", after = "nvim-cmp" },
+        { "hrsh7th/cmp-buffer",   after = "nvim-cmp" },
+        { "hrsh7th/cmp-path",     after = "nvim-cmp" },
         {
             "petertriho/cmp-git",
             after = "nvim-cmp",
@@ -39,7 +39,6 @@ completion({
 })
 
 completion({
-    enabled = false,
     "windwp/nvim-autopairs",
     event = {
         "InsertEnter",
