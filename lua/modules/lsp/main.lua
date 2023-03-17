@@ -30,46 +30,51 @@ local sumneko = {
     capabilities = capabilities,
     settings = {
         Lua = {
-            workspace = {
-                -- checkThirdParty = false,
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                    [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+            diagnostics = {
+                globals = {
+                    "vim",
+                    "neorg",
                 },
-            },
-            completion = {
-                workspaceWord = true,
-                callSnippet = "Both",
-            },
-            misc = {
-                parameters = {
-                    "--log-level=trace",
+                workspace = {
+                    -- checkThirdParty = false,
+                    library = {
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                        [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+                    },
                 },
-            },
-            format = {
-                enable = false,
-                defaultConfig = {
-                    indent_style = "space",
-                    indent_size = "2",
-                    continuation_indent_size = "2",
+                completion = {
+                    workspaceWord = true,
+                    callSnippet = "Both",
+                },
+                misc = {
+                    parameters = {
+                        "--log-level=trace",
+                    },
+                },
+                format = {
+                    enable = false,
+                    defaultConfig = {
+                        indent_style = "space",
+                        indent_size = "2",
+                        continuation_indent_size = "2",
+                    },
                 },
             },
         },
     },
 }
-local use_lua_dev = true
-if use_lua_dev then
-    local luadev = require("lua-dev").setup({
+local use_neo_dev = true
+if use_neo_dev then
+    local neodev = require("neodev").setup({
         library = {
-            vimruntime = true,
+            runtime = true,
             types = true,
-            plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
+            plugins = {},
         },
         lspconfig = sumneko,
     })
-
-    lspconfig.lua_ls.setup(luadev)
+    lspconfig.lua_ls.setup(neodev)
 else
     lspconfig.lua_ls.setup(sumneko)
 end
@@ -149,7 +154,6 @@ local jedi = {
                 stubPath = vim.fn.expand("$HOME/typings"),
                 diagnosticSeverityOverrides = {
                     reportMissingTypeStubs = "information",
-
                     reportGeneralTypeIssues = "warning",
                     reportUnboundVariable = "warning",
                     reportUndefinedVariable = "error",

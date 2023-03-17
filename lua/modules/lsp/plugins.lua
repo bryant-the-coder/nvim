@@ -32,7 +32,14 @@ lsp({
 })
 
 lsp({
+    enabled = false,
     "max397574/lua-dev.nvim",
+    ft = { "lua" },
+    after = "nvim-lspconfig",
+})
+
+lsp({
+    "folke/neodev.nvim",
     ft = { "lua" },
     after = "nvim-lspconfig",
 })
