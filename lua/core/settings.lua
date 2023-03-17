@@ -16,6 +16,7 @@ vim.opt.stl = " "
 
 -- Mappings
 g.mapleader = ","
+g.maplocalleader = " "
 o.mouse = "a"
 o.mousemoveevent = true
 
