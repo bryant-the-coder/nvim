@@ -47,8 +47,6 @@ ui({
 
 ui({
     "j-hui/fidget.nvim",
-    lazy = true,
-    module = "lspconfig",
     config = conf.fidget,
 })
 
