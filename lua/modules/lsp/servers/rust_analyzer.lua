@@ -189,11 +189,7 @@ local opts = {
         adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
     },
 }
-local status_ok, rust = pcall(require, "rust-tools")
-if not status_ok then
-    return
-end
-rust.setup(opts)
+require("rust-tools").setup(opts)
 
 local dap = require("dap")
 dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
