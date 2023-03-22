@@ -25,7 +25,7 @@ lspconfig.vimls.setup({})
 lspconfig.bashls.setup({})
 
 -- sumneko_lua
-local sumneko = {
+local lua_ls = {
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -66,12 +66,12 @@ if use_lua_dev then
             types = true,
             plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
         },
-        lspconfig = sumneko,
+        lspconfig = lua_ls,
     })
 
     lspconfig.lua_ls.setup(luadev)
 else
-    lspconfig.lua_ls.setup(sumneko)
+    lspconfig.lua_ls.setup(lua_ls)
 end
 
 -- JSON
