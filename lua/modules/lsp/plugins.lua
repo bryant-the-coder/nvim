@@ -9,7 +9,8 @@ lsp({
     end,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
     config = function()
-        require("modules.lsp.main")
+        require("modules.lsp.installer")
+        require("modules.lsp.lsp_config")
     end,
 })
 
@@ -92,7 +93,15 @@ lsp({
 })
 
 lsp({
+    enabled = false,
     "max397574/lua-dev.nvim",
     ft = { "lua" },
     after = "nvim-lspconfig",
+})
+
+lsp({
+    "folke/neodev.nvim",
+    config = function(_, opts)
+        require("modules.lsp.servers.lua_ls").setup(opts)
+    end,
 })

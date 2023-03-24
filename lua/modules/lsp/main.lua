@@ -24,56 +24,6 @@ lspconfig.tsserver.setup({})
 lspconfig.vimls.setup({})
 lspconfig.bashls.setup({})
 
--- sumneko_lua
-local lua_ls = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            workspace = {
-                -- checkThirdParty = false,
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                    [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-                },
-            },
-            completion = {
-                workspaceWord = true,
-                callSnippet = "Both",
-            },
-            misc = {
-                parameters = {
-                    "--log-level=trace",
-                },
-            },
-            format = {
-                enable = false,
-                defaultConfig = {
-                    indent_style = "space",
-                    indent_size = "2",
-                    continuation_indent_size = "2",
-                },
-            },
-        },
-    },
-}
-local use_lua_dev = true
-if use_lua_dev then
-    local luadev = require("lua-dev").setup({
-        library = {
-            vimruntime = true,
-            types = true,
-            plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
-        },
-        lspconfig = lua_ls,
-    })
-
-    lspconfig.lua_ls.setup(luadev)
-else
-    lspconfig.lua_ls.setup(lua_ls)
-end
-
 -- JSON
 lspconfig.jsonls.setup({
     on_attach = on_attach,
@@ -149,7 +99,6 @@ local jedi = {
                 stubPath = vim.fn.expand("$HOME/typings"),
                 diagnosticSeverityOverrides = {
                     reportMissingTypeStubs = "information",
-
                     reportGeneralTypeIssues = "warning",
                     reportUnboundVariable = "warning",
                     reportUndefinedVariable = "error",

@@ -130,6 +130,7 @@ local config = {
     severity_sort = true,
     update_in_insert = true,
     virtual_text = false,
+    virtual_lines = { only_current_line = true },
 
     float = {
         focusable = false,
