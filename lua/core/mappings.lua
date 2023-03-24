@@ -107,10 +107,10 @@ map("n", "<A-left>", "<C-w>>")
 map("n", "<A-right>", "<C-w><")
 
 -- Window Navigation
-map("", "H", "<C-w>h")
-map("", "K", "<C-w>k")
-map("", "J", "<C-w>j")
-map("", "L", "<C-w>l")
+map("", "<C-h>", "<C-w>h")
+map("", "<C-k>", "<C-w>k")
+map("", "<C-j>", "<C-w>j")
+map("", "<C-l>", "<C-w>l")
 
 -- Buffer navigation
 map("n", "<Tab>", "<cmd>bnext<CR>")
