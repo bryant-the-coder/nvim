@@ -56,6 +56,7 @@ ui({
 })
 
 ui({
+    enabled = false,
     "utilyre/barbecue.nvim",
     version = "*",
     after = "nvim-lspconfig",
@@ -64,18 +65,4 @@ ui({
         "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     config = conf.barbecue,
-})
-
-ui({
-    enabled = true,
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = function()
-        require("lsp_lines").setup()
-        vim.api.nvim_create_autocmd({ "WinEnter", "FileType" }, {
-            pattern = "lazy",
-            callback = function()
-                require("lsp_lines").toggle()
-            end,
-        })
-    end,
 })

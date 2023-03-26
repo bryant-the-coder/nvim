@@ -28,7 +28,7 @@ search({
 search({
     "ibhagwan/fzf-lua",
     dependencies = "nvim-tree/nvim-web-devicons",
-    command = {
+    cmd = {
         "FzfLua files",
         "FzfLua live_grep",
         "FzfLua buffers",

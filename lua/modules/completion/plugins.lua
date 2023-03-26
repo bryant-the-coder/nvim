@@ -9,14 +9,14 @@ completion({
     dependencies = {
         {
             "saadparwaiz1/cmp_luasnip",
-            after = { "nvim-cmp" },
+            lazy = true,
         },
-        { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
-        { "hrsh7th/cmp-buffer",   after = "nvim-cmp" },
-        { "hrsh7th/cmp-path",     after = "nvim-cmp" },
+        { "hrsh7th/cmp-nvim-lsp", lazy = true },
+        { "hrsh7th/cmp-buffer", lazy = true },
+        { "hrsh7th/cmp-path", lazy = true },
         {
             "petertriho/cmp-git",
-            after = "nvim-cmp",
+            lazy = true,
             config = conf.cmp_git,
         },
     },
@@ -45,7 +45,6 @@ completion({
         -- for working with cmp
         "CmdLineEnter",
     },
-    after = "nvim-cmp",
     config = conf.nvim_autopairs,
 })
 

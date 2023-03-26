@@ -222,22 +222,18 @@ function config.barbecue()
         ---
         ---@type boolean
         attach_navic = false,
-
         ---Whether to create winbar updater autocmd.
         ---
         ---@type boolean
         create_autocmd = true,
-
         ---Buftypes to enable winbar in.
         ---
         ---@type string[]
         include_buftypes = { "" },
-
         ---Filetypes not to enable winbar in.
         ---
         ---@type string[]
         exclude_filetypes = { "toggleterm" },
-
         modifiers = {
             ---Filename modifiers applied to dirname.
             ---
@@ -245,7 +241,6 @@ function config.barbecue()
             ---
             ---@type string
             dirname = ":~:.",
-
             ---Filename modifiers applied to basename.
             ---
             ---See: `:help filename-modifiers`
@@ -253,23 +248,19 @@ function config.barbecue()
             ---@type string
             basename = "",
         },
-
         ---Whether to display path to file.
         ---
         ---@type boolean
         show_dirname = false,
-
         ---Whether to display file name.
         ---
         ---@type boolean
         show_basename = false,
-
         ---Whether to replace file icon with the modified symbol when buffer is
         ---modified.
         ---
         ---@type boolean
         show_modified = false,
-
         ---Get modified status of file.
         ---
         ---NOTE: This can be used to get file modified status from SCM (e.g. git)
@@ -278,12 +269,10 @@ function config.barbecue()
         modified = function(bufnr)
             return vim.bo[bufnr].modified
         end,
-
         ---Whether to show/use navic in the winbar.
         ---
         ---@type boolean
         show_navic = true,
-
         ---Get leading custom section contents.
         ---
         ---NOTE: This function shouldn't do any expensive actions as it is run on each
@@ -293,7 +282,6 @@ function config.barbecue()
         lead_custom_section = function()
             return " "
         end,
-
         ---@alias barbecue.Config.custom_section
         ---|string # Literal string.
         ---|{ [1]: string, [2]: string? }[] # List-like table of `[text, highlight?]` tuples in which `highlight` is optional.
@@ -307,7 +295,6 @@ function config.barbecue()
         custom_section = function()
             return " "
         end,
-
         ---@alias barbecue.Config.theme
         ---|'"auto"' # Use your current colorscheme's theme or generate a theme based on it.
         ---|string # Theme located under `barbecue.theme` module.
@@ -317,29 +304,24 @@ function config.barbecue()
         ---
         ---@type barbecue.Config.theme
         theme = "auto",
-
         ---Whether context text should follow its icon's color.
         ---
         ---@type boolean
         context_follow_icon_color = false,
-
         symbols = {
             ---Modification indicator.
             ---
             ---@type string
             modified = "●",
-
             ---Truncation indicator.
             ---
             ---@type string
             ellipsis = "…",
-
             ---Entry separator.
             ---
             ---@type string
             separator = "",
         },
-
         ---@alias barbecue.Config.kinds
         ---|false # Disable kind icons.
         ---|table<string, string> # Type to icon mapping.
@@ -375,6 +357,23 @@ function config.barbecue()
             Operator = " ",
             TypeParameter = " ",
         },
+    })
+
+    vim.api.nvim_create_autocmd({
+        "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
+        "BufWinEnter",
+        "CursorHold",
+        "InsertLeave",
+
+        -- include these if you have set `show_modified` to `true`
+        "BufWritePost",
+        "TextChanged",
+        "TextChangedI",
+    }, {
+        group = vim.api.nvim_create_augroup("barbecue.updater", {}),
+        callback = function()
+            require("barbecue.ui").update()
+        end,
     })
 end
 

@@ -150,7 +150,6 @@ cmd({ "WinEnter", "FileType" }, {
         vim.opt.statusline = "%#StatusLine#" -- Disable statusline
     end,
 }) ]]
-
 -----------------------------------
 --             PLUGINS           --
 -----------------------------------
@@ -176,22 +175,5 @@ cmd("LspAttach", {
         -- vim.lsp.semantic_tokens.stop(bufnr, args.data.client_id)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         client.server_capabilities.semanticTokensProvider = nil
-    end,
-})
-
-vim.api.nvim_create_autocmd({
-    "WinScrolled", -- or WinResized on NVIM-v0.9 and higher
-    "BufWinEnter",
-    "CursorHold",
-    "InsertLeave",
-
-    -- include these if you have set `show_modified` to `true`
-    "BufWritePost",
-    "TextChanged",
-    "TextChangedI",
-}, {
-    group = vim.api.nvim_create_augroup("barbecue.updater", {}),
-    callback = function()
-        require("barbecue.ui").update()
     end,
 })

@@ -9,9 +9,6 @@ end
 local defaults = {
     lua_ls = {
         on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        },
         settings = {
             Lua = {
                 diagnostics = {
@@ -35,14 +32,6 @@ local defaults = {
                 misc = {
                     parameters = {
                         "--log-level=trace",
-                    },
-                },
-                format = {
-                    enable = false,
-                    defaultConfig = {
-                        indent_style = "space",
-                        indent_size = "2",
-                        continuation_indent_size = "2",
                     },
                 },
                 workspace = {

@@ -44,7 +44,7 @@ editor({
 
 editor({
     "folke/todo-comments.nvim",
-    after = "nvim-treesitter",
+    event = "VeryLazy",
     config = conf.todo,
 })
 
