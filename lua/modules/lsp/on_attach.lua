@@ -18,9 +18,21 @@ local function lsp_highlight_document(client, bufnr)
             buffer = bufnr,
         })
 
-        vim.api.nvim_set_hl(0, "LspReferenceText", { nocombine = true, reverse = false, underline = true })
-        vim.api.nvim_set_hl(0, "LspReferenceRead", { nocombine = true, reverse = false, underline = true })
-        vim.api.nvim_set_hl(0, "LspReferenceWrite", { nocombine = true, reverse = false, underline = true })
+        vim.api.nvim_set_hl(
+            0,
+            "LspReferenceText",
+            { nocombine = true, reverse = false, underline = true, italic = true }
+        )
+        vim.api.nvim_set_hl(
+            0,
+            "LspReferenceRead",
+            { nocombine = true, reverse = false, underline = true, italic = true }
+        )
+        vim.api.nvim_set_hl(
+            0,
+            "LspReferenceWrite",
+            { nocombine = true, reverse = false, underline = true, italic = true }
+        )
     end
 end
 

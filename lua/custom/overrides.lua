@@ -214,6 +214,7 @@ fg_bg("RenamerTitle", black, yellow, { bold = true, italic = true })
 fg("RenamerBorder", yellow)
 fg("InlayHints", grey_fg)
 
+-- Mason
 fg_bg("MasonHeader", black, red)
 fg("MasonHighlight", blue)
 fg_bg("MasonHighlightBlock", black, green)
