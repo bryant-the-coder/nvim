@@ -3,9 +3,9 @@ local git = require("utils.pack").package
 
 git({
     "TimUntersberger/neogit",
-    -- lazy = true,
+    lazy = true,
     dependencies = { "nvim-lua/plenary.nvim" },
-    -- cmd = { "Neogit" },
+    cmd = { "Neogit" },
     config = conf.neogit,
 })
 
