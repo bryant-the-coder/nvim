@@ -86,7 +86,6 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 --[[ map({ "n", "v" }, "j", "jzzzv")
 map({ "n", "v" }, "k", "kzzzv") ]]
-
 -- Disable arrow keys
 map({ "n", "v" }, "<Up>", "<nop>")
 map({ "n", "v" }, "<Down>", "<nop>")
@@ -164,7 +163,6 @@ end)
 --[[ map("n", "<leader>sy", function()
     require("core.utils").swap_yes_no()
 end) ]]
-
 map("n", "<A-r>", function()
     require("core.utils").rename()
 end)
@@ -220,7 +218,6 @@ end)
 map("n", "<leader>ds", function()
     require("neogen").generate { type = "type" }
 end) ]]
-
 -- TSPlayground
 map("n", "<leader>tp", "<cmd>TSPlaygroundToggle<CR>")
 map("i", "<leader>tp", "<cmd>TSPlaygroundToggle<CR>")
@@ -361,16 +358,5 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- ┌─────────────┐
--- │ Comment Box │
--- └─────────────┘
---[[ local cb = require("comment-box")
-
--- left aligned fixed size box with left aligned text
-map({ "n", "v" }, "<Leader>bb", cb.lbox, {})
--- centered adapted box with centered text
-map({ "n", "v" }, "<Leader>bc", cb.accbox, {})
-
--- centered line
-map("n", "<Leader>bl", cb.cline, {})
-map("i", "<M-l>", cb.cline, {}) ]]
+--[[ map("n", "<leader>hh", require("hover").hover, { desc = "hover.nvim" })
+map("n", "<leader>hs", require("hover").hover_select, { desc = "hover.nvim (select)" }) ]]
