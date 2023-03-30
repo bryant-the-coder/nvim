@@ -3,20 +3,16 @@ local git = require("utils.pack").package
 
 git({
     "TimUntersberger/neogit",
-    lazy = true,
+    -- lazy = true,
     dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = { "Neogit" },
+    -- cmd = { "Neogit" },
     config = conf.neogit,
 })
 
 git({
-    enabled = false,
+    enabled = true,
     "tpope/vim-fugitive",
     after = "gitsigns.nvim",
-    cmd = {
-        "Git commit",
-        "Git add",
-    },
 })
 
 -- Git intergrations
@@ -53,9 +49,8 @@ git({
     -- dependencies = { "nvim-lua/plenary.nvim" },
     -- module = "gitsigns",
 } ]]
-
 git({
-    enabled = false,
+    enabled = true,
     "sindrets/diffview.nvim",
     after = "gitsigns.nvim",
     config = conf.diffview,
