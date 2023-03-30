@@ -43,3 +43,13 @@ tools({
         "UndotreeHide",
     },
 })
+
+tools({
+    enabled = false,
+    "lewis6991/hover.nvim",
+    -- event = "InsertEnter",
+    init = function()
+        require("custom.load").lazy_load("hover.nvim")
+    end,
+    config = conf.hover,
+})

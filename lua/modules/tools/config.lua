@@ -5,20 +5,15 @@ function config.workspaces()
         -- path to a file to store workspaces data in
         -- on a unix system this would be ~/.local/share/nvim/workspaces
         path = vim.fn.stdpath("data") .. "/workspaces",
-
         -- to change directory for all of nvim (:cd) or only for the current window (:lcd)
         -- if you are unsure, you likely want this to be true.
         global_cd = true,
-
         -- sort the list of workspaces by name after loading from the workspaces path.
         sort = true,
-
         -- sort by recent use rather than by name. requires sort to be true
         mru_sort = true,
-
         -- enable info-level notifications after adding or removing a workspace
         notify_info = true,
-
         hooks = {
             open = { "Telescope find_files" },
         },
@@ -126,6 +121,25 @@ function config.toggleterm()
     end
 
     vim.api.nvim_set_keymap("n", "<leader>tg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+end
+
+function config.hover()
+    require("hover").setup({
+        init = function()
+            -- Require providers
+            require("hover.providers.lsp")
+            require("hover.providers.gh")
+            require("hover.providers.gh_user")
+            require("hover.providers.man")
+        end,
+        preview_opts = {
+            border = nil,
+        },
+        -- Whether the contents of a currently open hover window should be moved
+        -- to a :h preview-window when pressing the hover keymap.
+        preview_window = false,
+        title = true,
+    })
 end
 
 return config
