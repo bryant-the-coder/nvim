@@ -41,6 +41,7 @@ lang({
 })
 
 lang({
+    enabled = false,
     "stevearc/overseer.nvim",
     event = "VeryLazy",
     config = conf.overseer,
