@@ -10,7 +10,6 @@
     { "┗", "FloatBorder" },
     { "┃", "FloatBorder" },
 } ]]
-
 --[[ local border = {
     { "╔", "FloatBorder" },
     { "═", "FloatBorder" },
@@ -21,7 +20,6 @@
     { "╚", "FloatBorder" },
     { "║", "FloatBorder" },
 } ]]
-
 --[[ local border = {
     { "╭", "FloatBorder" },
     { "─", "FloatBorder" },
@@ -32,7 +30,6 @@
     { "╰", "FloatBorder" },
     { "│", "FloatBorder" },
 } ]]
-
 local border = {
     { "┌", "FloatBorder" },
     { "─", "FloatBorder" },
@@ -128,10 +125,9 @@ local config = {
     signs = true,
     underline = true,
     severity_sort = true,
-    update_in_insert = true,
+    update_in_insert = false,
     virtual_text = false,
     virtual_lines = { only_current_line = true },
-
     float = {
         focusable = false,
         scope = "cursor",
@@ -155,7 +151,6 @@ local config = {
             end
             return i .. "/" .. total .. " " .. icon .. "  ", highlight
         end,
-
         -- Code from TJ
         --[[ format = function(d)
             local t = vim.deepcopy(d)
@@ -165,7 +160,7 @@ local config = {
             end
             return t.message
         end,
-]]
+        ]]
         -- Code from santigo-zero
         --[[ format = function(diagnostic)
             return string.format(
