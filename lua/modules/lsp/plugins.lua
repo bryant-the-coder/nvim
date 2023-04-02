@@ -39,7 +39,7 @@ lsp({
 })
 
 lsp({
-    enabled = false,
+    enabled = true,
     "p00f/clangd_extensions.nvim",
     ft = { "c", "cpp" },
     -- after = "nvim-lspconfig",
