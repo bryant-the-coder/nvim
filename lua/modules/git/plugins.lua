@@ -10,7 +10,7 @@ git({
 })
 
 git({
-    enabled = true,
+    enabled = false,
     "tpope/vim-fugitive",
     after = "gitsigns.nvim",
 })
