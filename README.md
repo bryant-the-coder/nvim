@@ -1,6 +1,6 @@
-# Cynosure
+# My neovim config
 
-This config is for my linux use only. Based on my own config [Cynosure](https://github.com/bryant-the-coder/Cynosure)
+This config is for my linux use only. It is the successor after [Cynosure](https://github.com/bryant-the-coder/Cynosure)
 
 ![image](https://user-images.githubusercontent.com/92417638/172029944-724c7e33-242d-4837-bd3f-1eb90e12cf31.png)
 
