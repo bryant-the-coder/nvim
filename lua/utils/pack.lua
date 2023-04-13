@@ -1,11 +1,10 @@
 local uv, api, fn = vim.loop, vim.api, vim.fn
-local helper = require("utils.helper")
 
 local pack = {}
 pack.__index = pack
 
 function pack:load_modules_packages()
-    local modules_dir = helper.get_config_path() .. "/lua/modules"
+    local modules_dir = vim.fn.stdpath("config") .. "/lua/modules"
     self.repos = {}
 
     local get_plugins_list = function()
@@ -33,7 +32,7 @@ end
 
 -- Install lazy if it isnt install on the system
 function pack:boot_strap()
-    local lazy_path = string.format("%s/lazy/lazy.nvim", helper.get_data_path())
+    local lazy_path = string.format("%s/lazy/lazy.nvim", vim.fn.stdpath("data"))
     local state = uv.fs_stat(lazy_path)
     if not state then
         local cmd = "!git clone https://github.com/folke/lazy.nvim " .. lazy_path
@@ -42,7 +41,7 @@ function pack:boot_strap()
     vim.opt.runtimepath:prepend(lazy_path)
     local lazy = require("lazy")
     local opts = {
-        lockfile = helper.get_data_path() .. "/lazy-lock.json",
+        lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
         dev = { path = "~/Workspace" },
     }
     self:load_modules_packages()
