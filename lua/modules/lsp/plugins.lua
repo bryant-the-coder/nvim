@@ -59,7 +59,7 @@ lsp({
 
 -- Uncomment this if you want lspsage
 lsp({
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     cmd = { "Lspsaga" },
     lazy = true,
     config = function()
