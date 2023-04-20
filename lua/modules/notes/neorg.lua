@@ -8,7 +8,7 @@ local neorg_callbacks = require("neorg.callbacks")
 neorg.setup({
     load = {
         ["core.defaults"] = {},
-        ["core.norg.dirman"] = {
+        ["core.dirman"] = {
             config = {
                 workspaces = {
                     home = "~/neorg",
@@ -30,7 +30,7 @@ neorg.setup({
                 },
             },
         },
-        ["core.norg.esupports.metagen"] = {
+        ["core.esupports.metagen"] = {
             config = {
                 type = "auto",
             },
@@ -41,7 +41,7 @@ neorg.setup({
                 extensions = "all",
             },
         },
-        ["core.norg.completion"] = {
+        ["core.completion"] = {
             config = {
                 engine = "nvim-cmp",
             },
@@ -51,7 +51,7 @@ neorg.setup({
                 workspace = "task",
             },
         }, ]]
-        ["core.norg.concealer"] = {
+        ["core.concealer"] = {
             config = {
                 -- markup_preset = "dimmed",
                 markup_preset = "conceal",
@@ -97,11 +97,9 @@ neorg.setup({
                         level_1 = {
                             icon = "◈",
                         },
-
                         level_2 = {
                             icon = " ◇",
                         },
-
                         level_3 = {
                             icon = "  ◆",
                         },
@@ -125,7 +123,7 @@ neorg.setup({
                 end,
             },
         },
-        ["core.norg.journal"] = {
+        ["core.journal"] = {
             config = {
                 workspace = "home",
                 journal_folder = "journal",
@@ -145,7 +143,6 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
         n = { -- Bind keys in normal mode
             { "<C-f>", "core.integrations.telescope.find_linkable" },
         },
-
         i = { -- Bind in insert mode
             { "<C-l>", "core.integrations.telescope.insert_link" },
         },
