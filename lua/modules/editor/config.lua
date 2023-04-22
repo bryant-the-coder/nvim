@@ -18,7 +18,6 @@ function config.commit()
             line = "gc",
             block = "gb",
         },
-
         -- with nvim-ts-context-commentstring
         pre_hook = function(ctx)
             local U = require("Comment.utils")
@@ -42,7 +41,8 @@ function config.comment_box()
     require("comment-box").setup({
         doc_width = 80, -- width of the document
         box_width = 70, -- width of the boxes
-        borders = { -- symbols used to draw a box
+        borders = {
+            -- symbols used to draw a box
             top = "─",
             bottom = "─",
             left = "│",
@@ -53,7 +53,8 @@ function config.comment_box()
             bottom_right = "╯",
         },
         line_width = 70, -- width of the lines
-        line = { -- symbols used to draw a line
+        line = {
+            -- symbols used to draw a line
             line = "─",
             line_start = "─",
             line_end = "─",
@@ -89,6 +90,7 @@ function config.venn()
             vim.b.venn_enabled = nil
         end
     end
+
     -- toggle keymappings for venn using <leader>v
     vim.api.nvim_set_keymap("n", "<leader>v", ":lua Toggle_venn()<CR>", { noremap = true })
 end
@@ -191,7 +193,6 @@ function config.discord()
         buttons = true, -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
         file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
         show_time = true, -- Show the timer
-
         -- Rich Presence text options
         editing_text = "Editing %s", -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
         file_explorer_text = "Browsing %s", -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
