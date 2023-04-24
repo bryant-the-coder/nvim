@@ -54,7 +54,7 @@ map("n", "<leader>ex", "<cmd>call bryant#save_and_exec()<CR>")
 map("n", "<leader>rw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Saving the traditional way
-map({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
+map({ "n", "i" }, "<C-s>", "<Cmd>silent! write ++p<CR>")
 -- nimap("<C-s>", "<cmd>w<CR>")
 map("n", "<leader>sf", "<cmd>source % <CR>")
 
