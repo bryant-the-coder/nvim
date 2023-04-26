@@ -48,6 +48,7 @@ function config.gitsigns()
     gitsigns.setup({
         debug_mode = true,
         max_file_length = 1000000000,
+        numhl = true,
         signs = {
             add = { show_count = false, text = "│" },
             change = { show_count = false, text = "│" },
