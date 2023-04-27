@@ -4,13 +4,14 @@ lsp({
     "neovim/nvim-lspconfig",
     -- event ={"BufEnter", "BufFilePost", "BufFilePre"},
     -- event = "BufRead",
-    init = function()
+    --[[ init = function()
         require("custom.load").lazy_load("nvim-lspconfig")
-    end,
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
+    end, ]]
+    -- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
     config = function()
         require("modules.lsp.installer")
         require("modules.lsp.lsp_config")
+        require("modules.lsp.main")
     end,
 })
 

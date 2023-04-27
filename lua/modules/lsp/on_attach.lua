@@ -52,14 +52,14 @@ function on_attach.setup(client, bufnr)
         end
         navic.attach(client, bufnr)
     end
-
+    --[[
     augroup("_lsp", {})
     -- Open float when there are diagnostics
     cmd({ "CursorHold" }, {
         desc = "Open float when there is diagnostics",
         group = "_lsp",
         callback = vim.diagnostic.open_float,
-    })
+    }) ]]
 end
 
 return on_attach
