@@ -1,7 +1,4 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-    return
-end
+local lspconfig = require("lspconfig")
 
 -- Load lua-dev because i am lazyloading it
 -- require("lazy").load "lua-dev.nvim"
@@ -127,7 +124,7 @@ local jedi = {
 
 local use_pyright = true
 if use_pyright then
-    lspconfig.pyright.setup(pyright)
+    require("lspconfig").pyright.setup(pyright)
 else
-    lspconfig.jedi_language_server.setup(jedi)
+    require("lspconfig").jedi_language_server.setup(jedi)
 end

@@ -177,3 +177,10 @@ cmd("LspAttach", {
         client.server_capabilities.semanticTokensProvider = nil
     end,
 })
+
+cmd("CursorHold", {
+    group = vim.api.nvim_create_augroup("lsp_float", {}),
+    callback = function()
+        vim.diagnostic.open_float()
+    end,
+})
