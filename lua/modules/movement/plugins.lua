@@ -25,3 +25,7 @@ movement({
     end,
     config = conf.harpoon,
 })
+
+movement({
+    "christoomey/vim-tmux-navigator",
+})

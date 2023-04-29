@@ -38,10 +38,10 @@ end
 
 function on_attach.setup(client, bufnr)
     lsp_highlight_document(client, bufnr)
-    vim.keymap.set("n", "<C-k>", function()
+    vim.keymap.set("n", "<leader>lp", function()
         vim.diagnostic.goto_prev({ border = "rounded" })
     end)
-    vim.keymap.set("n", "<C-j>", function()
+    vim.keymap.set("n", "<leader>ld", function()
         vim.diagnostic.goto_next({ border = "rounded" })
     end)
 

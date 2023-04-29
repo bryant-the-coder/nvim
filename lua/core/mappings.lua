@@ -106,10 +106,14 @@ map("n", "<A-left>", "<C-w>>")
 map("n", "<A-right>", "<C-w><")
 
 -- Window Navigation
-map("", "<C-h>", "<C-w>h")
-map("", "<C-k>", "<C-w>k")
-map("", "<C-j>", "<C-w>j")
-map("", "<C-l>", "<C-w>l")
+map("", "<A-h>", "<C-w>h")
+map("", "<A-k>", "<C-w>k")
+map("", "<A-j>", "<C-w>j")
+map("", "<A-l>", "<C-w>l")
+map("", "<C-h>", "<cmd>silent! TmuxNavigateLeft<CR>")
+map("", "<C-k>", "<cmd>silent! TmuxNavigateUp<CR>")
+map("", "<C-j>", "<cmd>silent! TmuxNavigateDown<CR>")
+map("", "<C-l>", "<cmd>silent! TmuxNavigateRight<CR>")
 
 -- Buffer navigation
 map("n", "<Tab>", "<cmd>bnext<CR>")
@@ -259,7 +263,7 @@ map("n", "<leader>li", "<cmd>Lazy install<CR>")
 map("n", "<leader>lu", "<cmd>Lazy update<CR>")
 map("n", "<leader>lx", "<cmd>Lazy clean<CR>")
 map("n", "<leader>ls", "<cmd>Lazy sync<CR>")
-map("n", "<leader>lp", "<cmd>Lazy profile<CR>")
+map("n", "<leader>pp", "<cmd>Lazy profile<CR>")
 
 -- LSP
 -- map("n", "<leader>ca", vim.lsp.buf.code_action)
@@ -277,13 +281,6 @@ map("n", "<C-a>", vim.lsp.buf.references)
 map("n", "<leader>lbh", function()
     require("core.utils").show_documentation()
 end, { desc = "Show the documentation in a floating window" })
-
-map("n", "<C-k>", function()
-    vim.diagnostic.goto_prev({ border = "rounded" })
-end)
-map("n", "<C-j>", function()
-    vim.diagnostic.goto_next({ border = "rounded" })
-end)
 
 -- Harpooon
 map("n", "<A-h>", function()

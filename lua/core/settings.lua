@@ -8,6 +8,7 @@ local o = vim.opt
 -- local themes = utils.timer_theme()
 
 g.colors_name = config.ui.theme
+g.tmux_navigator_no_mappings = true
 
 --Cursor & cursorline
 o.cursorline = true
