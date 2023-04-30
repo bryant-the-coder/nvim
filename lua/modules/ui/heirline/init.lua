@@ -84,7 +84,8 @@ local Mode = {
     -- corresponding string and color. We can put these into `static` to compute
     -- them at initialisation time.
     static = {
-        mode_names = { -- change the strings if you like it vvvvverbose!
+        mode_names = {
+            -- change the strings if you like it vvvvverbose!
             n = "NORMAL",
             no = "NORMAL",
             v = "VISUAL",
@@ -152,7 +153,8 @@ local Git = {
         self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
     end,
 
-    { -- git branch name
+    {
+        -- git branch name
         provider = function(self)
             return "  " .. self.status_dict.head .. " "
         end,
@@ -295,7 +297,6 @@ local FileType = {
 }
 
 local Diagnostics = {
-
     condition = conditions.has_diagnostics,
 
     static = {

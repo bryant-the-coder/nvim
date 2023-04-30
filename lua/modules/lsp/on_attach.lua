@@ -41,7 +41,7 @@ function on_attach.setup(client, bufnr)
     vim.keymap.set("n", "<leader>lp", function()
         vim.diagnostic.goto_prev({ border = "rounded" })
     end)
-    vim.keymap.set("n", "<leader>ld", function()
+    vim.keymap.set("n", "<leader>ln", function()
         vim.diagnostic.goto_next({ border = "rounded" })
     end)
 
