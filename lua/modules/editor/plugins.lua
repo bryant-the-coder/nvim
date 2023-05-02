@@ -28,6 +28,7 @@ editor({
 })
 
 editor({
+    enabled = false,
     "anuvyklack/hydra.nvim",
     lazy = true,
     dependencies = { "anuvyklack/keymap-layer.nvim" },
@@ -35,6 +36,7 @@ editor({
 })
 
 editor({
+    enabled = false,
     "jbyuki/venn.nvim",
     event = "VeryLazy",
     -- lazy = true,

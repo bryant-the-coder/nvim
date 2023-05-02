@@ -34,6 +34,7 @@ lsp({
 })
 
 lsp({
+    enabled = false,
     "max397574/lua-dev.nvim",
     ft = { "lua" },
     after = "nvim-lspconfig",
@@ -91,13 +92,6 @@ lsp({
     config = function()
         require("modules.lsp.null-ls")
     end,
-})
-
-lsp({
-    enabled = false,
-    "max397574/lua-dev.nvim",
-    ft = { "lua" },
-    after = "nvim-lspconfig",
 })
 
 lsp({
