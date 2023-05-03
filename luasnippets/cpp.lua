@@ -3,11 +3,10 @@ local hello = [[
 #include <iostream>
 
 int main() {
-  std::cout << "$1" << std::endl;
-  std::cin.get();
+    std::cout << "$1";
 }
 ]]
 
 return {
-    parse({ trig = "hello" }, hello),
+  parse({ trig = "hello" }, hello),
 }
