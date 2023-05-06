@@ -28,7 +28,15 @@ telescope.setup({
         -- Transparency settings
         -- winblend = 20,
 
-        find_command = { "rg", "-L", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
+        find_command = {
+            "rg",
+            "-L",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+        },
         prompt_prefix = "  ",
         selection_caret = "  ",
         entry_prefix = "  ",
@@ -144,6 +152,7 @@ custom_telescope.find_files = function()
             prompt_position = "top",
         },
         hidden = false,
+        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
     }
     require("telescope.builtin").find_files(opts)
 end
