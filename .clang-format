@@ -1,0 +1,41 @@
+Language:        Cpp
+# BasedOnStyle:  LLVM
+AccessModifierOffset: -2
+AlignAfterOpenBracket:  BlockIndent
+AlignArrayOfStructures: Left
+AlignConsecutiveAssignments:
+  Enabled:         true
+  AcrossEmptyLines: true
+AlignConsecutiveBitFields:
+  Enabled:         true
+  AcrossEmptyLines: true
+AlignConsecutiveDeclarations:
+  Enabled:         true
+  AcrossEmptyLines: true
+AlignConsecutiveMacros:
+  Enabled:         true
+  AcrossEmptyLines: true
+AlignEscapedNewlines: Left
+AllowShortFunctionsOnASingleLine: None
+BinPackArguments: false
+BinPackParameters: false
+BitFieldColonSpacing: After
+BraceWrapping:
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: false
+ColumnLimit:     0
+CompactNamespaces: true
+EmptyLineAfterAccessModifier: Leave
+EmptyLineBeforeAccessModifier: Leave
+IncludeBlocks:   Merge
+IndentPPDirectives: AfterHash
+IndentWidth:     4
+PointerAlignment: Middle
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeCtorInitializerColon: false
+SpaceBeforeInheritanceColon: false
+SpacesInContainerLiterals: false
