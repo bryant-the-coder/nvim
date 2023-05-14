@@ -170,7 +170,6 @@ cmp.setup({
         entries = { name = "wildmenu", separator = " | " },
     },
 }) ]]
-
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
