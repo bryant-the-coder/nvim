@@ -1,6 +1,6 @@
 local base16 = require("base16")
 
-local theme = vim.g.colors_name
+local theme = require("core.default_config").ui.theme
 return base16(base16.themes(theme))
 
 --[[ local time = os.date("*t")

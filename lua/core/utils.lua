@@ -34,7 +34,7 @@ utils.get = function()
         theme = "onedark"
     end ]]
     -- return base16(base16.themes(theme))
-    local theme = vim.g.colors_name
+    local theme = require("core.default_config").ui.theme
     return require("hl_themes." .. theme)
 end
 
@@ -46,7 +46,7 @@ utils.get_base = function()
     else
         theme = "onedark"
     end ]]
-    local theme = vim.g.colors_name
+    local theme = require("core.default_config").ui.theme
     return require("themes." .. theme .. "-base16")
 end
 
