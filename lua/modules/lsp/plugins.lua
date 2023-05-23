@@ -1,4 +1,5 @@
 local lsp = require("utils.pack").package
+local conf = require("modules.lsp.config")
 
 lsp({
     "neovim/nvim-lspconfig",
@@ -9,9 +10,7 @@ lsp({
     end, ]]
     -- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
     config = function()
-        require("modules.lsp.installer")
-        require("modules.lsp.lsp_config")
-        require("modules.lsp.main")
+        require("modules.lsp.settings.main")
     end,
 })
 
@@ -28,9 +27,10 @@ lsp({
     enabled = false,
     "lvimuser/lsp-inlayhints.nvim",
     after = "nvim-lspconfig",
-    config = function()
+    --[[ config = function()
         require("modules.lsp.inlay")
-    end,
+    end, ]]
+    config = conf.inlayhints,
 })
 
 lsp({
@@ -54,19 +54,14 @@ lsp({
     "ray-x/lsp_signature.nvim",
     lazy = true,
     ft = { "python" },
-    config = function()
-        require("modules.lsp.signature")
-    end,
+    config = conf.signature,
 })
 
--- Uncomment this if you want lspsage
 lsp({
     "nvimdev/lspsaga.nvim",
     cmd = { "Lspsaga" },
     lazy = true,
-    config = function()
-        require("modules.lsp.saga")
-    end,
+    config = conf.saga,
     dependencies = "neovim/nvim-lspconfig",
 })
 
@@ -81,9 +76,7 @@ lsp({
 lsp({
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
-    config = function()
-        require("modules.lsp.crates")
-    end,
+    config = conf.rust_crates,
 })
 
 lsp({

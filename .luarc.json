@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/home/bryant/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/home/bryant/.local/share/bob/v0.9.0/nvim-linux64/share/nvim/runtime/lua",
+        "/home/bryant/.config/nvim/lua",
+        "/home/bryant/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/476b123d"
+    ]
+}

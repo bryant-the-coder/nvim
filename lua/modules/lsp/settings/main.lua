@@ -1,64 +1,37 @@
 local lspconfig = require("lspconfig")
 
--- Load lua-dev because i am lazyloading it
--- require("lazy").load "lua-dev.nvim"
-
 -- WARN: Dont remove this files
 require("modules.lsp.installer")
-require("modules.lsp.lsp_config")
-local capabilities = require("modules.lsp.capabilities")
+require("modules.lsp.settings.lsp_config")
 
 -- Creating a function call on_attach
 local function on_attach(client, bufnr)
-    require("modules.lsp.on_attach").setup(client, bufnr)
+    require("modules.lsp.settings.on_attach").setup(client, bufnr)
 end
 
-local function on_attach_16(client, bufnr)
-    require("modules.lsp.on_attach").setup(client, bufnr)
+--[[ local function on_attach_16(client, bufnr)
+    require("modules.lsp.settings.on_attach").setup(client, bufnr)
+end ]]
+local capabilities = require("modules.lsp.settings.capabilities")
+
+-- Loading the LSP servers in a list
+local servers = {
+    tsserver = {},
+    vimls = {},
+    bashls = {},
+    jsonls = {},
+    texlab = {},
+    gopls = {},
+}
+for server, config in pairs(servers) do
+    lspconfig[server].setup(vim.tbl_deep_extend("force", {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }, config))
 end
-
-lspconfig.tsserver.setup({})
-lspconfig.vimls.setup({})
-lspconfig.bashls.setup({})
-
--- JSON
-lspconfig.jsonls.setup({
-    on_attach = on_attach,
-})
-
-require("lspconfig").texlab.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        texlab = {
-            auxDirectory = ".",
-            bibtexFormatter = "texlab",
-            build = {
-                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
-                executable = "latexmk",
-                forwardSearchAfter = false,
-                onSave = true,
-            },
-            chktex = {
-                onEdit = false,
-                onOpenAndSave = true,
-            },
-            diagnosticsDelay = 100,
-            formatterLineLength = 100,
-            forwardSearch = {
-                args = {},
-            },
-            latexFormatter = "latexindent",
-            latexindent = {
-                modifyLineBreaks = false,
-            },
-        },
-    },
-})
 
 local pyright = {
     on_attach = on_attach,
-    capabilities = capabilities,
     settings = {
         python = {
             analysis = {
@@ -82,7 +55,6 @@ local pyright = {
 
 local jedi = {
     on_attach = on_attach,
-    capabilities = capabilities,
     settings = {
         python = {
             analysis = {
