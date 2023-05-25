@@ -282,7 +282,7 @@ end)
 map("n", "]d", function()
     vim.diagnostic.goto_next({ border = "rounded" })
 end)
-
+map("n", "<leader>lq", vim.diagnostic.setloclist)
 map("n", "<leader>lbh", function()
     require("core.utils").show_documentation()
 end, { desc = "Show the documentation in a floating window" })
