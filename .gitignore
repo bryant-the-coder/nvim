@@ -2,4 +2,3 @@ plugin/
 txt
 tmp.norg
 nvim.version
-lua/core/default_config.lua
