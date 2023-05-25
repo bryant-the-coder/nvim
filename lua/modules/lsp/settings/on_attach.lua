@@ -38,13 +38,6 @@ end
 
 function on_attach.setup(client, bufnr)
     lsp_highlight_document(client, bufnr)
-    vim.keymap.set("n", "<leader>lp", function()
-        vim.diagnostic.goto_prev({ border = "rounded" })
-    end)
-    vim.keymap.set("n", "<leader>ln", function()
-        vim.diagnostic.goto_next({ border = "rounded" })
-    end)
-
     if client.server_capabilities["documentSymbolProvider"] then
         local status_ok, navic = pcall(require, "nvim-navic")
         if not status_ok then

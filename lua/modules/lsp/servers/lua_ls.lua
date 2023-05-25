@@ -1,6 +1,6 @@
 local lang_lua = {}
 
-local capabilities = require("modules.lsp.settings..capabilities")
+local capabilities = require("modules.lsp.settings.capabilities")
 -- Creating a function call on_attach
 local function on_attach(client, bufnr)
     require("modules.lsp.on_attach").setup(client, bufnr)
@@ -9,6 +9,7 @@ end
 local defaults = {
     lua_ls = {
         on_attach = on_attach,
+        capabilities = capabilities,
         settings = {
             Lua = {
                 diagnostics = {
