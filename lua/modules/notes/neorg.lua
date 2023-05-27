@@ -134,6 +134,7 @@ neorg.setup({
         },
         -- ["external.kanban"] = {},
         -- ["core.integrations.telescope"] = {}, -- Enable the telescope module
+        ["core.highlights"] = {},
     },
 })
 
