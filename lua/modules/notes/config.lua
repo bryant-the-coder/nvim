@@ -54,7 +54,7 @@ function config.neorg()
                 workspace = "task",
             },
         }, ]]
-            ["core.concealer"] = {
+            --[[ ["core.concealer"] = {
                 config = {
                     -- markup_preset = "dimmed",
                     markup_preset = "conceal",
@@ -68,10 +68,6 @@ function config.neorg()
                         },
                     },
                     icons = {
-                        marker = {
-                            enabled = true,
-                            icon = " ",
-                        },
                         todo = {
                             enable = true,
                             recurring = {
@@ -117,6 +113,11 @@ function config.neorg()
                             },
                         },
                     },
+                },
+            }, ]]
+            ["core.concealer"] = {
+                config = {
+                    icon_preset = "diamond"
                 },
             },
             ["core.keybinds"] = {
