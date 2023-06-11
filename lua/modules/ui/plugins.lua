@@ -47,6 +47,7 @@ ui({
 
 ui({
     "j-hui/fidget.nvim",
+    tag = 'legacy',
     config = conf.fidget,
 })
 
