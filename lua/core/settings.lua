@@ -83,8 +83,8 @@ vim.defer_fn(function()
     -- See :h fillchars
     o.fillchars = {
         eob = " ",
-        vert = "┃", -- ║
-        horiz = "━", -- ═
+        vert = "┃",    -- ║
+        horiz = "━",   -- ═
         horizup = "┻", -- ╩
         horizdown = "┳", -- ╦
         vertleft = "┫", -- ╣
