@@ -16,7 +16,7 @@ function config.vimtex()
             "-pdflatex",
             "-interaction=nonstopmode",
             "-synctex=1",
-            "-outdir=.build",
+            "-outdir=test",
             "-pvc",
         },
     }
