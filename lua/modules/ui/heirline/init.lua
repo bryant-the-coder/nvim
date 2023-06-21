@@ -131,7 +131,8 @@ local Mode = {
     -- control the padding and make sure our string is always at least 2
     -- characters long. Plus a nice Icon.
     provider = function(self)
-        return " %2(" .. self.mode_names[self.mode] .. "%) "
+        return " %2(" .. self.mode_names[self.mode:sub(1, 1)] .. "%) "
+        -- return "%2(" .. data.mode_icons[self.mode:sub(1, 1)] .. "%)"
     end,
     hl = function(self)
         local mode = self.mode:sub(1, 1) -- get only the first mode character
@@ -427,6 +428,11 @@ local TerminalStatusline = {
     condition = function()
         return conditions.buffer_matches({ buftype = { "terminal" } })
     end,
+    hl = { bg = "dark_red" },
+    { condition = conditions.is_active, Mode, space },
+    FileType,
+    space,
+    TerminalName,
     align,
 }
 
@@ -437,7 +443,7 @@ local Statuslines = {
     help_file_line,
     inactive_statusline,
     default_statusline,
-    -- TerminalStatusline,
+    TerminalStatusline,
     GitStatusline,
 }
 
