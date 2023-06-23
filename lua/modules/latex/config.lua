@@ -1,23 +1,16 @@
 local config = {}
 
 function config.vimtex()
-    vim.g.vimtex_view_method = 'zathura'
-    vim.g.vimtex_view_general_viewer = 'okular'
-    vim.g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
+    vim.g.vimtex_view_method = "sioyek" -- sioyek
     vim.g.vimtex_compiler_method = "latexmk"
     vim.g.vimtex_compiler_latexmk = {
-        build_dir = "build",
-        callback = 1,
-        continuous = 1,
-        executable = "latexmk",
+        build_dir = ".out",
         options = {
-            "-pdf",
             "-shell-escape",
-            "-pdflatex",
+            "-verbose",
+            "-file-line-error",
             "-interaction=nonstopmode",
             "-synctex=1",
-            "-outdir=test",
-            "-pvc",
         },
     }
     vim.g.vimtex_imaps_enabled = true
