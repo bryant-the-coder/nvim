@@ -240,6 +240,8 @@ fg("NeoTreeDirectoryName", folder_bg)
 fg("NeoTreeRootName", red, { underline = true })
 fg("NeoTreeDirectoryName", folder_bg)
 fg("NeoTreeFileNameOpened", folder_bg)
+fg_bg("NeoTreeFloatBorder", darker_black, darker_black)
+fg("NeoTreeFloatTitle", yellow)
 
 -- CMP
 fg("CmpItemAbbrDeprecated", "#808080", { strikethrough = true })

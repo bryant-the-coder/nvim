@@ -10,7 +10,6 @@ tree.setup({
         "filesystem",
         "buffers",
         "git_status",
-        "diagnostics",
         "document_symbols",
     },
     source_selector = {
@@ -25,8 +24,8 @@ tree.setup({
         "Vista",
         "edgy",
     },
-    close_if_last_window = true,      -- Close Neo-tree if it is the last window left in the tab
-    popup_border_style = "solid",     -- "double", "none", "rounded", "shadow", "single" or "solid
+    close_if_last_window = true,  -- Close Neo-tree if it is the last window left in the tab
+    popup_border_style = "solid", -- "double", "none", "rounded", "shadow", "single" or "solid
     enable_git_status = true,
     enable_diagnostics = true,
     git_status_async = true,
@@ -104,6 +103,9 @@ tree.setup({
             ["m"] = "move", -- takes text input for destination
             ["q"] = "close_window",
             ["R"] = "refresh",
+            ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
+            ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
+            ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
         },
     },
     nesting_rules = {},
