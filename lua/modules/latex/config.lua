@@ -1,18 +1,30 @@
 local config = {}
 
 function config.vimtex()
-    vim.g.vimtex_view_method = "sioyek" -- sioyek
+  vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = { "*.tex" },
+        callback = function()
+            vim.cmd([[VimtexCompile]])
+        end,
+    })
+    vim.g.vimtex_view_method = "zathura" -- sioyek
     vim.g.vimtex_compiler_method = "latexmk"
     vim.g.vimtex_compiler_latexmk = {
-        build_dir = ".out",
+        executable = "latexmk",
+        out_dir = ".build",
         options = {
-            "-shell-escape",
-            "-verbose",
-            "-file-line-error",
-            "-interaction=nonstopmode",
-            "-synctex=1",
+            "--pdflatex",
+            "--shell-escape",
+            "--file-line-error",
+            "--synctex=1",
+            "--interaction=nonstopmode",
         },
     }
+
+    vim.cmd([[
+    let g:Tex_FormatDependency_dvi='dvi,ps,pdf'
+    let g:Tex_DefaultTargetFormat='pdf'
+    ]])
     vim.g.vimtex_imaps_enabled = true
     -- TOC settings
     vim.g.vimtex_toc_config = {

@@ -20,46 +20,7 @@ local servers = {
     vimls = {},
     bashls = {},
     jsonls = {},
-    texlab = {
-        texlab = {
-            auxDirectory = "build",
-            bibtexFormatter = "texlab",
-            build = {
-                executable = "latexmk",
-                args = {
-                    "-pdf",
-                    "-interaction=nonstopmode",
-                    "-synctex=1",
-                    "%f",
-                },
-                on_save = true,
-                forward_search_after = false,
-            },
-            chktex = {
-                on_open_and_save = false,
-                on_edit = false,
-            },
-            forward_search = {
-                executable = nil,
-                args = {},
-            },
-            latexindent = {
-                ["local"] = nil,
-                modify_line_breaks = false,
-            },
-            diagnostics = {
-                virtual_text = { spacing = 0, prefix = "" },
-                signs = true,
-                underline = true,
-            },
-            linters = { "chktex" },
-            auto_save = false,
-            ignore_errors = {},
-            diagnosticsDelay = 300,
-            formatterLineLength = 120,
-            latexFormatter = "latexindent",
-        }
-    },
+    texlab = require("modules.lsp.servers.texlab"),
     gopls = {},
 }
 for server, config in pairs(servers) do
