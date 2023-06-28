@@ -49,6 +49,7 @@ map({ "n", "i", "v" }, "<ESC>", "<cmd>noh<CR>")
 
 -- Running and exec files
 map("n", "<leader>ex", "<cmd>call bryant#save_and_exec()<CR>")
+map("n", "<leader>st", "<cmd>call bryant#terminal()<CR>")
 
 -- Replace words with find and replace
 map("n", "<leader>rw", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")

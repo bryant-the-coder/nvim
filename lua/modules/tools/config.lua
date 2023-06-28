@@ -84,7 +84,7 @@ function config.toggleterm()
     -- }
 
     toggleterm.setup({
-        size = 70,
+        size = 52,
         open_mapping = [[<c-t>]],
         hide_numbers = true, -- hide the number column in toggleterm buffers
         shade_filetypes = {},
