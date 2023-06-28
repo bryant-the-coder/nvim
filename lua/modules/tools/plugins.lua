@@ -28,6 +28,7 @@ tools({
 })
 
 tools({
+    enabled = false,
     "NvChad/nvim-colorizer.lua",
     event = "BufEnter",
     config = conf.colorizer,

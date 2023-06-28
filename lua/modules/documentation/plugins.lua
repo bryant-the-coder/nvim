@@ -9,6 +9,7 @@ docs({
 })
 
 docs({
+    enabled = false,
     "romainl/vim-devdocs",
     cmd = { "DD" },
     lazy = true,

@@ -35,6 +35,7 @@ lang({
 })
 
 lang({
+    enabled = false,
     "mfussenegger/nvim-dap-python",
     after = "nvim-dap",
     config = conf.dap_py,
