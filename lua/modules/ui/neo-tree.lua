@@ -24,7 +24,7 @@ tree.setup({
         "Vista",
         "edgy",
     },
-    close_if_last_window = true,  -- Close Neo-tree if it is the last window left in the tab
+    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "solid", -- "double", "none", "rounded", "shadow", "single" or "solid
     enable_git_status = true,
     enable_diagnostics = true,
@@ -67,7 +67,7 @@ tree.setup({
         git_status = {
             symbols = {
                 -- Change type
-                added = "",    -- or "✚", but this is redundant info if you use git_status_colors on the name
+                added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
                 modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
                 deleted = "✖", -- this can only be used in the git_status source
                 renamed = "", -- this can only be used in the git_status source
@@ -103,9 +103,15 @@ tree.setup({
             ["m"] = "move", -- takes text input for destination
             ["q"] = "close_window",
             ["R"] = "refresh",
-            ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
-            ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
-            ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+            ["e"] = function()
+                vim.api.nvim_exec("Neotree focus filesystem left", true)
+            end,
+            ["b"] = function()
+                vim.api.nvim_exec("Neotree focus buffers left", true)
+            end,
+            ["g"] = function()
+                vim.api.nvim_exec("Neotree focus git_status left", true)
+            end,
         },
     },
     nesting_rules = {},
@@ -122,7 +128,7 @@ tree.setup({
             },
         },
         follow_current_file = true, -- This will find and focus the file in the active buffer every
-        group_empty_dirs = true,    -- when true, empty folders will be grouped together
+        group_empty_dirs = true, -- when true, empty folders will be grouped together
         hijack_netrw_behavior = "open_default",
         window = {
             mappings = {
@@ -138,7 +144,7 @@ tree.setup({
     buffers = {
         follow_current_file = true, -- This will find and focus the file in the active buffer every
         -- time the current file is changed while the tree is open.
-        group_empty_dirs = true,    -- when true, empty folders will be grouped together
+        group_empty_dirs = true, -- when true, empty folders will be grouped together
         show_unloaded = true,
         window = {
             mappings = {

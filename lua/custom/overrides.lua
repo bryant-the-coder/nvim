@@ -1,6 +1,6 @@
 local hl = vim.api.nvim_set_hl
-local colors = require("core.utils").get()
 local base = require("core.utils").get_base()
+local colors = require("core.utils").get()
 local config = require("core.default_config")
 
 -- Code from nvchad

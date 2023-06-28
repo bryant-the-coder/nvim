@@ -2,11 +2,11 @@
 -- Credits: https://github.com/max397574/omega-nvim/blob/feat/make_usable_for_outsiders/lua/omega/modules/ui/heirline/round_blended.lua
 
 local use_dev_icons = false
+local base = require("core.utils").get_base()
+local colors = require("core.utils").get()
 local conditions = require("heirline.conditions")
 local utilities = require("heirline.utils")
 local utils = require("heirline.utils")
-local colors = require("core.utils").get()
-local base = require("core.utils").get_base()
 local fn = vim.fn
 local api = vim.api
 local fmt = string.format

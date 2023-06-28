@@ -1,7 +1,7 @@
 local config = {}
 
 function config.vimtex()
-  vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
         pattern = { "*.tex" },
         callback = function()
             vim.cmd([[VimtexCompile]])

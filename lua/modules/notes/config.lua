@@ -117,7 +117,7 @@ function config.neorg()
             }, ]]
             ["core.concealer"] = {
                 config = {
-                    icon_preset = "diamond"
+                    icon_preset = "diamond",
                 },
             },
             ["core.keybinds"] = {

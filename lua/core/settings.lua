@@ -1,6 +1,6 @@
 require("core.disable_builtin")
-local utils = require("core.utils")
 local config = require("core.default_config")
+local utils = require("core.utils")
 
 local g = vim.g
 local o = vim.opt
@@ -83,8 +83,8 @@ vim.defer_fn(function()
     -- See :h fillchars
     o.fillchars = {
         eob = " ",
-        vert = "┃",    -- ║
-        horiz = "━",   -- ═
+        vert = "┃", -- ║
+        horiz = "━", -- ═
         horizup = "┻", -- ╩
         horizdown = "┳", -- ╦
         vertleft = "┫", -- ╣

@@ -4,8 +4,8 @@ if not present then
 end
 
 local actions = require("telescope.actions")
-local theme = require("telescope.themes")
 local previewers_utils = require("telescope.previewers.utils")
+local theme = require("telescope.themes")
 
 local open_cmd = "xdg-open"
 
