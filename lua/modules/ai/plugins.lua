@@ -1,7 +1,7 @@
 local ai = require("utils.pack").package
 local conf = require("modules.ai.config")
 
-ai {
+ai({
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     dependencies = { "nvim-cmp" },
@@ -25,6 +25,6 @@ ai {
             ["dap-repl"] = false,
         },
     },
-}
+})
 
 -- print a statement
