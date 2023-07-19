@@ -363,3 +363,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 --[[ map("n", "<leader>hh", require("hover").hover, { desc = "hover.nvim" })
 map("n", "<leader>hs", require("hover").hover_select, { desc = "hover.nvim (select)" }) ]]
+
+-- code from lazyvim
+local utils = require("core.utils")
+
+map("n", "<leader>gG", function()
+    utils.float_term({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
+end, { desc = "Lazygit (cwd)" })
+map("n", "<leader>tft", function()
+    utils.float_term()
+end)
