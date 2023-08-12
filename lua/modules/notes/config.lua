@@ -1,16 +1,23 @@
 local config = {}
 
 function config.neorg()
-    --[[ local present, neorg = pcall(require, "neorg")
+    local present, neorg = pcall(require, "neorg")
     if not present then
         return
     end
-]]
-    local neorg_callbacks = require("neorg.callbacks")
 
-    require("neorg").setup({
+    neorg.setup({
         load = {
             ["core.defaults"] = {},
+            ["core.upgrade"] = {},
+            ["core.looking-glass"] = {}, -- Enable the looking_glass module
+            ["core.itero"] = {},
+            ["core.export"] = {},
+            ["core.export.markdown"] = {
+                config = {
+                    extensions = "all",
+                },
+            },
             ["core.dirman"] = {
                 config = {
                     workspaces = {
@@ -38,86 +45,9 @@ function config.neorg()
                     type = "auto",
                 },
             },
-            ["core.export"] = {},
-            ["core.export.markdown"] = {
-                config = {
-                    extensions = "all",
-                },
-            },
             ["core.completion"] = {
                 config = {
                     engine = "nvim-cmp",
-                },
-            },
-            --[[ ["core.gtd.base"] = {
-            config = {
-                workspace = "task",
-            },
-        }, ]]
-            --[[ ["core.concealer"] = {
-                config = {
-                    -- markup_preset = "dimmed",
-                    markup_preset = "conceal",
-                    -- icon_preset = "diamond",
-                    -- icon_preset = "varied",
-                    dim_code_blocks = {
-                        width = "content",
-                        padding = {
-                            left = 10,
-                            right = 10,
-                        },
-                    },
-                    icons = {
-                        todo = {
-                            enable = true,
-                            recurring = {
-                                -- icon="ﯩ",
-                                icon = "",
-                            },
-                            pending = {
-                                -- icon = ""
-                                icon = "",
-                            },
-                            uncertain = {
-                                icon = "?",
-                            },
-                            urgent = {
-                                icon = "",
-                            },
-                            on_hold = {
-                                icon = "",
-                            },
-                            cancelled = {
-                                icon = "",
-                            },
-                        },
-                        heading = {
-                            enabled = true,
-                            level_1 = {
-                                icon = "◈",
-                            },
-                            level_2 = {
-                                icon = " ◇",
-                            },
-                            level_3 = {
-                                icon = "  ◆",
-                            },
-                            level_4 = {
-                                icon = "   ❖",
-                            },
-                            level_5 = {
-                                icon = "    ⟡",
-                            },
-                            level_6 = {
-                                icon = "     ⋄",
-                            },
-                        },
-                    },
-                },
-            }, ]]
-            ["core.concealer"] = {
-                config = {
-                    icon_preset = "diamond",
                 },
             },
             ["core.keybinds"] = {
@@ -139,23 +69,11 @@ function config.neorg()
             -- ["external.kanban"] = {},
             -- ["core.integrations.telescope"] = {}, -- Enable the telescope module
             ["core.highlights"] = {},
+            ["core.ui.calendar"] = {},
+            ["core.summary"] = {},
+            ["core.manoeuvre"] = {},
         },
     })
-
-    neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-        -- Map all the below keybinds only when the "norg" mode is active
-        keybinds.map_event_to_mode("norg", {
-            n = { -- Bind keys in normal mode
-                { "<C-f>", "core.integrations.telescope.find_linkable" },
-            },
-            i = { -- Bind in insert mode
-                { "<C-l>", "core.integrations.telescope.insert_link" },
-            },
-        }, {
-            silent = true,
-            noremap = true,
-        })
-    end)
 end
 
 return config

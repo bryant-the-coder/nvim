@@ -3,7 +3,7 @@ local conf = require("modules.ai.config")
 
 ai({
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    ft = { "lua", "cpp", "python" },
     dependencies = { "nvim-cmp" },
     opts = {
         panel = {
