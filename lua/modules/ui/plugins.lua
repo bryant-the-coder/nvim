@@ -31,6 +31,7 @@ ui({
 ui({
     "lukas-reineke/indent-blankline.nvim",
     lazy = true,
+    main = "ibl",
     init = function()
         require("custom.load").lazy_load("indent-blankline.nvim")
     end,
