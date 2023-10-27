@@ -1,7 +1,7 @@
 local capabilities = require("modules.lsp.settings..capabilities")
 -- Creating a function call on_attach
 local function on_attach(client, bufnr)
-    require("modules.lsp.on_attach").setup(client, bufnr)
+    require("modules.lsp.settings.on_attach").setup(client, bufnr)
 end
 
 -- Update this path
