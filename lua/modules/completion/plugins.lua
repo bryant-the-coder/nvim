@@ -57,6 +57,7 @@ completion({
 })
 
 completion({
+    enabled = false,
     "zbirenbaum/copilot-cmp",
     config = function()
         require("copilot_cmp").setup()

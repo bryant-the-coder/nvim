@@ -9,6 +9,7 @@ tools({
 })
 
 tools({
+    enabled = false,
     "natecraddock/workspaces.nvim",
     lazy = true,
     cmd = {

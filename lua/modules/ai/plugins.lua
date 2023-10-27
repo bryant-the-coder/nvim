@@ -2,6 +2,7 @@ local ai = require("utils.pack").package
 local conf = require("modules.ai.config")
 
 ai({
+    enabled = false,
     "zbirenbaum/copilot.lua",
     ft = { "lua", "cpp", "python" },
     dependencies = { "nvim-cmp" },
@@ -26,5 +27,3 @@ ai({
         },
     },
 })
-
--- print a statement
