@@ -22,7 +22,7 @@ editor({
 })
 
 editor({
-    enabled = false,
+    enabled = true,
     "andweeb/presence.nvim",
     event = "VeryLazy",
     config = conf.discord,
