@@ -80,7 +80,7 @@ lsp({
 })
 
 lsp({
-    "Jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = { "InsertEnter" },
     config = function()
         require("modules.lsp.null-ls")
