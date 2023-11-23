@@ -181,7 +181,7 @@ end)
 map("n", "<leader>,", function()
     require("core.utils").insert_comma()
 end)
-map("n", "<leader>;", function()
+map("n", ";;", function()
     require("core.utils").insert_semicolon()
 end)
 
