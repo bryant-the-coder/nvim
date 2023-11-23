@@ -116,6 +116,12 @@ function config.comment()
     })
 end
 
+function config.ts_context_commentstring()
+    require("ts_context_commentstring").setup({
+        enable_autocmd = false,
+    })
+end
+
 function config.todo()
     local present, todo = pcall(require, "todo-comments")
     if not present then

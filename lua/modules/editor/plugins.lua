@@ -7,6 +7,7 @@ editor({
     dependencies = {
         "JoosepAlviste/nvim-ts-context-commentstring",
         lazy = true,
+        config = conf.ts_context_commentstring,
     },
     keys = { { "g", mode = "n" }, { "g", mode = "v" } },
     config = conf.comment,
