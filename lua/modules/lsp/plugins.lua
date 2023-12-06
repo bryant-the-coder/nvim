@@ -75,6 +75,7 @@ lsp({
 
 lsp({
     "saecki/crates.nvim",
+    ft = "rust",
     event = { "BufRead Cargo.toml" },
     config = conf.rust_crates,
 })

@@ -19,7 +19,7 @@ completion({
             lazy = true,
             config = conf.cmp_git,
         },
-        { "hrsh7th/cmp-nvim-lsp-signature-help" },
+        { "hrsh7th/cmp-nvim-lsp-signature-help", lazy = true },
     },
     config = conf.cmp,
 })
@@ -68,6 +68,7 @@ completion({
 })
 
 completion({
+    enabled = false,
     "onsails/lspkind.nvim",
     config = function()
         require("lspkind").init({
