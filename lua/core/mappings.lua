@@ -203,7 +203,7 @@ map("n", "<leader>jt", "<cmd>Neorg journal today<CR>")
 map("n", "<leader>ng", "<cmd>Neogit<CR>")
 
 -- Neo-tree
-map("n", "<leader>nr", "<cmd>NeoTreeFocusToggle<CR>")
+map("n", "<leader>nr", "<cmd>Neotree<CR>")
 map("n", "<leader>nf", "<cmd>Neotree float<CR>")
 
 -- Zen-mode
