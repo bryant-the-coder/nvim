@@ -9,7 +9,7 @@ tools({
 })
 
 tools({
-    enabled = false,
+    enabled = true,
     "natecraddock/workspaces.nvim",
     lazy = true,
     cmd = {
@@ -23,13 +23,14 @@ tools({
 })
 
 tools({
+    enabled = false,
     "akinsho/toggleterm.nvim",
     keys = { "<c-t>", "<leader>tg" },
     config = conf.toggleterm,
 })
 
 tools({
-    enabled = true,
+    enabled = false,
     "NvChad/nvim-colorizer.lua",
     event = "BufEnter",
     config = conf.colorizer,

@@ -28,6 +28,7 @@ buffer({
 })
 
 buffer({
+    enabled = false,
     "stevearc/oil.nvim",
     -- event = "VeryLazy",
     init = function()
