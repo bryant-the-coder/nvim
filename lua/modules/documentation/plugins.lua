@@ -3,7 +3,8 @@ local docs = require("utils.pack").package
 
 docs({
     "danymat/neogen",
-    lazy = true,
+    -- lazy = true,
+    cmd = { "Neogen" },
     dependencies = { "L3MON4D3/LuaSnip" },
     config = conf.neogen,
 })
