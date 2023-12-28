@@ -2,7 +2,7 @@ local conf = require("modules.git.config")
 local git = require("utils.pack").package
 
 git({
-    enabled = false,
+    enabled = true,
     "TimUntersberger/neogit",
     lazy = true,
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -51,7 +51,7 @@ git({
     -- module = "gitsigns",
 } ]]
 git({
-    enabled = false,
+    enabled = true,
     "sindrets/diffview.nvim",
     after = "gitsigns.nvim",
     config = conf.diffview,

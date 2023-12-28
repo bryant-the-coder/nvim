@@ -32,6 +32,8 @@ function config.neogit()
             status = {
                 -- To override lightspeed "s" keybinding
                 ["<Space>"] = "Stage",
+            },
+            popup = {
                 ["p"] = "PushPopup",
                 ["P"] = "PullPopup",
             },
