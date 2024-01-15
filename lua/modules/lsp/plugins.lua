@@ -66,10 +66,35 @@ lsp({
 })
 
 lsp({
+    enabled = false,
     "simrat39/rust-tools.nvim",
     ft = "rust",
     config = function()
         require("modules.lsp.servers.rust_analyzer")
+    end,
+})
+
+lsp({
+    "mrcjkb/rustaceanvim",
+    version = "^3", -- Recommended
+    ft = { "rust" },
+    config = function()
+        vim.g.rustaceanvim = {
+            -- Plugin configuration
+            tools = {},
+            -- LSP configuration
+            server = {
+                on_attach = function(client, bufnr)
+                    -- you can also put keymaps in here
+                end,
+                settings = {
+                    -- rust-analyzer language server configuration
+                    ["rust-analyzer"] = {},
+                },
+            },
+            -- DAP configuration
+            dap = {},
+        }
     end,
 })
 
