@@ -17,7 +17,7 @@ lang({
 })
 
 lang({
-    enabled = false,
+    enabled = true,
     "mfussenegger/nvim-dap",
     lazy = true,
     --[[ config = function()
@@ -27,17 +27,18 @@ lang({
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-dap-python",
     },
+    config = conf.dap,
 })
 
 lang({
-    enabled = false,
+    enabled = true,
     "rcarriga/nvim-dap-ui",
     after = "nvim-dap",
     config = conf.dap_ui,
 })
 
 lang({
-    enabled = false,
+    enabled = true,
     "mfussenegger/nvim-dap-python",
     ft = "python",
     after = "nvim-dap",

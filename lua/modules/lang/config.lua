@@ -17,11 +17,15 @@ function config.trouble()
 end
 
 function config.dap_ui()
-    require("modules.lang.dap.dap_ui")
+    require("modules.lang.debugger.dap_ui")
 end
 
 function config.dap_py()
-    require("modules.lang.dap.dap_py")
+    require("modules.lang.debugger.dap_py")
+end
+
+function config.dap()
+    require("modules.lang.debugger.dap")
 end
 
 return config
