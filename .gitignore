@@ -2,3 +2,4 @@ plugin/
 txt
 tmp.norg
 nvim.version
+lua/core/global.lua
