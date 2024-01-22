@@ -345,6 +345,15 @@ map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>")
 map("n", "<leader>ft", function()
     require("modules.files.telescope").harpoon()
 end)
+map("n", "<leader>pws", function()
+    local builtin = require("telescope.builtin")
+    local word = vim.fn.expand("<cword>")
+    builtin.grep_string({ search = word })
+end)
+map("n", "<leader>ps", function()
+    local builtin = require("telescope.builtin")
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "qf",
