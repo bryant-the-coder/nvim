@@ -15,7 +15,6 @@ function config.neorg()
                     engine = "nvim-cmp",
                 },
             },
-            ["core.upgrade"] = {},
             ["core.looking-glass"] = {}, -- Enable the looking_glass module
             ["core.itero"] = {},
             ["core.export"] = {},
