@@ -41,7 +41,6 @@ lsp({
 })
 
 lsp({
-    enabled = true,
     "p00f/clangd_extensions.nvim",
     ft = { "c", "cpp" },
     -- after = "nvim-lspconfig",
@@ -108,6 +107,9 @@ lsp({
 lsp({
     "nvimtools/none-ls.nvim",
     event = { "InsertEnter" },
+    dependencies = {
+        "nvimtools/none-ls-extras.nvim",
+    },
     config = function()
         require("modules.lsp.null-ls")
     end,

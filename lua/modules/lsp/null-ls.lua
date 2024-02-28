@@ -11,7 +11,7 @@ null_ls.setup({
     sources = {
         formatting.prettier.with({}),
         formatting.stylua,
-        formatting.rustfmt,
+        -- formatting.rustfmt,
         formatting.clang_format,
         formatting.black.with({
             extra_args = function(_)
@@ -25,6 +25,7 @@ null_ls.setup({
                 }
             end,
         }),
+        require("none-ls.formatting.rustfmt"),
         --[[ diagnostics.flake8.with {
             extra_args = function(_)
                 return { "--max-line-lenth", vim.opt_local.colorcolumn:get()[1] or "88" }

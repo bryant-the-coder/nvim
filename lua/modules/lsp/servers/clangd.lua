@@ -18,13 +18,10 @@ local clangd_configs = vim.tbl_deep_extend("force", clangd_defaults["default_con
         "--pch-storage=memory",
     },
 })
-local status_ok, clangd = pcall(require, "clangd_extensions")
-if not status_ok then
-    return
-end
-clangd.setup({
-    server = clangd_configs,
-    extensions = {
+
+require("clangd_extensions").setup({
+    inlay_hints = {
+        inline = vim.fn.has("nvim-0.10") == 1,
         autoSetHints = true,
         hover_with_actions = true,
         inlay_hints = {
@@ -49,7 +46,8 @@ clangd.setup({
                 statement = "",
                 ["template argument"] = "",
             },
-            {
+
+            kind_icons = {
                 Compound = "",
                 Recovery = "",
                 TranslationUnit = "",
@@ -58,15 +56,15 @@ clangd.setup({
                 TemplateTemplateParm = "",
                 TemplateParamObject = "",
             },
-            highlights = {
-                detail = "Comment",
-            },
-            memory_usage = {
-                border = "rounded",
-            },
-            symbol_info = {
-                border = "rounded",
-            },
         },
+        highlights = {
+            detail = "Comment",
+        },
+    },
+    memory_usage = {
+        border = "none",
+    },
+    symbol_info = {
+        border = "none",
     },
 })
