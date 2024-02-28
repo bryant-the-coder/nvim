@@ -22,6 +22,22 @@ local servers = {
     jsonls = {},
     texlab = require("modules.lsp.servers.texlab"),
     gopls = {},
+    clangd = {
+        cmd = {
+            "clangd",
+            -- NOTE: don't remove this if you don't want errors
+            "--offset-encoding=utf-16",
+            "-j=4",
+            "--background-index",
+            "--clang-tidy",
+            "--fallback-style=llvm",
+            "--all-scopes-completion",
+            "--completion-style=detailed",
+            "--header-insertion=iwyu",
+            "--header-insertion-decorators",
+            "--pch-storage=memory",
+        },
+    },
 }
 for server, config in pairs(servers) do
     lspconfig[server].setup(vim.tbl_deep_extend("force", {
