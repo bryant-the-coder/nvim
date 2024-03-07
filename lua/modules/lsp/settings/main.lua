@@ -110,7 +110,7 @@ local jedi = {
     },
 }
 
-local use_pyright = true
+local use_pyright = false
 if use_pyright then
     require("lspconfig").pyright.setup(pyright)
 else

@@ -289,7 +289,7 @@ map("n", "<leader>lbh", function()
 end, { desc = "Show the documentation in a floating window" })
 
 -- Harpooon
-map("n", "<A-t>", function()
+map("n", "<A-p>", function()
     require("harpoon.ui").toggle_quick_menu()
 end)
 map("n", "<A-=>", function()
