@@ -33,6 +33,9 @@ lang({
 lang({
     enabled = true,
     "rcarriga/nvim-dap-ui",
+    dependencies = {
+        "nvim-neotest/nvim-nio",
+    },
     after = "nvim-dap",
     config = conf.dap_ui,
 })
