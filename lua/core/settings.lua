@@ -13,7 +13,8 @@ g.tmux_navigator_no_mappings = true
 --Cursor & cursorline
 o.cursorline = true
 o.cursorlineopt = { "number" } -- Highlighting the number where the cursor is on
-vim.opt.stl = " "
+o.stl = " "
+o.colorcolumn = "120"
 
 -- Mappings
 g.mapleader = ","
