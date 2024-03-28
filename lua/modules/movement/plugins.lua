@@ -27,6 +27,6 @@ movement({
 })
 
 movement({
-    enabled = false,
+    enabled = true,
     "christoomey/vim-tmux-navigator",
 })
