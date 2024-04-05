@@ -1,6 +1,10 @@
 local config = {}
 
 function config.nvim_bufferline()
+    local fn = vim.fn
+    local r = vim.regex
+    local fmt = string.format
+    local bufferline = require("bufferline")
     local default = {
         colors = require("core.utils").get(),
     }
@@ -14,6 +18,61 @@ function config.nvim_bufferline()
     -- Code from NvChad
     require("bufferline").setup({
         options = {
+            groups = {
+                options = { toggle_hidden_on_enter = true },
+                items = {
+                    bufferline.groups.builtin.pinned:with({ icon = "" }),
+                    bufferline.groups.builtin.ungrouped,
+                    {
+                        name = "Dependencies",
+                        icon = "",
+                        highlight = { fg = "#ECBE7B" },
+                        matcher = function(buf)
+                            return vim.startswith(buf.path, vim.env.VIMRUNTIME)
+                        end,
+                    },
+                    {
+                        name = "Terraform",
+                        matcher = function(buf)
+                            return buf.name:match("%.tf") ~= nil
+                        end,
+                    },
+                    {
+                        name = "Kubernetes",
+                        matcher = function(buf)
+                            return buf.name:match("kubernetes") and buf.name:match("%.yaml")
+                        end,
+                    },
+                    {
+                        name = "SQL",
+                        matcher = function(buf)
+                            return buf.name:match("%.sql$")
+                        end,
+                    },
+                    {
+                        name = "tests",
+                        icon = "",
+                        matcher = function(buf)
+                            local name = buf.name
+                            return name:match("[_%.]spec") or name:match("[_%.]test")
+                        end,
+                    },
+                    {
+                        name = "docs",
+                        icon = "",
+                        matcher = function(buf)
+                            if vim.bo[buf.id].filetype == "man" or buf.path:match("man://") then
+                                return true
+                            end
+                            for _, ext in ipairs({ "txt", "org", "wiki", "norg" }) do
+                                if ext == fn.fnamemodify(buf.path, ":e") then
+                                    return true
+                                end
+                            end
+                        end,
+                    },
+                },
+            },
             hover = {
                 enabled = true,
                 delay = 0,
