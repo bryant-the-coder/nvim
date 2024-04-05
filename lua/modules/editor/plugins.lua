@@ -47,7 +47,7 @@ editor({
 })
 
 editor({
-    enabled = false,
+    enabled = true,
     "folke/todo-comments.nvim",
     event = "VeryLazy",
     config = conf.todo,

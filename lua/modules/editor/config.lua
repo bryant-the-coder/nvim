@@ -129,7 +129,7 @@ function config.todo()
     end
 
     todo.setup({
-        signs = false, -- show icons in the signs column
+        signs = true, -- show icons in the signs column
         sign_priority = 8, -- sign priority
         -- keywords recognized as todo comments
         keywords = {
@@ -139,11 +139,11 @@ function config.todo()
                 alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
                 -- signs = false, -- configure signs for some keywords individually
             },
-            TODO = { icon = " ", color = "info", alt = { "REVIST", "todo", "Todo", "TODO" } },
+            TODO = { icon = " ", color = "info", alt = { "REVIST", "TODO" } },
             HACK = { icon = " ", color = "warning" },
-            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "warning", "warn", "WARN", "Warn" } },
-            PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "optimize", "Optimize" } },
-            NOTE = { icon = " ", color = "hint", alt = { "INFO", "info", "Info" } },
+            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "WARN" } },
+            PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+            NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         },
         merge_keywords = true, -- when true, custom keywords will be merged with the defaults
         -- highlighting of the line containing the todo comment
@@ -152,7 +152,7 @@ function config.todo()
         -- * after: highlights after the keyword (todo text)
         highlight = {
             before = "", -- "fg" or "bg" or empty
-            keyword = "fg", -- "fg", "bg", "wide" or empty. (wide is the same as bg, but will also highlight surrounding characters)
+            keyword = "bg", -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
             after = "fg", -- "fg" or "bg" or empty
             pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlightng (vim regex)
             comments_only = true, -- uses treesitter to match keywords in comments only
