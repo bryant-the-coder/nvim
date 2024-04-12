@@ -49,11 +49,15 @@ end
 local pyright = {
     on_attach = on_attach,
     settings = {
+        pyright = {
+            disableOrganizeImports = false,
+        },
         python = {
             analysis = {
                 indexing = true,
                 typecheckingmode = "basic",
-                diagnosticmode = "openfilesonly",
+                -- diagnosticmode = "openfilesonly",
+                diagnosticmode = "workspace",
                 inlayhints = {
                     variabletypes = true,
                     functionreturntypes = true,
@@ -67,10 +71,31 @@ local pyright = {
             },
         },
     },
+    --[[ settings = {
+        python = {
+            analysis = {
+                indexing = true,
+                typecheckingmode = "basic",
+                -- diagnosticmode = "openfilesonly",
+                diagnosticmode = "workspace",
+                inlayhints = {
+                    variabletypes = true,
+                    functionreturntypes = true,
+                },
+                stubpath = vim.fn.expand("$home/typings"),
+                diagnosticseverityoverrides = {
+                    reportunusedimport = "information",
+                    reportunusedfunction = "information",
+                    reportunusedvariable = "information",
+                },
+            },
+        },
+    }, ]]
 }
 
 local jedi = {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         python = {
             analysis = {
@@ -110,7 +135,7 @@ local jedi = {
     },
 }
 
-local use_pyright = false
+local use_pyright = true
 if use_pyright then
     require("lspconfig").pyright.setup(pyright)
 else
