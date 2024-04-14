@@ -36,6 +36,7 @@ telescope.setup({
             "--line-number",
             "--column",
             "--smart-case",
+            "--ignore-file ~/.config/fzf-ignore",
         },
         prompt_prefix = "  ",
         selection_caret = "  ",
