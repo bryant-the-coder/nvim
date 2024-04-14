@@ -266,9 +266,15 @@ map("n", "<leader>lx", "<cmd>Lazy clean<CR>")
 map("n", "<leader>ls", "<cmd>Lazy sync<CR>")
 map("n", "<leader>pp", "<cmd>Lazy profile<CR>")
 
+-- Lspsaga
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+map("n", "<leader>lf", "<cmd>Lspsaga finder<CR>")
+map("n", "<leader>lpd", "<cmd>Lspsaga peek_definition<CR>")
+map("n", "<leader>lptd", "<cmd>Lspsaga peek_type_definition<CR>")
+map({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+
 -- LSP
 -- map("n", "<leader>ca", vim.lsp.buf.code_action)
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 map("n", "<leader>lr", function()
     require("core.utils").open()
 end)

@@ -25,6 +25,11 @@ o.mousemoveevent = true
 -- Theme
 o.termguicolors = true
 
+-- Search
+o.grepprg = "rg --vimgrep --no-heading --hidden --smart-case --ignore-file ~/.config/fzf-ignore"
+o.grepformat = "%f:%l:%c:%m"
+vim.g.python3_host_prog = vim.fn.expand("~/.virtualenvs/neovim/bin/python3")
+
 -- Command line
 o.shortmess:append("I")
 o.cmdheight = 1
