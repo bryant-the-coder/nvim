@@ -128,6 +128,7 @@ local config = {
     update_in_insert = false,
     virtual_text = false,
     virtual_lines = { only_current_line = true },
+    --INFO: Cannot use vim.fn.sign_define (deprecated)
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "",
