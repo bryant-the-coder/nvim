@@ -125,7 +125,7 @@ local config = {
     -- signs = true,
     underline = true,
     severity_sort = true,
-    update_in_insert = false,
+    update_in_insert = true,
     virtual_text = false,
     virtual_lines = { only_current_line = true },
     --INFO: Cannot use vim.fn.sign_define (deprecated)

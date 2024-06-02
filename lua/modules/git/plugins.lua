@@ -53,6 +53,8 @@ git({
 git({
     enabled = true,
     "sindrets/diffview.nvim",
-    after = "gitsigns.nvim",
+    dependencies = {
+        "lewis6991/gitsigns.nvim",
+    },
     config = conf.diffview,
 })

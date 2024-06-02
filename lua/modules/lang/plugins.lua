@@ -35,8 +35,8 @@ lang({
     "rcarriga/nvim-dap-ui",
     dependencies = {
         "nvim-neotest/nvim-nio",
+        "mfussenegger/nvim-dap",
     },
-    after = "nvim-dap",
     config = conf.dap_ui,
 })
 
@@ -53,7 +53,9 @@ lang({
     enabled = true,
     "mfussenegger/nvim-dap-python",
     ft = "python",
-    after = "nvim-dap",
+    dependencies = {
+        "mfussenegger/nvim-dap",
+    },
     config = conf.dap_py,
 })
 
