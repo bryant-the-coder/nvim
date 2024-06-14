@@ -18,6 +18,7 @@ notes({
 })
 
 notes({
+    enabled = false,
     "nvim-neorg/neorg",
     branch = "luarocks",
     dependencies = { "vhyrro/luarocks.nvim" },
