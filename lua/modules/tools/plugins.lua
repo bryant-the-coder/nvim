@@ -23,7 +23,7 @@ tools({
 })
 
 tools({
-    enabled = false,
+    enabled = true,
     "akinsho/toggleterm.nvim",
     keys = { "<c-t>", "<leader>tg" },
     config = conf.toggleterm,
