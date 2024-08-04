@@ -97,7 +97,6 @@ function config.nvim_bufferline()
             tab_size = 20,
             view = "multiwindow",
             diagnostics = "nvim_lsp",
-            diagnostics_update_in_insert = true,
             -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
             --     return "(" .. count .. ")"
             -- end,
