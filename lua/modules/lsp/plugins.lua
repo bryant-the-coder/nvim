@@ -75,7 +75,7 @@ lsp({
 
 lsp({
     "mrcjkb/rustaceanvim",
-    version = "^3", -- Recommended
+    version = "^5", -- Recommended
     ft = { "rust" },
     config = function()
         vim.g.rustaceanvim = {

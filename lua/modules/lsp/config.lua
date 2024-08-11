@@ -116,7 +116,6 @@ function config.rust_crates()
         thousands_separator = ".",
         notification_title = "Crates",
         curl_args = { "-sL", "--retry", "1" },
-        disable_invalid_feature_diagnostic = false,
         text = {
             loading = "   Loading",
             version = "   %s",
@@ -229,8 +228,11 @@ function config.rust_crates()
                 jump_back = { "<c-o>", "<C-RightMouse>" },
             },
         },
-        src = {
+        completion = {
             insert_closing_quote = true,
+            cmp = {
+                enabled = true,
+            },
             text = {
                 prerelease = "  pre-release ",
                 yanked = "  yanked ",
@@ -238,6 +240,11 @@ function config.rust_crates()
             coq = {
                 enabled = false,
                 name = "Crates",
+            },
+            crates = {
+                enabled = true, -- disabled by default
+                max_results = 8, -- The maximum number of search results to display
+                min_chars = 3, -- The minimum number of charaters to type before completions begin appearing
             },
         },
         null_ls = {

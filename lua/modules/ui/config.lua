@@ -98,7 +98,7 @@ function config.fidget()
     local relative = "editor"
     fidget.setup({
         text = {
-            spinner = "moon",
+            spinner = "meter",
             -- spinner = {
             --     " ",
             --     " ",
