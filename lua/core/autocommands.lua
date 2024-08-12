@@ -224,3 +224,59 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
     end,
 })
+
+-- CPP purposes
+local function TermWrapper(command)
+    if vim.g.split_term_style == nil then
+        vim.g.split_term_style = "vertical"
+    end
+
+    local buffercmd
+    if vim.g.split_term_style == "vertical" then
+        buffercmd = "vnew"
+    elseif vim.g.split_term_style == "horizontal" then
+        buffercmd = "new"
+    else
+        error(
+            'ERROR! g:split_term_style is not a valid value (must be "horizontal" or "vertical" but is currently set to "'
+                .. vim.g.split_term_style
+                .. '")'
+        )
+    end
+
+    vim.cmd(buffercmd)
+
+    if vim.g.split_term_resize_cmd ~= nil then
+        vim.cmd(vim.g.split_term_resize_cmd)
+    end
+
+    vim.cmd("term " .. command)
+    vim.cmd("setlocal nornu nonu")
+    vim.cmd("startinsert")
+    vim.api.nvim_create_autocmd("BufEnter", {
+        buffer = 0,
+        command = "startinsert",
+    })
+end
+
+vim.api.nvim_create_user_command("CompileAndRun", function()
+    local fileName = vim.fn.expand("%")
+    local exeName = fileName:gsub("%.cpp$", "")
+    TermWrapper("g++ -std=c++11 -o " .. exeName .. " " .. fileName .. " && ./" .. exeName)
+end, {})
+vim.api.nvim_create_user_command("CompileAndRunWithFile", function(args)
+    TermWrapper("g++ -std=c++11 " .. vim.fn.expand("%") .. " && ./a.out < " .. args.args)
+end, {
+    nargs = 1,
+    complete = "file",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
+    command = "nnoremap <leader>fw :CompileAndRun<CR>",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
+    command = "nnoremap <leader>fr :CompileAndRunWithFile<CR>",
+})
