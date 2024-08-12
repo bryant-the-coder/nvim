@@ -226,6 +226,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- CPP purposes
+--------------------------------------------------------------------
+---------------------- READ TO UNDERSTAND --------------------------
+--------------------------------------------------------------------
+--- Function to open a new terminal (vertical / horizontal)
+--- While starting in INSERT mode
 local function TermWrapper(command)
     if vim.g.split_term_style == nil then
         vim.g.split_term_style = "vertical"
@@ -259,23 +264,26 @@ local function TermWrapper(command)
     })
 end
 
+-- Invoke a command
+-- Runs g++ and compile it into exe
+-- After compile, runs the exe
 vim.api.nvim_create_user_command("CompileAndRun", function()
     local fileName = vim.fn.expand("%")
     local exeName = fileName:gsub("%.cpp$", "")
     TermWrapper("g++ -std=c++11 -o " .. exeName .. " " .. fileName .. " && ./" .. exeName)
 end, {})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
+    command = "nnoremap <leader>fw :CompileAndRun<CR>",
+})
+
+-- Same as above but theres an input file (use it thru command line)
 vim.api.nvim_create_user_command("CompileAndRunWithFile", function(args)
     TermWrapper("g++ -std=c++11 " .. vim.fn.expand("%") .. " && ./a.out < " .. args.args)
 end, {
     nargs = 1,
     complete = "file",
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "cpp",
-    command = "nnoremap <leader>fw :CompileAndRun<CR>",
-})
-
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
     command = "nnoremap <leader>fr :CompileAndRunWithFile<CR>",
