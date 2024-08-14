@@ -274,7 +274,7 @@ vim.api.nvim_create_user_command("CompileAndRun", function()
 end, {})
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
-    command = "nnoremap <leader>fw :CompileAndRun<CR>",
+    command = "nnoremap <leader>fc :CompileAndRun<CR>",
 })
 
 -- Same as above but theres an input file (use it thru command line)
