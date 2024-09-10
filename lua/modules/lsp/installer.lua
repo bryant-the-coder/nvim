@@ -1,7 +1,7 @@
 local servers = {
     "clangd",
     "jsonls",
-    "tsserver",
+    "ts_ls",
     "ltex",
     "texlab",
     "lua_ls",

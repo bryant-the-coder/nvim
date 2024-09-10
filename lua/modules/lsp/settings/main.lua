@@ -17,7 +17,7 @@ local capabilities = require("modules.lsp.settings.capabilities")
 
 -- Loading the LSP servers in a list
 local servers = {
-    tsserver = {},
+    ts_ls = {},
     vimls = {},
     bashls = {},
     jsonls = {},
