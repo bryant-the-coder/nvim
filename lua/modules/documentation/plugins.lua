@@ -17,7 +17,7 @@ docs({
 })
 
 docs({
-    enabled = false,
+    enabled = true,
     "lalitmee/browse.nvim",
     lazy = true,
     dependencies = { "nvim-telescope/telescope.nvim" },

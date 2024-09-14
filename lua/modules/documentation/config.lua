@@ -22,7 +22,7 @@ end
 
 function config.browse()
     local browse = require("browse")
-    local bookmarks = {
+    BOOKMARKS = {
         ["github"] = {
             ["name"] = "search github from neovim",
             ["code_search"] = "https://github.com/search?q=%s&type=code",
@@ -33,11 +33,11 @@ function config.browse()
     }
     browse.setup({
         -- search provider you want to use
-        provider = "duckduckgo", -- duckduckgo, bing, google
+        provider = "google", -- duckduckgo, bing, google
 
         -- either pass it here or just pass the table to the functions
         -- see below for more
-        bookmarks = bookmarks,
+        bookmarks = BOOKMARKS,
     })
 end
 
