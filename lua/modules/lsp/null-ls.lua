@@ -19,7 +19,11 @@ null_ls.setup({
                     "--fast",
                     "--quiet",
                     "--target-version",
+                    "py38",
+                    "py39",
                     "py310",
+                    "py311",
+                    "py312",
                     "-l",
                     vim.opt_local.colorcolumn:get()[1] or "88",
                 }
