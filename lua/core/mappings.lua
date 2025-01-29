@@ -13,12 +13,6 @@
 -- local nimap = require("core.utils").normal_insert()
 
 local map = vim.keymap.set
-vim.api.nvim_set_keymap(
-    "v",
-    "<Leader>re",
-    [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-    { noremap = true, silent = true, expr = false }
-)
 
 map("n", "<leader>ta", [[<cmd>put! =repeat(nr2char(10), v:count1)<cr>'[]])
 -----------------------------------

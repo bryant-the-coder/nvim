@@ -2,8 +2,6 @@ local servers = {
     "clangd",
     "jsonls",
     "ts_ls",
-    "ltex",
-    "texlab",
     "lua_ls",
     "jedi_language_server",
     "pyright",

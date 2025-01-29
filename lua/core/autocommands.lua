@@ -244,8 +244,8 @@ local function TermWrapper(command)
     else
         error(
             'ERROR! g:split_term_style is not a valid value (must be "horizontal" or "vertical" but is currently set to "'
-                .. vim.g.split_term_style
-                .. '")'
+            .. vim.g.split_term_style
+            .. '")'
         )
     end
 
@@ -287,4 +287,14 @@ end, {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "cpp",
     command = "nnoremap <leader>fr :CompileAndRunWithFile<CR>",
+})
+
+augroup("json_conceal", {})
+-- Fix conceallevel for json files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = "json_conceal",
+    pattern = { "json", "jsonc", "json5" },
+    callback = function()
+        vim.opt_local.conceallevel = 0
+    end,
 })
