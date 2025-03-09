@@ -105,6 +105,7 @@ lsp({
 })
 
 lsp({
+    enabled = false,
     "nvimtools/none-ls.nvim",
     event = { "InsertEnter" },
     dependencies = {
@@ -120,4 +121,12 @@ lsp({
     config = function(_, opts)
         require("modules.lsp.servers.lua_ls").setup(opts)
     end,
+})
+
+lsp({
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    config = function()
+        require("modules.lsp.conform")
+    end
 })

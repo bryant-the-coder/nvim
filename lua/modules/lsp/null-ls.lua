@@ -13,22 +13,23 @@ null_ls.setup({
         formatting.stylua,
         -- formatting.rustfmt,
         formatting.clang_format,
-        formatting.black.with({
-            extra_args = function(_)
-                return {
-                    "--fast",
-                    "--quiet",
-                    "--target-version",
-                    "py38",
-                    "py39",
-                    "py310",
-                    "py311",
-                    "py312",
-                    "-l",
-                    vim.opt_local.colorcolumn:get()[1] or "88",
-                }
-            end,
-        }),
+        -- formatting.black.with({
+        --     extra_args = function(_)
+        --         return {
+        --             "--fast",
+        --             "--quiet",
+        --             "--target-version",
+        --             "py38",
+        --             "py39",
+        --             "py310",
+        --             "py311",
+        --             "py312",
+        --             "-l",
+        --             vim.opt_local.colorcolumn:get()[1] or "88",
+        --         }
+        --     end,
+        -- }),
+        formatting.black,
         require("none-ls.formatting.rustfmt"),
         --[[ diagnostics.flake8.with {
             extra_args = function(_)
