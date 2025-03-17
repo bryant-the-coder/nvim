@@ -98,7 +98,8 @@ local jedi = {
     end,
 }
 
-require("lspconfig").jedi_language_server.setup(jedi)
+-- require("lspconfig").jedi_language_server.setup(jedi)
+require 'lspconfig'.pyright.setup(pyright)
 -- local use_pyright = true
 -- if use_pyright then
 --     require("lspconfig").pyright.setup(pyright)
