@@ -12,8 +12,8 @@ completion({
             lazy = true,
         },
         { "hrsh7th/cmp-nvim-lsp", lazy = true },
-        { "hrsh7th/cmp-buffer", lazy = true },
-        { "hrsh7th/cmp-path", lazy = true },
+        { "hrsh7th/cmp-buffer",   lazy = true },
+        { "hrsh7th/cmp-path",     lazy = true },
         {
             "petertriho/cmp-git",
             lazy = true,

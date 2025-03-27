@@ -127,14 +127,14 @@ local config = {
     severity_sort = true,
     update_in_insert = true,
     virtual_text = false,
-    virtual_lines = { only_current_line = true },
+    virtual_lines = false,
     --INFO: Cannot use vim.fn.sign_define (deprecated)
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "",
             [vim.diagnostic.severity.WARN] = "",
             [vim.diagnostic.severity.HINT] = "",
-            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.INFO] = ""
         },
     },
     float = {
