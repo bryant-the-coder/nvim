@@ -24,7 +24,7 @@ tree.setup({
         "Vista",
         "edgy",
     },
-    close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+    close_if_last_window = true,  -- Close Neo-tree if it is the last window left in the tab
     popup_border_style = "solid", -- "double", "none", "rounded", "shadow", "single" or "solid
     enable_git_status = true,
     enable_diagnostics = true,
@@ -136,7 +136,7 @@ tree.setup({
             mappings = {
                 ["<bs>"] = "navigate_up",
                 ["."] = "set_root",
-                ["<C-h>"] = "toggle_hidden",
+                ["<C-.>"] = "toggle_hidden",
                 ["/"] = "fuzzy_finder",
                 ["f"] = "filter_on_submit",
                 ["<c-x>"] = "clear_filter",
