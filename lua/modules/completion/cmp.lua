@@ -108,7 +108,7 @@ cmp.setup({
                     return true
                 end
             end,
-
+            require("clangd_extensions.cmp_scores"),
             cmp.config.compare.kind,
             cmp.config.compare.sort_text,
             cmp.config.compare.length,
@@ -151,11 +151,11 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         -- { name = "copilot", group_index = 2 },
-        { name = "nvim_lsp", priority = "9" },
+        { name = "nvim_lsp",                priority = "9" },
         { name = "nvim_lsp_signature_help", priority = "7" },
-        { name = "luasnip", priority = "8" },
-        { name = "buffer", keyword_length = 5 },
-        { name = "npm", keyword_length = 2 },
+        { name = "luasnip",                 priority = "8" },
+        { name = "buffer",                  keyword_length = 5 },
+        { name = "npm",                     keyword_length = 2 },
         { name = "neorg" },
         { name = "path" },
         { name = "git" },
