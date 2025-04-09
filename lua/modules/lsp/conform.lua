@@ -11,7 +11,7 @@ require("conform").setup({
         end, ]]
         python = { "isort", "black", "docformatter" },
         rust = { "rustfmt", lsp_format = "fallback" },
-        cpp = { "clang-format" }
+        cpp = { "clang-format" },
     },
 
     format_on_save = {

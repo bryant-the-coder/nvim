@@ -244,8 +244,8 @@ local function TermWrapper(command)
     else
         error(
             'ERROR! g:split_term_style is not a valid value (must be "horizontal" or "vertical" but is currently set to "'
-            .. vim.g.split_term_style
-            .. '")'
+                .. vim.g.split_term_style
+                .. '")'
         )
     end
 

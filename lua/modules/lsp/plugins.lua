@@ -128,5 +128,5 @@ lsp({
     event = { "BufWritePre" },
     config = function()
         require("modules.lsp.conform")
-    end
+    end,
 })
