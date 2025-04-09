@@ -91,15 +91,15 @@ function config.signature()
         hi_parameter = "Search",
         max_height = 22,
 
-        transparency = 1, -- disabled by default, allow floating win transparent value 1~100
-        max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
+        transparency = 1,                       -- disabled by default, allow floating win transparent value 1~100
+        max_width = 120,                        -- max_width of signature floating_window, line will be wrapped if exceed max_width
         handler_opts = {
-            border = border, -- double, single, shadow, none
+            border = border,                    -- double, single, shadow, none
         },
-        zindex = 50, -- by default it will be on top of all floating windows, set to 50 send it to bottom
-        padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
+        zindex = 50,                            -- by default it will be on top of all floating windows, set to 50 send it to bottom
+        padding = "",                           -- character to pad on left and right of signature can be ' ', or '|'  etc
         always_trigger = true,
-        floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
+        floating_window_above_cur_line = false, -- try to place the floating above the current line when possible Note:
     }
 
     require("lsp_signature").setup(opts)
@@ -242,9 +242,9 @@ function config.rust_crates()
                 name = "Crates",
             },
             crates = {
-                enabled = true, -- disabled by default
+                enabled = true,  -- disabled by default
                 max_results = 8, -- The maximum number of search results to display
-                min_chars = 3, -- The minimum number of charaters to type before completions begin appearing
+                min_chars = 3,   -- The minimum number of charaters to type before completions begin appearing
             },
         },
         null_ls = {
