@@ -1,4 +1,4 @@
--- Clangd
+--[[ -- Clangd
 local clangd_defaults = require("lspconfig.server_configurations.clangd")
 local clangd_configs = vim.tbl_deep_extend("force", clangd_defaults["default_config"], {
     -- on_attach = on_attach_16,
@@ -17,7 +17,7 @@ local clangd_configs = vim.tbl_deep_extend("force", clangd_defaults["default_con
         "--header-insertion-decorators",
         "--pch-storage=memory",
     },
-})
+}) ]]
 
 require("clangd_extensions").setup({
     inlay_hints = {

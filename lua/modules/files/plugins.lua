@@ -26,16 +26,9 @@ search({
 })
 
 search({
-    enabled = false,
+    enabled = true,
     "ibhagwan/fzf-lua",
     dependencies = "nvim-tree/nvim-web-devicons",
-    cmd = {
-        "FzfLua files",
-        "FzfLua live_grep",
-        "FzfLua buffers",
-        "FzfLua lsp_references",
-        "FzfLua lsp_definitions",
-        "FzfLua lsp_code_actions",
-    },
+    event = "VeryLazy",
     config = conf.fzf,
 })
