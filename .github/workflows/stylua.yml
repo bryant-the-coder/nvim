@@ -1,48 +1,42 @@
 name: Formatting
 
-on: 
+on:
   push:
-    branches: [ "main" ]
-    paths-ignore:
-      - ".github/**"
-      - "**.md"
-      - "**.norg"
+    branches: [main]  # or any branch you want to watch
+    paths:
+      - '**.lua'
+  pull_request:
+    paths:
+      - '**.lua'
 
 jobs:
-  format-with-stylua:
+  format:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Cache cargo modules
-        id: cache-cargo
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          path: ~/.cargo
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install cargo
-        run: curl https://sh.rustup.rs -sSf | sh -s -- -y
+      - name: Set up Lua
+        uses: leafo/gh-actions-lua@v9
 
-      - name: Install stylua
-        run: cargo install stylua --features lua52
+      - name: Install Stylua
+        run: |
+          curl -L https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux-x86_64.zip -o stylua.zip
+          unzip stylua.zip -d stylua-bin
+          sudo mv stylua-bin/stylua /usr/local/bin/
+          stylua --version
 
-      - name: Run formatting
-        run: stylua -v --verify .
+      - name: Run Stylua formatter
+        run: |
+          stylua .
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore: autoformat with stylua"
-          branch: ${{ github.ref }}
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      - name: Commit formatted code (if changed)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "chore: auto-format Lua code with Stylua"
+          git push
