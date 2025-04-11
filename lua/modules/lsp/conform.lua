@@ -1,15 +1,15 @@
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
-        -- Uses ruff. If ruff unavailable, use isot and black
-        --[[ python = function(bufnr)
+        -- Uses ruff. If ruff unavailable, use isort and black
+        python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
-                return { "ruff_format", "ruff_organize_imports" }
+                return { "ruff_format", "ruff_organize_imports", "docformatter" }
             else
-                return { "isort", "black" }
+                return { "isort", "black", "docformatter" }
             end
-        end, ]]
-        python = { "isort", "black", "docformatter" },
+        end,
+        -- python = { "isort", "black", "docformatter" },
         rust = { "rustfmt", lsp_format = "fallback" },
         cpp = { "clang-format" },
     },
