@@ -99,7 +99,7 @@ function config.signature()
         zindex = 50, -- by default it will be on top of all floating windows, set to 50 send it to bottom
         padding = "", -- character to pad on left and right of signature can be ' ', or '|'  etc
         always_trigger = true,
-        floating_window_above_cur_line = false, -- try to place the floating above the current line when possible Note:
+        floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
     }
 
     require("lsp_signature").setup(opts)
