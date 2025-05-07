@@ -42,7 +42,7 @@ lang({
 
 lang({
     "jay-babu/mason-nvim-dap.nvim",
-    dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+    dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-dap" },
     opts = {
         ensure_installed = { "codelldb" },
         handlers = {},
